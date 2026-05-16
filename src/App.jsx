@@ -7,7 +7,7 @@ import './index.css';
 // ============================================
 // API CONFIGURATION - USING YOUR WORKING BACKEND
 // ============================================
-const BACKEND_URL = 'https://recoveryback.vercel.app';
+const BACKEND_URL = 'https://recoveryback.onrender.com';
 
 // ============================================
 // LANGUAGE DETECTION & TRANSLATIONS
