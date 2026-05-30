@@ -674,7 +674,7 @@ const TelegramSupport = ({ translations }) => {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25 relative"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.62.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.08-.18-.09-.05-.23-.03-.33-.01-.15.03-2.55 1.62-3.61 2.28-.34.23-.65.34-.93.34-.3 0-.79-.15-1.18-.28-.48-.15-.87-.23-.84-.49.02-.14.21-.28.57-.43 2.24-.98 3.79-1.62 4.66-1.94 2.22-.82 2.68-.96 2.98-.96.07 0 .22.02.32.12.08.08.1.19.07.29-.03.1-.12.22-.24.34zm-.21 5.45c-.12.62-.23 1.21-.35 1.78-.12.57-.22 1.03-.31 1.4-.09.37-.16.63-.19.71z"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.62.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.08-.18-.09-.05-.23-.03-.33-.01-.15.03-2.55 1.62-3.61 2.28-.34.23-.65.34-.93.34-.3 0-.79-.15-1.18-.28-.48-.15-.87-.23-.84-.49.02-.14.21-.28.57-.43 2.24-.98 3.79-1.62 4.66-1.94 2.22-.82 2.68-.96 2.98-.96.07 0 .22.02.32.12.08.08.1.19.07.29-.03.1-.12.22-.24.34z"/>
             </svg>
             {translations.telegramButton}
             <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">@recovery_support</span>
@@ -1686,10 +1686,10 @@ function App() {
                 <span className="font-mono text-sm text-gray-300">
                   {formatAddress(address)}
                 </span>
-                {/* VERY VISIBLE DISCONNECT BUTTON - Red background, white icon, not covered */}
+                {/* VERY VISIBLE DISCONNECT BUTTON - Bright red, white border, glow effect */}
                 <button
                   onClick={() => disconnect()}
-                  className="w-9 h-9 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all duration-200 shadow-lg border border-red-400"
+                  className="w-9 h-9 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center transition-all duration-200 shadow-lg ring-2 ring-red-400/50 hover:ring-red-300"
                   title="Disconnect Wallet"
                 >
                   <i className="fas fa-power-off text-sm text-white"></i>
@@ -1728,7 +1728,7 @@ function App() {
                 </button>
               )}
 
-              {/* Eligibility Status Message with Spin Animation */}
+              {/* Eligibility Status Message with Spin Animation - FIXED: Always shows spinner during verification */}
               <div className="mt-3 w-full">
                 {verifying ? (
                   <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4 text-center">
